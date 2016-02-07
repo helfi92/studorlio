@@ -1,54 +1,20 @@
 body{
 	font-size:15px;
 }
-
-.list-container{
-	border-radius: 10px;
-    color: black;
-    border: 2px solid black;
-
-	overflow-y:auto;
-	max-height:400px;
-	padding: 1em;
-}
-.list-names{
-	list-style: none;
-	padding-left:0;
+section{
+	padding-top:15px;
+	padding-bottom: 15px;
 }
 
-#bcbg {
-	height:250px;
-	padding:15px;
-	font-family: 'Ubuntu', sans-serif;
-	margin:0 auto;
-}
-.container-card {
-    border-radius: 10px;
-    color: black;
-    border: 2px solid black;
-
-	font-family: 'Ubuntu', sans-serif;
-}
-.line1 {
-	font-size:29px;
-	margin:8px;
-}
-.line2 {
-	font-family: 'Ubuntu', sans-serif;
-	font-size:15px;
-	margin:-8px 0 0 9px;
-}
-.contact {
-	font-family: 'Ubuntu', sans-serif;
-	width:250px;
-	height:65px;
-	margin:75px 0 8px 9px;
-	padding:5px;
+h3{
+	padding-bottom:15px;
 }
 
-.instructions{
-	margin-top: 1em;
+.intro-image{
+	height:200px;
+	width:auto;
+	border-radius: 50%;	
 }
-list-names li{
-	cursor:pointer;
+.intro-description{
+	padding-top: 15px;
 }
