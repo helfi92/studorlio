@@ -16,5 +16,11 @@ h3{
 	border-radius: 50%;	
 }
 .intro-description{
-	padding-top: 15px;
+	padding-top: 45px;
+}
+
+
+.social-container img{
+	height:128px;
+	padding-bottom:15px;
 }
