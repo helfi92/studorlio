@@ -1,9 +1,13 @@
 # Studorlio
+
+![](https://www.dropbox.com/s/a1exez4ktzjc7cj/screenshot.png?dl=1)
+
 Studorlio is a template for your own personal site. You can have yours running on the cloud in exactly 10 seconds. But first, make sure you have a GitHub account. Ready, set, go!
 
 ## Getting Started
 1. Fork the repository to make it yours.
 2. Rename the forked repository to `username.github.io`, where `username` is your GitHub username.
+3. That's it! Navigate to `username.github.io` to see your website :) 
 
 ## Demo
 [https://helfi92.github.io/studorlio](https://helfi92.github.io/studorlio/)
