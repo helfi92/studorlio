@@ -1,16 +1,20 @@
-body{
+html, body{
 	font-size:16px;
 	color: #dfdfdf;
 	background-color: #063647; 
 }
 
-h3{
-	padding-bottom:15px;
+a {
+  color: #00d1b2;
+}
+
+a:hover {
+  color: #00d1b2;
 }
 
 section{
 	padding-top: 3rem;
-	padding-bottom: 6rem;
+	padding-bottom: 3rem;
 }
 
 .section-1 {
@@ -26,8 +30,8 @@ section{
 }
 
 .section-4 {
-	background-color: #6589A9;
-	padding: 1.5rem 1.5rem 1.5rem;
+	background-color: #063647;
+	padding: 0.2rem;
 }
 
 a.nav-item {
@@ -69,40 +73,16 @@ a.nav-item:hover {
 	border: 2px solid rgba(7, 59, 79, 0.5);
 }
 
-.section-4 a {
-	color: #fff;
-}
-
-.section-4 a:hover {
-	color: #dfdfdf;
-}
-
 .title {
 	color: #fff;
 	text-align: left;
 	margin-bottom: 2rem;
 }
 
-.thumbs-up i {
-	transform: scale(-1, 1);
-	bottom: 1rem;
-	right: 1rem;
-	font-size: 150px;
-	position: absolute;
-}
-
-#contact {
-	position: relative;
-}
-
 .intro {
 	text-align: justify;
 	width: 80%;
 	margin: 0 auto;
-}
-
-.love {
-	color: #fff;
 }
 
 .void-background {
@@ -113,7 +93,17 @@ a.nav-item:hover {
 	.nav-menu {
 		background-color: #063647;
 	}
+
 	.nav-toggle:hover {
 		background-color: transparent;
 	}
+
+	.nav-toggle span {
+		background-color: #dfdfdf;
+	}
+
+	.nav-toggle span:hover {
+		background-color: #fff;
+	}
+
 }
