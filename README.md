@@ -9,8 +9,8 @@ Studorlio is a template for your own personal site. You can have yours running o
 [https://helfi92.github.io/studorlio](https://helfi92.github.io/studorlio/)
 
 ## FAQ
-* [How do I fork this repository?](#how-do-i-fork-this-repository?)
-* [How do I rename the forked repository?](#how-do-i-rename-the-forked-repository?)
+* [How do I fork this repository?](#how-do-i-fork-this-repository)
+* [How do I rename the forked repository?](#how-do-i-rename-the-forked-repository)
 
 ### How do I fork this repository?
 1. Make sure you're logged into GitHub with your account
