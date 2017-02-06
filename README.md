@@ -28,6 +28,6 @@ Studorlio is a template for your own personal site. You can have yours running o
 ## Bugs and Issues
 Have a bug or an issue with this template? [Open a new issue](https://github.com/helfi92/studorlio/issues)
 
-## Copyright and License
+## License
 Code released under the [MIT](https://github.com/helfi92/studorlio/blob/master/LICENSE) license
 
