@@ -1,19 +1,47 @@
 body{
 	font-size:16px;
 	color: #dfdfdf;
-}
-section{
-	padding-top: 3rem;
-	padding-bottom: 6rem;
+	background-color: #063647; 
 }
 
 h3{
 	padding-bottom:15px;
 }
 
+section{
+	padding-top: 3rem;
+	padding-bottom: 6rem;
+}
+
+.section-1 {
+	background: #063647;
+}
+
+.section-2 {
+	background-color: #052D3D;
+}
+
+.section-3 {
+	background-color: #0E282E;
+}
+
+.section-4 {
+	background-color: #6589A9;
+	padding: 1.5rem 1.5rem 1.5rem;
+}
+
+a.nav-item {
+	color: #dfdfdf;
+}
+
+a.nav-item:hover {
+	color: #fff;
+}
+
 .avatar{
 	height:200px;
-	border-radius: 50%;	
+	border-radius: 50%;
+	margin-top: 30px;
 }
 
 .intro-description{
@@ -23,7 +51,7 @@ h3{
 .social-container img{
 	max-width:100%;
 	max-height:175px;
-	padding-bottom:15px;
+	margin-bottom:15px;
 }
 
 .project-figure {
@@ -41,20 +69,12 @@ h3{
 	border: 2px solid rgba(7, 59, 79, 0.5);
 }
 
-.section-2 {
-	background: #063647;
+.section-4 a {
+	color: #fff;
 }
 
-.section-3 {
-	background-color: #052D3D;
-}
-
-.section-4 {
-	background-color: #0E282E;
-}
-
-.section-5 {
-	background-color: #6589A9;
+.section-4 a:hover {
+	color: #dfdfdf;
 }
 
 .title {
@@ -73,4 +93,27 @@ h3{
 
 #contact {
 	position: relative;
+}
+
+.intro {
+	text-align: justify;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.love {
+	color: #fff;
+}
+
+.void-background {
+	background-color: transparent; 
+}
+
+@media screen and (max-width: 768px) {
+	.nav-menu {
+		background-color: #063647;
+	}
+	.nav-toggle:hover {
+		background-color: transparent;
+	}
 }

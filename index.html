@@ -10,45 +10,39 @@
 	<!-- external libraries-->
 	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 	
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 	<meta name="author" content="Hassan Ali">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
 		<!-- Navbar -->
-		<nav class="nav container">
+		<nav class="nav container void-background">
 			<!-- This "nav-menu" is hidden on mobile -->
 			<!-- Add the modifier "is-active" to display it on mobile -->
-			<div class="nav-left nav-menu">
-				<span class="nav-item">
-					<a href="#about">About</a>
-				</span>
-				<span class="nav-item">
-					<a href="#projects">Projects</a>
-				</span>
-				<span class="nav-item">
-					<a href="#social">Social</a>
-				</span>
-				<span class="nav-item">
-					<a href="#contact">Contact</a>
-				</span>
-			</div>
-
-			<div class="nav-center">
-				<a class="nav-item">
+		
+			<div class="nav-left">
+				<a href="http://medium.com/@hassanwalcott/" class="nav-item">
 					<span class="icon">
 						<i class="fa fa-medium"></i>
 					</span>
 				</a>
-				<a class="nav-item">
+				<a href="http://github.com/helfi92" class="nav-item">
 					<span class="icon">
 						<i class="fa fa-github"></i>
 					</span>
 				</a>
-				<a class="nav-item">
+				<a href="https://twitter.com/helfiwalcott" class="nav-item">
 					<span class="icon">
 						<i class="fa fa-twitter"></i>
 					</span>
 				</a>				
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="#about">About</a>
+				<a class="nav-item" href="#projects">Projects</a>
+				<a class="nav-item" href="#social">Social</a>
+				<a class="nav-item" href="#contact">Contact</a>
 			</div>
 
 			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
@@ -61,30 +55,20 @@
 		</nav>
 				
 		<!-- About Me -->
-		<section id="about" class="section-2">
+		<section id="about" class="section-1">
 			<div class="container has-text-centered">
 				<!-- Source: https://flic.kr/p/pAZBNK -->
 				<img class="avatar" src="http://hassanali.me/images/my-picture.png">
 			</div>
 			<div class="container"></br>
-				<div class="columns">
-					<div class="column is-6 has-text-centered">
-						<p>
-							tique. Ut eleifend eros nulla id vestibulum suspendisse, ornare id massa laudantium, a urna a, urna commodo velit condimentum, porta egestas semper. Vestibulum viverra velit. Curabitur erat os nulla id vestibulum suspendisse, ornare id massa laudantium, a urna a, urna commodo velit condimentum, porta egestas semper
-						</p>
-					</div>
-
-					<div class="column is-6 has-text-centered">
-						<p>
-							tique. Ut eleifend eros nulla id vestibulum suspendisse, ornare id massa laudantium, a urna a, urna commodo velit condimentum, porta egestas semper. Vestibulum viverra velit. Curabitur erat os nulla id vestibulum suspendisse, ornare id massa laudantium, a urna a, urna commodo velit condimentum, porta egestas semper
-						</p>
-					</div>
-				</div>
+				<p class="intro">
+					tique. Ut eleifend eros nulla id vestibulum suspendisse, ornare id massa laudantium, a urna a, urna commodo velit condimentum, porta egestas semper. Vestibulum viverra velit. Curabitur erat os nulla id vestibulum suspendisse, ornare id massa laudantium, a urna a
+				</p>
 			</div>
 		</section>
 		
 		<!-- Projects -->
-		<section  class="section-3">
+		<section  id="projects" class="section-2">
 			<div class="container">
 				<div class="has-text-centered">
 					<h3 class="title is-3">Projects</h3>
@@ -96,7 +80,7 @@
 							<article>
 								<div>
 									<figure class="image project-figure">
-										<img src="https://static.pexels.com/photos/28094/pexels-photo-28094.jpg" alt="Image">
+										<img src="assets/img/watch.jpg" alt="Image">
 									</figure>
 								</div>
 								<div>			
@@ -113,7 +97,7 @@
 							<article>
 								<div>
 									<figure class="image project-figure">
-										<img src="https://static.pexels.com/photos/105254/pexels-photo-105254.jpeg" alt="Image">
+										<img src="assets/img/phone.jpeg" alt="Image">
 									</figure>
 								</div>
 								<div>			
@@ -129,19 +113,19 @@
 		</section>
 
 		<!-- Social -->
-		<section id="social" class="section-4">
+		<section id="social" class="section-3">
 			<div class="container">
 				<div class="has-text-centered">					
 					<h3 class="title is-3">Let's Socialize</h3>
 				</div>
 				<div class="social-container columns">
-					<div class="column is-4 has-text-right">
+					<div class="column is-4 has-text-centered">
 						<a target="_blank" href="https://ca.linkedin.com/in/hassan-ali-6132468a"><img class="" src="assets/img/linkedin.png"></a>
 					</div>
 					<div class="column is-4 has-text-centered">
 						<a target="_blank" href="https://www.instagram.com/helfiwalcott/"><img class=""  src="assets/img/instagram.png"></a>
 					</div>
-					<div class="column is-4 has-text-left">
+					<div class="column is-4 has-text-centered">
 						<a target="_blank" href="https://www.facebook.com/Hassan.Helfi"><img class="" src="assets/img/facebook.png"></a>
 					</div>
 				</div>
@@ -149,17 +133,13 @@
 		</section>	
 		
 		<!-- Contact -->
-		<section id="contact" class="section-5">
-			<div class="container has-text-centered">
-				<div>
-					<h3 class="title is-3">Contact</h3>
+		<section id="contact" class="section-4">
+			<div class="container">
+				<div class="content has-text-centered">
+					<p>
+						Made with <strong><i class="fa fa-heart-o love" aria-hidden="true"></i></strong> by <a href="https://helfi92.github.io/about.html">Hassan Ali</a>
+					</p>
 				</div>
-				<div>
-					Hassan Ali</br><a href="mailto:hassanali.mail.mcgill.com">hassan.ali@mail.mcgill.com</a>
-				</div>
-			</div>
-			<div class="thumbs-up is-hidden-mobile">
-				<i class="fa fa-thumbs-o-up fa-6" aria-hidden="true"></i>
 			</div>
 		</section>
 		
