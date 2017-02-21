@@ -12,7 +12,7 @@ Studorlio is a template for your own personal site. You can have yours running o
 If this is your first time making a website and is having trouble getting started, that's ok. Head over to the [FAQ](#faq) section and let me try help you.
 
 ## Demo
-[https://helfi92.github.io/studorlio](https://helfi92.github.io/studorlio/)
+[http://www.hassanali.me/studorlio/](http://www.hassanali.me/studorlio/)
 
 ## FAQ
 * [How do I fork this repository?](#how-do-i-fork-this-repository)
