@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Work</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+	<meta name="author" content="Hogaru.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="https://www.linkedin.com/in/albertoalonsog/" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-linkedin"></i>
+					</span>
+				</a>
+				<a href="http://github.com/a-alonso" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="index.html">About</a>
+				<a class="nav-item" href="index.html">Work</a>
+			</div>
+
+			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+			<span class="nav-toggle">
+				<span></span>
+				<span></span>
+			</span>
+		</nav>
+
+		<!-- About Me -->
+		<section class="hero is-info is-medium">
+		  <div class="hero-body">
+		    <div class="container">
+		      <h1 class="title">
+		        Hogaru.com
+		      </h1>
+		      <h2 class="subtitle">
+		        On Demand cleaning for SMEs and Homes
+		      </h2>
+		    </div>
+		  </div>
+		</section>
+
+		<!-- Work -->
+		<section  id="Work" class="section section-2">
+			<div class="container">
+				<div class="columns is-desktop is-centered">
+					<div class="column is-three-quarters is-narrow">
+						<div class="has-text-left">
+							<div class="content">
+								<h2 class="title is-2">Online Acquisition Experience</h2>
+								<p class="subtitle is-5">Client lead conversion expierience enhanced to acquire subscriptions instead of one-shot purchases <br></p>
+								<p class=''><span class='subtitle is-5'>The problem -</span>
+									Since Hogaru.com is a service, it's revenues rely on how many times a new client repurchase. The churn of new clients was above 42% augmenting dramatically the cost of effective acquisition.
+								</p>
+								<p class=''><span class='subtitle is-5'>The solution -</span>The acquisition and pricing experience was changed to a <strong>subscription model</strong> where the client had to give a trial to a month subscription rather than one cleaning.
+									Despite of the amount of cleanings purchased, the price per cleaning was defined by the weekly frequency chosen by the client.
+									<br>
+									After 4 months of deploying this feature, 64% of the company revenues were stabilized by subscription clients.
+								</p>
+								<p class=''><span class='subtitle is-5'>The UX Approach -</span>The solution was conceived and refined by UX Research and prototyping using these qualitative and quantitative methods:
+									<br>
+								</p>
+								<div class="columns is-desktop">
+									<div class="column is-half">
+										<dl>
+											<dt>1. Problem research</dt>
+												<dd>Recurrent client interviews</dd>
+												<dd>Churned client interviews and surveys</dd>
+											<dt>2. Scoping</dt>
+												<dd>Quantitative - Retention comparisson between clietns that purchased several cleanings VS one cleaning on their first purchase</dd>
+												<dd>Qualitative - Benchmarking the actual 'subscription' services the test clients were using</dd>
+										</dl>
+									</div>
+									<div class="column is-half">
+										<dl>
+											<dt>3. Protyping</dt>
+												<dd>A/B transactional e-mail hacking to provide a 'draft' booking for the client to confirm instead of waiting them to repurchase at the end of the month</dd>
+												<dd>Design Scenario tests</dd>
+											<dt>4. Deployment</dt>
+												<dd>Userflow, features and email chaining</dd>
+										</dl>
+									</div>
+								</div>
+								<p class=''><span class='subtitle is-5'>The Deliverables -</span> Wireframes, UI specs, and User stories were handed to developers
+									<br>
+								Check the wireframe
+								<a href="http://invis.io/VHDZFQGRZ">here:</a> 
+								</p>
+								<iframe src="http://invis.io/VHDZFQGRZ" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+								<!-- Second large project -->
+								<hr>
+								<h2 class="title is-2">Mobile ERP - Cleaners Operation Management</h2>
+								<p class="subtitle is-5">Bot developed to manage cleaners daily processes <br></p>
+								<p class=''><span class='subtitle is-5'>The problem -</span> Company required a monthly 30% growth in its cleaners fleet, counting ~1200 cleaners by the end of 2017. Each cleaner on a succesful journey follows 4 mandatory steps per day:
+									<ol>
+										<li>Confirm attendance to cleaning on the next day</li>
+										<li>Confirm they are commuting to calculate ETA</li>
+										<li>Confirm to begin the cleaning</li>
+										<li>Confirm to finish the cleaning</li>
+									</ol>
+									However, mostly newcomers and cleaners having new clients had several operations issues such as getting lost finding an address or questioning how to clean something properly.
+									The daily amount of processes is up to 2,700 per day, making unsustainable to build up a support team of 1 operator per 20 cleaners.
+								</p>
+								<p class=''><span class='subtitle is-5'>The solution -</span>A mobile bot was embedded in their mobile app to simulate a chat with a virtual operator that replies immediatly to any requirement the cleaner has. Manual communication is held only when a situation requires attention
+									<br>
+									The virtual operator "Amanda" currently <strong> replies automatically to the 76% of conversations</strong> with cleaners and manages the daily operations with no hassle.
+									A sandbox tool was deployed for the ops team to add or remove options the cleaners can choose when using the bot.
+								</p>
+								<p class=''><span class='subtitle is-5'>The UX Approach -</span>The solution was conceived and refined by UX Research and prototyping using these qualitative and quantitative methods:
+									<br>
+								</p>
+								<div class="columns is-desktop">
+									<div class="column is-half">
+										<dl>
+											<dt>1. Problem research</dt>
+												<dd>User Shadowing</dd>
+												<dd>Task Analysis</dd>
+											<dt>2. Scoping</dt>
+												<dd>Quantitative - Conversation scraping for identification of most common requests</dd>
+												<dd>Qualitative - Roleplay</dd>
+										</dl>
+									</div>
+									<div class="column is-half">
+										<dl>
+											<dt>3. Protyping</dt>
+												<dd>Wizard of Oz</dd>
+												<dd>Paper protoyping</dd>
+											<dt>4. Deployment</dt>
+												<dd>Definition of service moments and touch points</dd>
+												<dd>Decision tree</dd>
+										</dl>
+									</div>
+								</div>
+								<p class=''><span class='subtitle is-5'>The Deliverables -</span> Wireframes, UI specs, User stories and the decision tree were handed to developers
+									<br>
+								Check the decision tree here:
+								</p>
+								<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQgavZ9SUdTe3cyK_dgPGrJf_fTBVVVnO6I2HxodJoNtx_Nje8QaoeMLArRNg3VM1f56Kt-vjhwjoa8/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Footer -->
+		<section class="section-4 has-text-centered container">
+			<small>Alberto Alonso Portfolio 2017 👨🏻‍💻 | alonsog.alberto@gmail.com</small>
+		</section>
+
+		<!-- Scripts  -->
+		<script src="controller.js"></script>
+	</body>
+</html>
