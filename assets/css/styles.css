@@ -18,6 +18,10 @@ section{
 	padding-bottom: 3rem;
 }
 
+dd {
+	text-indent: 1rem;
+}
+
 .section-1 {
 	background: #5AC5E2;
 	background: -webkit-linear-gradient(to right, #5AC5E2, #AFE2F0); /* Chrome 10-25, Safari 5.1-6 */
@@ -37,7 +41,7 @@ section{
 }
 
 a.nav-item {
-	color: #6D7373;
+	color: #5AC5E2;
 }
 
 a.nav-item:hover {
