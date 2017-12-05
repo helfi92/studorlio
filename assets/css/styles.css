@@ -92,6 +92,23 @@ a.nav-item:hover {
 	background-color: transparent;
 }
 
+.iframe-phone {
+    background-image: url("https://mockuphone.com/static/images/devices/apple-iphone6-spacegrey-portrait.png");
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 900px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.iframe-phone-nequi {
+    height: 455px;
+    width: 256px;
+    position: absolute;
+    top: 133px;
+    left: 233px;
+}
+
 @media screen and (max-width: 768px) {
 	.nav-menu {
 		background-color: #2197B7;
