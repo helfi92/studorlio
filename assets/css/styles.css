@@ -14,7 +14,6 @@ a:hover {
 }
 
 section{
-	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
 
@@ -57,12 +56,6 @@ a.nav-item:hover {
 	padding-top: 1rem;
 }
 
-.social-container img{
-	max-width:100%;
-	max-height:175px;
-	margin-bottom:15px;
-}
-
 .project-figure {
 	margin: 0 auto 1rem auto;
 	max-height: 256px;
@@ -88,10 +81,6 @@ a.nav-item:hover {
 	margin: 0 auto;
 }
 
-.void-background {
-	background-color: transparent;
-}
-
 .iframe-phone {
     background-image: url("https://mockuphone.com/static/images/devices/apple-iphone6-spacegrey-portrait.png");
     background-repeat: no-repeat;
@@ -109,21 +98,9 @@ a.nav-item:hover {
     left: 233px;
 }
 
+/*Background Colours*/
+
 @media screen and (max-width: 768px) {
-	.nav-menu {
-		background-color: #2197B7;
-	}
 
-	.nav-toggle:hover {
-		background-color: transparent;
-	}
-
-	.nav-toggle span {
-		background-color: #dfdfdf;
-	}
-
-	.nav-toggle span:hover {
-		background-color: #fff;
-	}
 
 }
