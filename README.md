@@ -2,6 +2,9 @@
 
 Studorlio is a template for your own personal site. You can have yours running on the cloud in exactly 10 seconds. But first, make sure you have a GitHub account. Ready, set, go!
 
+"MAKE THE DIV’S OF EQUAL HEIGHT AND WIDTH UNDER PROJECT SECTION TO LOOK MORE DECORATIVE AND ALSO  DECREASE THE SIZE OF IMAGES IN LET’S SOCIALIZE SECTION"
+
+
 ![Display Image](https://raw.githubusercontent.com/helfi92/studorlio/master/assets/img/studorlio.png)
 
 ## Getting Started
