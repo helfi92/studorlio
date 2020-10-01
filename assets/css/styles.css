@@ -69,13 +69,22 @@ a.nav-item:hover {
 
 .box {
 	background-color: transparent;
-	border: 2px solid rgba(7, 59, 79, 0.5);
+	box-shadow: 0 0 15px 5px rgba(256, 256, 256, 0.1);
+	height: 400px;
+	width: 360px;
+	transition: transform 200ms ease-in;
+	cursor: pointer;
 }
+.box:hover{
+	transform: scale(1.02);
+}
+
 
 .title {
 	color: #fff;
 	text-align: left;
 	margin-bottom: 2rem;
+
 }
 
 .intro {
@@ -87,6 +96,27 @@ a.nav-item:hover {
 .void-background {
 	background-color: transparent; 
 }
+
+h3{
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+
+#projects .columns{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	align-content: center;
+}
+
+figure img{
+	margin: 1rem 0;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
 	.nav-menu {
