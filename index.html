@@ -35,9 +35,9 @@
 			</div>
 
 			<div class="nav-right nav-menu">
-				<a class="nav-item" href="#about">About</a>
-				<a class="nav-item" href="#projects">Projects</a>
-				<a class="nav-item" href="#social">Social</a>
+				<a data-scroll class="nav-item" href="#about">About</a>
+				<a data-scroll class="nav-item" href="#projects">Projects</a>
+				<a data-scroll class="nav-item" href="#social">Social</a>
 			</div>
 
 			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
@@ -131,6 +131,12 @@
 		</section>
 		
 		<!-- Scripts  -->
-		<script src="controller.js"></script>		
+		<script src="controller.js"></script>
+
+		<!-- Smooth Scroll CDN -->
+		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+		<script>
+			var scroll = new SmoothScroll('a[href*="#"]');
+		</script>
 	</body>	
 </html>
