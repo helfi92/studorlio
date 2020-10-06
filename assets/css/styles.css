@@ -9,7 +9,7 @@ a {
 }
 
 a:hover {
-  color: #00d1b2;
+  color: black;
 }
 
 section{
@@ -22,7 +22,7 @@ section{
 }
 
 .section-2 {
-	background-color: #052D3D;
+	background-color: black;
 }
 
 .section-3 {
@@ -70,6 +70,7 @@ a.nav-item:hover {
 .box {
 	background-color: transparent;
 	border: 2px solid rgba(7, 59, 79, 0.5);
+	box-shadow: 4px 5px 7px grey;
 }
 
 .title {
