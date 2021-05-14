@@ -65,11 +65,25 @@ a.nav-item:hover {
 
 .project-text {
 	text-align: justify;
+	align-items: flex-end;
+	
+}
+.project1-title{
+	text-align: center;
+	margin-bottom: 2rem;
+
+}
+.project1-text{
+	margin-top: 20rem;
+}
+.project2-text{
+	margin-top: 10rem;
 }
 
 .box {
 	background-color: transparent;
 	border: 2px solid rgba(7, 59, 79, 0.5);
+	height: 55rem;
 }
 
 .title {
