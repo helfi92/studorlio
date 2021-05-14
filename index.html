@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Portfolio</title>
+	<title>C. Doza</title>
 	<!-- css files -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
@@ -11,126 +12,189 @@
 	<meta name="author" content="Hassan Ali">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-	<body>
-		<!-- Navbar -->
-		<nav class="nav container void-background">
-			<!-- This "nav-menu" is hidden on mobile -->
-			<!-- Add the modifier "is-active" to display it on mobile -->
-			<div class="nav-left">
-				<a href="http://medium.com/@hassanhelfi/" class="nav-item">
+
+<body>
+	<!-- Navbar -->
+	<nav class="nav container void-background">
+		<!-- This "nav-menu" is hidden on mobile -->
+		<!-- Add the modifier "is-active" to display it on mobile -->
+		<div class="nav-left">
+			<!-- <a href="http://medium.com/@hassanhelfi/" class="nav-item">
 					<span class="icon">
 						<i class="fa fa-medium"></i>
 					</span>
-				</a>
-				<a href="http://github.com/helfi92" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-github"></i>
-					</span>
-				</a>
-				<a href="https://twitter.com/hassanhelfi" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-twitter"></i>
-					</span>
-				</a>				
+				</a> -->
+			<a href="http://github.com/xine75" class="nav-item">
+				<span class="icon">
+					<i class="fa fa-github"></i>
+				</span>
+			</a>
+			<a href="https://twitter.com/xine75" class="nav-item">
+				<span class="icon">
+					<i class="fa fa-twitter"></i>
+				</span>
+			</a>
+		</div>
+
+		<div class="nav-right nav-menu">
+			<a class="nav-item" href="#about">About</a>
+			<a class="nav-item" href="#projects">Projects</a>
+			<a class="nav-item" href="#social">Social</a>
+		</div>
+
+		<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+		<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+		<span class="nav-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</span>
+	</nav>
+
+	<!-- About Me -->
+	<section id="about" class="section section-1">
+		<div class="container has-text-centered">
+			<!-- Source: https://flic.kr/p/pAZBNK -->
+			<img class="logo" src="assets/img/DozaLogo.png">
+		</div>
+		<div class="container"></br>
+			<p class="intro">
+				I loved being a classroom teacher. Working with groups of teens, helping solve problems - personal,
+				poetic and mathematical -a fire drill sounding off in the middle of a sentence - no two days were the
+				same. But after 17 years I felt the call to explore an old passion. I knew that some of the skills I
+				cultivated as a teacher would apply to software development, but I was wrong about which ones. I’d been
+				interested in coding since taking a computer science course as an undergrad, and believed my long
+				immersion in the logic of geometry and calculus would serve me. But it’s actually the people skills, the
+				facility with group dynamics, with making sure every voice is heard and every member feels valued, that
+				has been most essential. Software design is a team sport, and I’ve been working with groups, classes,
+				clubs, and teams for 17 years. And though code is not poetry, there is something about the pure economy
+				of the language - each keystroke pulling its own weight, nothing included than isn’t necessary - that
+				brings poetry to mind. And so I find myself exactly in the right place.
+		</div>
+		<div class="container has-text-centered">
+			<!-- Source: https://flic.kr/p/pAZBNK -->
+			<img class="avatar" src="assets/img/profile2.jpeg">
+		</div>
+	</section>
+
+	<!-- Projects -->
+	<section id="projects" class="section section-2">
+		<div class="container">
+			<div class="has-text-centered">
+				<h3 class="title is-3">Projects</h3>
 			</div>
 
-			<div class="nav-right nav-menu">
-				<a class="nav-item" href="#about">About</a>
-				<a class="nav-item" href="#projects">Projects</a>
-				<a class="nav-item" href="#social">Social</a>
-			</div>
-
-			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-			<span class="nav-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
-		</nav>
-				
-		<!-- About Me -->
-		<section id="about" class="section section-1">
-			<div class="container has-text-centered">
-				<!-- Source: https://flic.kr/p/pAZBNK -->
-				<img class="avatar" src="assets/img/profile.png">
-			</div>
-			<div class="container"></br>
-				<p class="intro">
-					Lorem Khaled Ipsum is a major key to success. To succeed you must believe. When you believe, you will succeed. Mogul talk. Find peace, life is like a water fall, you’ve gotta flow. Lion! Fan luv. Eliptical talk.
-				</p>
-			</div>
-		</section>
-		
-		<!-- Projects -->
-		<section  id="projects" class="section section-2">
-			<div class="container">
-				<div class="has-text-centered">
-					<h3 class="title is-3">Projects</h3>
+			<div class="columns is-multiline is-desktop">
+				<!-- Project 1 -->
+				<div class="column">
+					<div class="box project-text">
+						<article>
+							<div>
+								<h4 class="project1-title">Client-Side Project: KaBloom</h4>
+								<figure class="image project-figure">
+									<img src="assets/img/ezgif.com-UsingKaBloom copy.gif" alt="Image">
+								</figure>
+							</div>
+							<div>
+								<p class="project1-text">
+									KaBloom is a mobile app intended to put houseplant care in the palm of the user's
+									hand. It allows the user to see a list of their plants at a glance alongside a few
+									pieces of crucial information. Having
+									a photo of the plant as it looked when I first adopted it is an important visual cue
+									for comparing to the plant's current state. With a click, the user can access more
+									detailed information about the plant's care needs, such as lighting, fertilization.
+									Users can also create personal notes relating to the plant's life events, such as
+									repotting, blooming, etc. </p>
+							</div>
+						</article>
+					</div>
 				</div>
-				
-				<div class="columns is-multiline is-desktop">
-					<!-- Project 1 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
+				<!-- Project 2 -->
+				<div class="column">
+					<div class="box project-text">
+						<article>
+							<div>
+								<h4 class="project1-title">Full-Stack Project: NoveList</h4>
+								<figure class="image project-figure">
+									<img src="assets/img/BookDetailView.png" alt="Image">
+								</figure>
+							</div>
+							<div>
+								<p class="project2-text">
+									NoveList is a personal library manager. It leverages the power of Google Books API
+									to allow users to search and find the novels they want to add to their library. They
+									can then make notes on what they're reading, log start and finish-dates, rate their
+									reads and check in with friends.
+								</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Skills -->
+	<section id="skills" class="section section-1">
+		<div class="container">
+			<div class="has-text-centered">
+				<h3 class="title is-3">Skills</h3>
+			</div class="skill_logos">
+			<div class="columns is-multiline is-desktop">
+				<div class="column">
+					<div class="box project-text">
+						<article>
+							<div>
 								<div>
-									<figure class="image project-figure">
-										<img src="assets/img/project-1.jpg" alt="Image">
-									</figure>
+									<img class="skil_logo" src="assets\img\PngItem_3450034.png" Alt="Image">
+									<img class="skil_logo" src="assets\img\456px-.NET_Logo.png" Alt="Image">
+									<img class="skil_logo" src="assets\img\ASP.NET-Web-API-Logo.png" Alt="Image">
+									<img class="skil_logo" src="assets\img\sql-server-icon-png-11352.png" Alt="Image">
+									<img class="skil_logo" src="assets\img\react.png" Alt="Image">
+									<img class="skil_logo" src="assets\img\bootstrap.png" Alt="Image">
+									<img class="skil_logo" src="assets\img\github.png" Alt="Image">
 								</div>
-								<div>			
-									<p>
-										They don’t want us to eat. I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-					<!-- Project 2 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<img src="assets/img/project-2.jpg" alt="Image">
-									</figure>
-								</div>
-								<div>			
-									<p>
-										Bless up. Another one. How’s business? Boomin. Don’t ever play yourself. Life is what you make it, so let’s make it.
-									</p>
-								</div>
-							</article>
-						</div>
+								<figure class="image project-figure">
+									<!-- <img src="assets/img/ezgif.com-UsingKaBloom copy.gif" alt="Image"> -->
+								</figure>
+							</div>
+							<div>
+								<p class="project1-text">
+							</div>
+						</article>
 					</div>
 				</div>
-			</div>
-		</section>
 
-		<!-- Social -->
-		<section id="social" class="section section-3">
-			<div class="container">
-				<div class="has-text-centered">					
-					<h3 class="title is-3">Let's Socialize</h3>
-				</div>
-				<div class="social-container columns">
-					<div class="column is-6 has-text-centered">
-						<a target="_blank" href="https://ca.linkedin.com/in/hassan-ali-6132468a"><img class="" src="assets/img/linkedin.png"></a>
-					</div>
-					<div class="column is-6 has-text-centered">
-						<a target="_blank" href="https://www.facebook.com/Hassan.Helfi"><img class="" src="assets/img/facebook.png"></a>
-					</div>
-				</div>
 			</div>
-		</section>	
-		
-		<!-- Footer -->
-		<section class="section-4 has-text-centered container">
-			<a href="http://www.hassanali.me/about">Hassan Ali</a>
-		</section>
-		
-		<!-- Scripts  -->
-		<script src="controller.js"></script>		
-	</body>	
+		</div>
+	</section>
+
+	<!-- Social -->
+	<section id="social" class="section section-3">
+		<div class="container">
+			<div class="has-text-centered">
+				<h3 class="title is-3">Let's Socialize</h3>
+			</div>
+			<div class="social-container columns">
+				<div class="column is-6 has-text-centered">
+					<a target="_blank" href="https://ca.linkedin.com/in/christine-doza"><img class="social_logo" <a
+							target="_blank" src="assets/img/linkedin.png"></a>
+					<a target="_blank" href="https://twitter.com/Xine75"><img class="social_logo" <a target="_blank"
+							src="assets/img/twittter.png"></a>
+
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<section class="section-4 has-text-centered container">
+		<a href="https://ca.linkedin.com/in/christine-doza">Christine Doza</a>
+	</section>
+
+	<!-- Scripts  -->
+	<script src="controller.js"></script>
+</body>
+
 </html>
