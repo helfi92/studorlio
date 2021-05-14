@@ -68,8 +68,16 @@ a.nav-item:hover {
 	align-items: flex-end;
 	
 }
+.project1-title{
+	text-align: center;
+	margin-bottom: 2rem;
+
+}
 .project1-text{
 	margin-top: 20rem;
+}
+.project2-text{
+	margin-top: 10rem;
 }
 
 .box {
