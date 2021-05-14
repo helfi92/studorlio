@@ -80,6 +80,29 @@ a.nav-item:hover {
 	margin-top: 10rem;
 }
 
+.skill_logos{
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+.skil_logo{
+	width: 10%;
+	margin: 1rem;
+}
+#skills{
+	height: 25rem;
+}
+.social-container{
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+	justify-content: space-evenly;
+}
+.social_logo{
+
+}
+
 .box {
 	background-color: transparent;
 	border: 2px solid rgba(7, 59, 79, 0.5);
