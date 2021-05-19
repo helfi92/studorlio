@@ -1,7 +1,7 @@
 html, body{
 	font-size:16px;
 	color: #dfdfdf;
-	background-color: #063647; 
+	background-color: #5D5C61; 
 }
 
 a {
@@ -18,15 +18,15 @@ section{
 }
 
 .section-1 {
-	background: #063647;
+	background: #5D5C61 ;
 }
 
 .section-2 {
-	background-color: #052D3D;
+	background-color: #5D5C61 ;
 }
 
 .section-3 {
-	background-color: #0E282E;
+	background-color: #379683;
 }
 
 .section-4 {
@@ -35,7 +35,7 @@ section{
 }
 
 a.nav-item {
-	color: #dfdfdf;
+	color: #4dd1b7;
 }
 
 a.nav-item:hover {
@@ -69,7 +69,7 @@ a.nav-item:hover {
 
 .box {
 	background-color: transparent;
-	border: 2px solid rgba(7, 59, 79, 0.5);
+	border: 2px solid #75737a;
 }
 
 .title {
