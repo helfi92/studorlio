@@ -20,7 +20,8 @@ section{
 }
 
 .section-1 {
-	background: #5D5C61 ;
+	/* background: #5D5C61 ; */
+	background: #4a494d;
 }
 
 .section-2 {
@@ -29,13 +30,17 @@ section{
 
 .section-3 {
 	background-color: #379683;
+	/* background: #5D5C61; */
 }
 
 .section-4 {
 	background-color: #063647;
 	/* padding: 0.2rem; */
 }
-
+.project-title {
+	text-align: center;
+	margin-bottom: 1em;
+}
 a.nav-item {
 	color: #4dd1b7;
 }
