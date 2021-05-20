@@ -15,6 +15,8 @@ a:hover {
 section{
 	padding-top: 3rem;
 	padding-bottom: 3rem;
+	/* padding-top: 1rem;
+	padding-bottom: 1rem; */
 }
 
 .section-1 {
@@ -31,7 +33,7 @@ section{
 
 .section-4 {
 	background-color: #063647;
-	padding: 0.2rem;
+	/* padding: 0.2rem; */
 }
 
 a.nav-item {
@@ -51,8 +53,25 @@ a.nav-item:hover {
 	padding-top: 1rem;
 }
 
+.skill_logos{
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+	
+}
+.skil_logo{
+	width: 10%;
+	margin: .5rem;
+	
+}
+#skills{
+	height: 25rem;
+	
+}
+
 .social-container img{
-	max-width:100%;
+	/* max-width:100%; */
+	width: auto;
 	max-height:175px;
 	margin-bottom:15px;
 }
@@ -62,7 +81,10 @@ a.nav-item:hover {
 	max-height: 256px;
 	max-width: 256px;
 }
-
+/* .gif {
+	width: 120em;
+	height: auto;
+} */
 .project-text {
 	text-align: justify;
 }
@@ -74,7 +96,7 @@ a.nav-item:hover {
 
 .title {
 	color: #fff;
-	text-align: left;
+	text-align: center;
 	margin-bottom: 2rem;
 }
 
