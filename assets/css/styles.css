@@ -6,8 +6,6 @@ html, body{
 
 h1 {
 	text-align: center;
-	font-size:50px;
-	color: #8262FF;
 }
 
 a {
@@ -15,6 +13,15 @@ a {
 }
 
 a:hover {
+  color: #fff;
+}
+
+b {
+  font-size:22px;
+  color: #8262FF;
+}
+
+b:hover {
   color: #fff;
 }
 
