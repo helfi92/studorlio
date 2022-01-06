@@ -4,6 +4,13 @@ html, body{
 	background-color: #101010; 
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 h1 {
 	text-align: center;
 }
