@@ -4,8 +4,16 @@ html, body{
 	background-color: #101010; 
 }
 
+h1 {
+	text-align: center;
+	color: #fff;
+}
+
+h1:hover {
+  color: #8262FF;
+}
+
 a {
-  font-size:40px;
   color: #fff;
 }
 
