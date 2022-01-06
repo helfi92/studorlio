@@ -3,12 +3,9 @@ html, body{
 	color: #fff;
 	background-color: #101010; 
 }
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.logo{
+	height:50px;
+	border-radius: 0%;
 }
 
 h1 {
