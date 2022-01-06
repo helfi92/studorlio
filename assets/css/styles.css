@@ -5,7 +5,8 @@ html, body{
 }
 
 a {
-  color: #ff0000;
+  font-size:25px;
+  color: #fff;
 }
 
 a:hover {
