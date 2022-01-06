@@ -37,6 +37,7 @@ section{
 
 a.nav-item {
 	color: #8262FF;
+	font-size:25px;
 }
 
 a.nav-item:hover {
