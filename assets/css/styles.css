@@ -6,6 +6,7 @@ html, body{
 
 h1 {
 	text-align: center;
+	font-size:28px;
 	color: #fff;
 }
 
@@ -14,11 +15,11 @@ h1:hover {
 }
 
 a {
-  color: #fff;
+  color: #8262FF;
 }
 
 a:hover {
-  color: #8262FF;
+  color: #fff;
 }
 
 section{
