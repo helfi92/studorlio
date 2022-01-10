@@ -1,15 +1,19 @@
 html, body{
+  font-family: "Montserrat";
 	font-size:16px;
 	color: #fff;
 	background-color: #101010; 
 }
 .logo{
-	height:70px;
+    margin-top: -3px;
+	height:90px;
 	border-radius: 0%;
 }
 
 a {
-  color: #8262FF;
+    margin-top: -30px;
+    font-family: "Montserrat";
+    color: #8262FF;
 }
 
 a:hover {
@@ -21,6 +25,10 @@ b {
   color: #8262FF;
 }
 
+c{
+  line-height: 0.1em;
+  margin: 10px
+}
 section{
 	padding-top: 3rem;
 	padding-bottom: 3rem;
@@ -44,7 +52,7 @@ section{
 }
 
 a.nav-item {
-	margin-top: -4px;
+	margin-top: -10px;
 	color: #8262FF;
 }
 
@@ -53,7 +61,8 @@ a.nav-item:hover {
 }
 
 .avatar{
-	height:560px;
+  margin-right: 10px;
+	height:460px;
 	border-radius: 0%;
 }
 
@@ -116,3 +125,54 @@ a.nav-item:hover {
 	}
 
 }
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.title {
+  margin-top: -10rem;
+  font-family: "Montserrat";
+  text-align: center;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  letter-spacing: 1.2px;
+}
+
+h1 {
+  background-image: url(https://64.media.tumblr.com/2b911a5aa476acb79bc56fd4b6ece7bf/ecde8d103f41cb37-42/s400x600/dc1f77f98960f4e6297415a86bbc91a02688bca4.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 110px;
+  line-height: .75;
+  margin: 10px 0;
+}
+
+  @keyframes blinking {
+    from { border-color: transparent }
+    to { border-color: #8262FF; }
+  }
+
+  .typed-out2{
+        font-family: "Montserrat";
+        margin-top: -2rem;
+        margin-left: 3rem;
+        overflow: hidden;
+        border-right: .10em solid #101010;
+        border-radius: 0px;
+        white-space: nowrap;
+        animation: 
+            typing1 1s steps(20, end) forwards,
+            blinking 1.2s;
+            animation-delay: 1.5s;
+        font-size: 1.25rem;
+        width: 0;
+  }
+    @keyframes typing1 {
+    from { width: 0 }
+    to { width: 27% }
+    }
