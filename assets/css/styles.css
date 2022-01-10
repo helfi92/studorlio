@@ -1,5 +1,6 @@
 html, body{
   font-family: "Montserrat";
+	font-weight: bold;
 	font-size:16px;
 	color: #fff;
 	background-color: #101010; 
@@ -160,6 +161,7 @@ h1 {
 
   .typed-out2{
         font-family: "Montserrat";
+	font-weight: bold;
         margin-top: -2rem;
         margin-left: 3rem;
         overflow: hidden;
