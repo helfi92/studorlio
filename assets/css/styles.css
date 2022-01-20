@@ -6,9 +6,89 @@ html, body{
 	background-color: #101010; 
 }
 .logo{
-    margin-top: -3px;
+  margin-top: -3px;
 	height:90px;
 	border-radius: 0%;
+}
+
+.text {
+  position: absolute;
+  width: 1000px;
+  left: 50%;
+  margin-left: -600px;
+  height: 40px;
+  top: 50%;
+  margin-top: 10px;
+
+
+}
+
+p {
+  word-break: keep-all;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+	font-size:35px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.word {
+  position: absolute;
+  width: 500px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.purple {
+  color: #8262FF;
+}
+
+.white {
+  color: #fff;
+}
+/*
+.pomegranate {
+  color: #8262FF;
+}
+
+.green {
+  color: #fff;
+}
+
+.midnight {
+  color: ##8262FF;
+}
+*/
+hr {
+  margin-top: -300px;
+  width: 80%;
+  height: 3px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color:#8262FF;
 }
 
 a {
@@ -58,6 +138,13 @@ b {
   opacity: 1;
 }
 
+.projecttext {
+  font-weight: bold;
+  color: #8262FF;
+  font-size: 20px;
+  padding: 16px 32px;
+}
+
 .text {
   font-weight: bold;
   color: #8262FF;
@@ -69,6 +156,54 @@ c {
   font-weight: bold;
   color: #8262FF;
   font-size:11px;
+}
+
+d {
+  margin-left: 30px;
+  font-weight: bold;
+  color: #8262FF;
+  font-size:36px;
+  overflow: hidden;
+}
+.border{
+  padding: 5px;
+    background: linear-gradient(110deg, #8262FF 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #8262FF 40%, #fff 34%);
+  background-size: 400% 400%;
+  height: 412px;
+  width: 685px;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 5s ease infinite;
+}
+.inner-cutout{
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 20px;
+  display: block;
+  background-color:#101010;/*#ff6f69*/
+    
+  margin: 0%;
+  padding-bottom: 40px;
+  height: 404px;
+  background: #101010;
+   background-size: 300%;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 30% 50%
+  }
+  50% {
+    background-position: 25% 50%
+  }
+  100% {
+    background-position: 30% 50%
+  }
+  
+}
+
+.main{
+  margin-top: 17px;
+  margin-right: -30px;
 }
 
 #sections{
@@ -110,6 +245,7 @@ c {
   background:#101010;
 }
 #flip div:last-child div {
+  color: #8262FF;
   background:#101010;
 }
 
@@ -204,7 +340,7 @@ a.nav-right{
 .title {
 	color: #fff;
 	text-align: left;
-	margin-bottom: 2rem;
+	margin-top: 200rem;
 }
 
 .intro {
@@ -260,6 +396,7 @@ h1 {
   font-size: 110px;
   line-height: .75;
   margin: 10px 0;
+  margin-top: 130px;
 }
 
   @keyframes blinking {
@@ -291,4 +428,34 @@ h1 {
     .boxed {
       border: 1px solid #8262FF ;
     }
+    .arrow {
+      text-align: center;
+      margin: 8% 0;
+    }
+    .bounce {
+      margin-top: -20px;
+      -moz-animation: bounce 2s infinite;
+      -webkit-animation: bounce 2s infinite;
+      animation: bounce 2s infinite;
+    }
     
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+    
+.aboutimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px; 
+  width: 500px;
+  border-radius: 5%;
+}
