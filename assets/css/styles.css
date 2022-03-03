@@ -201,8 +201,8 @@ html, body{
   position: relative;
   transition: all 0.5s ease-in-out;
   height: 100%;
-  padding-left: 250px; /* Same as the width of the sidenav */
-  padding-right: 100px;
+  padding-left: 16%; /* Same as the width of the sidenav */
+  padding-right: 8%;
   overflow-x: hidden;
 }
 
@@ -222,7 +222,7 @@ h1 {
 
 @media screen and (max-width: 700px) {
   .section{
-  margin-left: -30%;
+  margin-left: -3%;
   padding-right: 10%;
   }
   .text {
