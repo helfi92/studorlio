@@ -319,7 +319,7 @@ c {
 .avatar{
   margin-top: 40px;
   height: 300px;
-  width: auto;
+  width: 300px;
   border-radius: 1%;
   display: inline-block;
 }
