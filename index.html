@@ -22,27 +22,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-	</head>
 	<body>
-		
-		<!-- Top Navigation Bar -->
-	<div id="navbar">
 
-		<!-- I kid you not, it took me almost a week to get a proper underline animation on these elements-->
-		<!-- It was worth it though :) -->
-		<div id="navbar-right">
+	<div class="topnav" id="myTopnav">
+		<ol><img class="logo" src="assets/img/weblogo.png" ></ol>
+		<ol><a href="#projects" class="effect-underline"><b>〈 </b> Projects <b> 〉</b></a></ol>
+		<ol><a href="#experience" class="effect-underline"><b>〈 </b> Experience <b> 〉</b></a></ol>
+		<ol><a href="#about" class="effect-underline"><b>〈 </b> About <b> 〉</b></a></ol>
+		<ol><a href="#home" class="effect-underline"><b>〈 </b> Home <b> 〉</b></a></ol>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-align-justify" aria-hidden="true"></i>
+		</a>
+	</div>
 
-			<ol><a href="mailto:jdewbury@uwaterloo.ca" class="effect-underline"><b>Ⅴ. </b>Contact&nbsp;&nbsp;</a></ol>
-			<ol><a href="#projects" class="effect-underline"><b>Ⅳ. </b>Projects&nbsp;&nbsp;</a></ol>
-			<ol><a href="#experience" class="effect-underline"><b>Ⅲ. </b>Experience&nbsp;&nbsp;</a></ol>
-			<ol><a href="#about" class="effect-underline"><b>Ⅱ. </b>About&nbsp;&nbsp;</a></ol>
-			<ol><a href="#home" class="effect-underline"><b>Ⅰ. </b>Home&nbsp;&nbsp;</a></ol>
-		</div>
-			<img class="logo" src="assets/img/weblogo.png" >
-	  </div>
-
-	  <!-- Side Navigation Bar -->
-	  <div class="sidenav">
+	<!-- Side Navigation Bar -->
+	<div class="sidenav">
+		<b>
 		<a href="https://www.linkedin.com/in/jarett-dewbury/" target="_blank" class="nav-item">
 			<span class="icon">
 				<i class="fa fa-linkedin" style="font-size:24px"></i>
@@ -73,168 +68,157 @@
 		</a>
 		<br>
 		<div class="vl"></div>
-
-		<!-- Right Side Navigation Bar -->
-		<!--
-		<div class="sidenavr">
-			<a href="mailto:jdewbury@uwaterloo.ca">
-			jdewbury@uwaterloo.ca
-			</a>
-			<div class="vlr"></div>
-			</div>
-	  	</div>
-		-->
 	</div>
 
 
-		<!-- Home Section -->
-		<section class="section" id="home">
-			<div class="bodyone">
-				<h1>Jarett Dewbury</h1>
-					<br>
-					<br>
-					<br>
-					<div class="text">
-						<c>〔&ensp;Aspiring </c>&nbsp;&ensp;
-						<c>
-							<span class="word darkgrey">Researcher&ensp;〕 </span>
-							<span class="word darkgrey">Engineer&ensp;〕</span>
-							<span class="word darkgrey">Innovator&ensp;〕</span>
-							<span class="word darkgrey">Entrepreneur&ensp;〕</span>
-							<span class="word darkgrey">Developer&ensp;〕</span>
-							
-						</c>
-					</div>
-			</div>
-		</section>	
-
-		<!-- About Section -->	
-		<section class="section" id="about">
-			<c class="sectiontitle purple"> Ⅱ.&ensp;</c><c class="sectiontitle lightpurp"> About</c><hr class="hl darkgrey"><br>
-			<div class="imageContainer">
+	<!-- Home Section -->
+	<section class="section" id="home">
+			<h1>Jarett Dewbury</h1>
+				<br>
+				<br>
+				<br>
+				<div class="text">
+					<c>&ensp;Aspiring </c>&nbsp;&ensp;
+					<c>
+						<span class="word darkgrey">Researcher </span>
+						<span class="word darkgrey">Engineer</span>
+						<span class="word darkgrey">Innovator</span>
+						<span class="word darkgrey">Entrepreneur</span>
+						<span class="word darkgrey">Developer</span>
+						
+					</c>
+				</div>
+	</section>	
+	
+	<!-- About Section -->	
+	<section class="section" id="about"><br><br><br><br><br>
+		<c class="sectiontitle lightpurp">About</c><hr class="hl purple"><br>
+		<img class="avatar" src="assets/img/myavatar.png">
 			<div class = "abouttext">
 				I'm an aspiring developer and researcher looking to share my passions with those around me. I am 
-				a current <a href="https://uwaterloo.ca/future-students/programs/biomedical-engineering" target="_blank">Biomedical Engineering</a> undergraduate at the University of Waterloo.<br /><br />
-				I am looking to explore a variety of topics such as neural interfaces, deep learning, 
+				a <a href="https://uwaterloo.ca/future-students/programs/biomedical-engineering" target="_blank">Biomedical Engineering</a> undergraduate at the University of Waterloo, where I am pursuing specialization in Artificial Intelligence and Neural Engineering. <br /><br />
+				I am currently looking to explore a variety of topics such as human computer interaction, deep learning, 
 				artificial intelligence, 
-				neuroengineering, software engineering, and research exploring the intersection of these fields! <br /><br />
+				neural engineering, software engineering, and research exploring the intersection of these fields! <br /><br />
 				Outside of academia, my passions focus around <a href="https://www.eliteprospects.com/player/582668/jarrett-dewbury" target="_blank">ice hockey</a>, bike rides, and all things food.<br>
-				<hr class="ul darkestgrey">
+				<br><br>
 			</div>
-			<img class="avatar" src="assets/img/myavatar.png">
-			<b></b>
-		</section>	
+	</section>	
 
-		<!-- Experience Section -->	
-		<section class="section" id="experience">
-			<c class="sectiontitle purple"> Ⅲ.&ensp;</c><c class="sectiontitle lightpurp"> Experience</c><hr class="hl darkgrey"><br><br><br>
-			<div class="tab">
-				<button class="tablinks" onclick="openCity(event, 'WATOLINK')" id="defaultOpen">WATOLINK</button>
-				<button class="tablinks" onclick="openCity(event, 'Waterloop')">Waterloop</button>
-				<button class="tablinks" onclick="openCity(event, 'Math2²Everyone')">Math2²Everyone</button>
-			  	</div>
-			  
-			  <div id="WATOLINK" class="tabcontent">
-				<a class="exptitle lightpurp" href="https://www.watolink.com/" target="_blank">WATOLINK</a><br>
-				<p class="exprole purple">Biosignal Research Lead</p>
-				<p class="expdate darkgrey">OCTOBER 2021 - Present</p>
-				<p class="expdate darkgrey">Waterloo, ON</p><br><br>
-				<p class="expdesc lightpurp">
-				Watolink is a Neuroengineering Design Team focused on developing a brain-computer interface (BCI) model to translate EEG signals into specific user commands.
-				As a member of the Biosignal Research Team, I have had the opportunity to explore and analyze the most optimal stimuli characteristics for effective signal detection. 
-				I cannot provide more specifics for now, as we will be competing in the NeuroTechX2022 Competition.
-				</p>
+
+	<!-- Experience Section -->	
+	<section class="section" id="experience"><br><br><br>
+		<c class="sectiontitle lightpurp"> Experience</c><hr class="hl purple"><br><br><br><br>
+		<div class="tab">
+			<button class="tablinks" onclick="openCity(event, 'WATOLINK')" id="defaultOpen">WATOLINK</button>
+			<button class="tablinks" onclick="openCity(event, 'Waterloop')">Waterloop</button>
+			<button class="tablinks" onclick="openCity(event, 'Math2²Everyone')">Math2²Everyone</button>
 			  </div>
-			  
-			  <div id="Waterloop" class="tabcontent">
-				<a class="exptitle lightpurp" href="https://www.watolink.com/" target="_blank">Waterloop</a><br>
-				<p class="exprole purple">Propulsion Team</p>
-				<p class="expdate darkgrey">SEPTEMBER 2021 - Present</p>
-				<p class="expdate darkgrey">Waterloo, ON</p><br><br>
-				<p class="expdesc lightpurp">
-				Waterloop is a hyperloop design team formed as a response to the 'SpaceX Hyperloop Pod Challenge'. As a member of the Propulsion Team, I had the opportunity to explore the 
-				possibility of electromagnetic levitation within the hyperloop pod, through the utilization of a linear induction motor (LIM). I also had the opportunity to analyze and repair
-				the LIM coil configuration, as well as hand-repair physical components of the motor. 
-				</p>
-			  </div>
-			  
-			  <div id="Math2²Everyone" class="tabcontent">
-				<a class="exptitle lightpurp" href="https://www.linkedin.com/company/math2%C2%B2everyone/?viewAsMember=true" target="_blank">Math2²Everyone</a><br>
-				<p class="exprole purple">Founder</p>
-				<p class="expdate darkgrey">SEPTEMBER 2018 - JUNE 2021</p>
-				<p class="expdate darkgrey">London, ON</p><br><br>
-				<p class="expdesc lightpurp">
-				Math2²Everyone was a self-started company with the intent to remove any barriers with learning and receiving necessary support in various levels of mathematics.
-				I had the opportunity to support over 15 highschool and university students in their prospective mathematics courses on a weekly basis, assessing academic performance
-				and developing personalized learning models all free of charge. 
-				</p>
-			  </div>
-			</div>
-			<p class="contactme purple">I am always open to new and challenging opportunities! If you have something in mind or would like to chat, please <a href="mailto:jdewbury@uwaterloo.ca" style ="color:#AFA9C7;">contact me</a></p>
+		  
+		  <div id="WATOLINK" class="tabcontent">
+			<a class="exptitle lightpurp" href="https://teamwaterloop.ca/" target="_blank">WATOLINK</a><br>
+			<p class="exprole purple">Biosignal Research Lead</p>
+			<p class="expdate darkgrey">OCTOBER 2021 - Present</p>
+			<p class="expdate darkgrey">Waterloo, ON</p><br><br>
+			<p class="expdesc lightpurp">
+			Watolink is a Neuroengineering Design Team focused on developing a brain-computer interface (BCI) model to translate EEG signals into specific user commands.
+			As a member of the Biosignal Research Team, I have had the opportunity to explore and analyze the most optimal stimuli characteristics for effective signal detection. 
+			I cannot provide more specifics for now, as we will be competing in the NeuroTechX2022 Competition.
+			</p>
+		  </div>
+		  
+		  <div id="Waterloop" class="tabcontent">
+			<a class="exptitle lightpurp" href="https://www.watolink.com/" target="_blank">Waterloop</a><br>
+			<p class="exprole purple">Propulsion Team</p>
+			<p class="expdate darkgrey">SEPTEMBER 2021 - Present</p>
+			<p class="expdate darkgrey">Waterloo, ON</p><br><br>
+			<p class="expdesc lightpurp">
+			Waterloop is a hyperloop design team formed as a response to the 'SpaceX Hyperloop Pod Challenge'. As a member of the Propulsion Team, I had the opportunity to explore the 
+			possibility of electromagnetic levitation within the hyperloop pod, through the utilization of a linear induction motor (LIM). I also had the opportunity to analyze and repair
+			the LIM coil configuration, as well as hand-repair physical components of the motor. 
+			</p>
+		  </div>
+		  
+		  <div id="Math2²Everyone" class="tabcontent">
+			<a class="exptitle lightpurp" href="https://www.linkedin.com/company/math2%C2%B2everyone/?viewAsMember=true" target="_blank">Math2²Everyone</a><br>
+			<p class="exprole purple">Founder</p>
+			<p class="expdate darkgrey">SEPTEMBER 2018 - JUNE 2021</p>
+			<p class="expdate darkgrey">London, ON</p><br><br>
+			<p class="expdesc lightpurp">
+			Math2²Everyone was a self-started company with the intent to remove any barriers with learning and receiving necessary support in various levels of mathematics.
+			I had the opportunity to support over 15 highschool and university students in their prospective mathematics courses on a weekly basis, assessing academic performance
+			and developing personalized learning models all free of charge. 
+			</p>
+		  </div>
 		</div>
-		</section>	
+	</div>
+	<!--
+	<p class="contactme purple">I am always open to new and challenging opportunities! If you have something in mind or would like to chat, please <a href="mailto:jdewbury@uwaterloo.ca" style ="color:#AFA9C7;">contact me</a></p>
+	-->
+	</section>	
 
+	<!-- Project Section -->	
+	<section class="section" id="projects"><br><br><br>
+		<c class="sectiontitle lightpurp"> Projects</c><hr class="hl purple"><br><br><br><br>
+		<p class="exprole darkgrey">Stay tuned for projects! For now, you can check out my projects <a href="https://github.com/Jdewbury" style ="color:#AFA9C7;">here</a></p>
+	</section>	
 
-		<!-- Project Section -->	
-		<section class="section" id="projects">
-			<c class="sectiontitle purple"> Ⅳ.&ensp;</c><c class="sectiontitle lightpurp"> Projects</c><hr class="hl darkgrey"><br><br><br><br>
-			<p class="sectiontitle darkgrey">Stay tuned for projects! For now, you can check out my projects <a href="https://github.com/Jdewbury" style ="color:#AFA9C7;">here</a></p>
-
-			<!--
-			<div class="containers">
-				<div class="descrip">
-					<img src="assets/img/watolink.png">
-					WATOLINK
-				</div>
-			</div>
-			<div class="pull-left">
-				<div class="hover-box">
-				  <p>Hover me</p>
-				  <span>This image is totally awesome</span>
-				</div>
-			</div>
-			-->
-		</section>	
-		
-
-
-		<section class="sectionfinal purple">
+	<!-- Final Section -->
+	<section class="sectionfinal purple">
 		<br><br><br>
 		Designed & Developed by Jarett Dewbury<br>
 		Copyright © 2022
 		</section>
-			<script src="js/main.js"></script>
-			<script src="js/controller.js"></script>
-			
-		  	<script>
-			// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-			window.onscroll = function() {scrollFunction()};
-			
-			function scrollFunction() {
-			  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-				document.getElementById("navbar").style.padding = "35px 10px";
-			  } else {
-				document.getElementById("navbar").style.padding = "60px 10px";
-			  }
-			}
-			</script>
-			<script>
-				function openCity(evt, cityName) {
-				  var i, tabcontent, tablinks;
-				  tabcontent = document.getElementsByClassName("tabcontent");
-				  for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = "none";
-				  }
-				  tablinks = document.getElementsByClassName("tablinks");
-				  for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" active", "");
-				  }
-				  document.getElementById(cityName).style.display = "block";
-				  evt.currentTarget.className += " active";
-				}
-				
-				// Get the element with id="defaultOpen" and click on it
-				document.getElementById("defaultOpen").click();
-				</script>
-	</body>	
+
+
+
+<script src="js/main.js"></script>
+<script src="js/controller.js"></script>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<script>
+	// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+	window.onscroll = function() {scrollFunction()};
+	
+	function scrollFunction() {
+	  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+		document.getElementById("myTopnav").style.padding = "0px 10px";
+	  } else {
+		document.getElementById("myTopnav").style.padding = "15px 10px";
+	  }
+	}
+</script>
+
+<script>
+	function openCity(evt, cityName) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(cityName).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}
+	
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	</script>
+
+
+
+</body>
 </html>
