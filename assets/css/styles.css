@@ -1,19 +1,6 @@
 /* Jarett Dewbury's Website CSS */
 /*------------------------------*/
 
-
-/* -------Background and general conditions----------*/
-html, body{
-  font-family: "Fira Code";
-  font-weight: bold;
-	font-size:13px;
-	color: #AFA9C7;
-	background-color: #222629; 
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-/*-----------------------------*/
-
 /* -------Colours----------*/
 
 
@@ -34,66 +21,54 @@ html, body{
 }
 /*-----------------------------*/
 
-
 /* -------Navigation Bar----------*/
-#navbar {
-  height: 30px;
+html, body{
+  font-family: "Fira Code";
+  font-weight: bold;
+	font-size:13px;
+	color: #AFA9C7;
+	background-color: #222629; 
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.topnav {
   overflow: hidden;
   background-color: #222629;
-  position: fixed;
-  padding: 40px 30px;
   transition: 0.4s;
   position: fixed;
   width: 100%;
-  top: 0;
-  z-index: 99;
+  z-index:100;
 }
 
-
-#navbar a {
-  margin-top: -8px;
-  margin-right: 50px;
-  color: #AFA9C7;
+.topnav a {
   float: right;
-  display: inline-block;
+  display: block;
+  color: #AFA9C7;
   text-align: center;
-  padding: 8px 0px;
+  padding: 40px 16px;
   text-decoration: none;
+  font-size: 13px;
+  margin-right: 50px;
   position: relative;
 }
 
-@media (max-width: 767px) { 
-  #navbar a{
-      display:none;
-  }
-}
-
-#navbar a:hover {
+.topnav a:hover {
   color: #8262FF;
 }
 
-.logo {
-  margin-left: 37px;
-  margin-top: -23px;
-  height: 75px;
-  float: left;
-  display: block;
-  text-decoration: none;
-  transition: 0.4s;
-  text-align: center;
-  padding: 11px 16px;
-}
-
 /*effect-underline*/
-#navbar a.effect-underline:after {
+.topnav a.effect-underline:after {
 	content: '';
   position: absolute;
   left: 0;
   display: inline-block;
   height: 1em;
-  width: 100%;
+  margin-left:10%;
+  width: 80%;
   border-bottom: 3px solid #8262FF;
-  margin-top: 10px;
+  margin-top: 20px;
   opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -101,47 +76,84 @@ html, body{
 	transform: scale(0,1);
 }
 
-#navbar a.effect-underline:hover:after {
+.topnav a.effect-underline:hover:after {
   opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
 
-#navbar ol {
+.topnav b {
+  font-weight: bold;
+  color: #8262FF;
+  font-size:17px;
+}
+
+.topnav ol {
   position: relative;
   display: inline;
 }
 
-#navbar-right {
-  float: right;
+
+.logo {
+  margin-top: 20px;
+  margin-left: 37px;
+  height: 75px;
+  float: left;
+  text-decoration: none;
+  text-align: center;
+  padding: 11px 16px;
 }
 
-#navbar b {
-  color: #8262FF;
-  font-size:15px;
+.topnav .icon {
+  font-size: 25px;
+  margin-right: 55px;
+  margin-top: 10px;
+  display: none;
+  color: #59646d;
 }
 
-@media screen and (max-width: 580px) {
-  #navbar {
-    padding: 20px 20px !important;
-  }
-  #navbar a {
-    float: none;
+@media screen and (max-width: 900px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
     display: block;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .topnav a {display: none;}
+}
+
+@media screen and (max-width: 900px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    margin-right: 65px;
+    margin-top: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav .logo {
+    float: none;
     text-align: left;
   }
-  #navbar-right {
+  .topnav.responsive a {
     float: none;
+    display: block;
+    text-align: center;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    z-index:1;
   }
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
 
 /*-----------------------------*/
 
+
 /* -------Side Navigation Bar----------*/
 .sidenav {
-  margin-top: 300px;
+  margin-top: 315px;
   height: 100%;
   width: 200px;
   position: fixed;
@@ -159,87 +171,74 @@ html, body{
   font-size: 25px;
   color: #AFA9C7;
   display: block;
+
 }
 
 .sidenav a:hover {
   color: #8262FF;
-  
 }
+
 .vl {
   margin-left: 88px;
-  border-left: 2px solid #AFA9C7;
+  border-left: 2px solid #59646d;
   height: 350px;
 }
 /*-----------------------------*/
 
-/* -------Side Navigation Bar----------*/
-.sidenavr {
-  margin-top: 380px;
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 40px;
-  overflow: hidden;
-  padding-top: 20px;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+@media screen and (max-width: 900px) {
+  .sidenav {
+    width: 75px;
+  }
 }
 
-.sidenavr a {
-  margin-right: 47px;
-  padding: 6px 6px 6px 32px;
-  text-decoration: none;
-  font-size: 13px;
-  color: #AFA9C7;
-  display: block;
-}
-
-.sidenavr a:hover {
-  color: #8262FF;
-}
-.vlr {
-  margin-top: 200px;
-  margin-right: -88px;
-  border-right: 2px solid #AFA9C7;
-  height: 150px;
-}
-
-/*-----------------------------*/
 
 /* -------Home Section----------*/
 .section {
 	background: #222629;
-  padding-top: 100px;
 	padding-bottom: 3rem;
   min-height: 100vh;
   overflow-y: hidden;
   position: relative;
   transition: all 0.5s ease-in-out;
   height: 100%;
-  margin-top: 50px;
   padding-left: 250px; /* Same as the width of the sidenav */
-  padding-right: 250px;
+  padding-right: 100px;
+  overflow-x: hidden;
 }
+
 
 h1 {
   color: #AFA9C7;
   font-weight: bold;
-  font-size: 600%;
+  font-size: 6.7vw;
   line-height: 100%;
-  margin: 5%;
-  margin-top: 12%;
+  margin: 10px;
+  margin-top: 250px;
 }
 .text {
-  margin-top: -120px;
-  margin-left: 65px;
+  margin-top: -60px;
+  margin-left: 0px;
 }
+
+@media screen and (max-width: 700px) {
+  .section{
+  margin-left: -155px;
+  padding-right: 50px;
+  }
+  .text {
+    font-size: 0.6px;
+    margin-left: 6px;
+  }
+  .word{
+    margin-left: 5px;
+  }
+}
+
 c {
   word-break: keep-all;
   text-align: center;
   font-weight: bold;
-	font-size:38px;
+	font-size:2.5vw;
   display: inline-block;
   vertical-align: top;
   margin: 0;
@@ -289,60 +288,46 @@ c {
   0% { transform: translateY(0); }
   100% { transform: translateY(-20px); }
 }
+
+.icon {
+  margin-top: 18px;
+  color:#59646d;
+}
+
+.icon:hover {
+  color: #8262FF;
+}
+
+
 /*-----------------------------*/
 
 /* -------About Section----------*/
 
-#about .hl {
-  margin-top: 22px;
+.hl {
+  margin-top: 2.4vw;
   margin-left: 10px;
   border-bottom: 2px solid;
-  width: 450px;
+  width: 50%;
   display: inline-block;
 }
 
-#about .sectiontitle{
-  font-size: 27px;
+
+.sectiontitle{
+  font-size: 3vw;
 }
 
 .avatar{
   margin-top: 40px;
-  height: 350px;
-  min-height: 200px;
-  min-width: 200px;
+  height: 300px;
   border-radius: 1%;
-}
-
-#about .imageContainer {
   display: inline-block;
+}
+
+.abouttext {
+  padding: 30px 30px 0px 30px;
+  display: inline-block;
+  width: 60%;
   position: relative;
-}
-
-#about .imageContainer::before {
-  position: absolute;
-  top: 70px;
-  left: 280px;
-  width: 785px;
-  height: 250px;
-  background-color: #282d31;
-  content: '';
-  box-shadow:3px 3px 25px rgba(0, 0, 0, 0.25);
-}
-
-#about .abouttext {
-  position: absolute;
-  top: 70px;
-  left: 280px;
-  width: 785px;
-  height: 250px;
-  font-size: 13px;
-  padding-left: 40px;
-  padding-top: 40px;
-  padding-right: 20px;
-}
-#about.atext {
-  margin-top: -5px;
-  font-size: 17px;
 }
 
 #about a{
@@ -353,33 +338,24 @@ c {
   border-bottom: 2px solid #8262FF;
 }
 
-.ul {
-  margin-top: 20px;
-  border-bottom: 4px solid;
-  width: 97%;
-  display: inline-block;
-}
-
 #about b{
   position: relative;
   margin-top: -30px;
 }
 
+@media screen and (max-width: 700px) {
+  .abouttext {
+    font-size: 2vw;
+    width: 100%;
+    margin-left: -20px;
+  }
+}
+
 /*-----------------------------*/
+
 
 /* -------Experience Section----------*/
 
-#experience .sectiontitle{
-  margin-top: -30px;
-  font-size: 27px;
-}
-#experience .hl {
-  margin-top: -35px;
-  margin-left: 11px;
-  border-bottom: 2px solid;
-  width: 450px;
-  display: inline-block;
-}
 .descrip {
   width: 400px;
   background-color: #282d31;
@@ -412,7 +388,7 @@ p {
   float: left;
   width: 15%;
   height: 300px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 /* Style the buttons inside the tab */
@@ -449,7 +425,7 @@ p {
 /* Style the tab content */
 .tabcontent {
   float: left;
-  padding: 0px 12px;
+  margin-left: 30px;
   width: 60%;
   border-left: none;
   height: 300px;
@@ -458,129 +434,76 @@ p {
 .exptitle {
   font-size: 22px;
 }
+
 .exptitle:hover {
-  font-size: 22px;
   color: #8262FF;
 }
+
 .exprole {
   font-size: 18px;
   font-weight: lighter;
 }
+
 .expdate {
   font-size: 15px;
   font-weight: lighter;
 }
+
 .expdesc {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: lighter;
 }
+
 .contactme {
   margin-left: 40px;
-  margin-top: 33%;
+  margin-top: 35%;
   font-size: 13px;
 
 }
 
-/*-----------------------------*/
-
-/* -------Projects Section----------*/
-
-#projects .sectiontitle{
-  margin-top: -30px;
-  font-size: 27px;
-}
-#projects .hl {
-  margin-top: -35px;
-  margin-left: 11px;
-  border-bottom: 2.4px solid;
-  width: 450px;
-  display: inline-block;
-}
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-.pull-left {
-  margin-left: 1em;
-  float: left;
-  height: 250px;
-  width: 250px;
-  text-align: center;
+.experience{
+  margin-top: 40px;
+  height: 75px;
+  min-height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
 }
 
-.pull-left:first-child {
-  margin-left: 0;
+
+@media screen and (max-width: 1200px) {
+  .tabcontent {
+  margin-left: 70px;
+  width: 80%;
+  }
+  .tab {
+    margin-left: -70px;
+  }
+  .tab button {
+    font-size: 1.5vw;
+  }
 }
 
-.hover-box {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  background-image: url('http://lorempixel.com/output/nightlife-q-c-250-250-5.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: left top;
-  border-radius: 5px;
-}
+@media screen and (max-width: 700px) {
+  .tab button {
+    font-size: 2vw;
+  }
+  .exptitle {
+    font-size: 3vw;
+  }
+  .exprole {
+    font-size: 2.6vw;
+  }
+  .expdate {
+    font-size: 2.6vw;
+  }
+  .expdesc {
+    font-size: 2vw;
+  }
 
-.hover-box span,
-.hover-box p {
-  display: block;
-  position: absolute;
-  right: 100%;
-  top: 0;
-  padding: 1em;
-  width: 100%;
-  height: 100%;
-  background: rgba(50,20,120,.7);
-  font-size: 2rem;  
-  letter-spacing: -.05rem;
-  color: #fff;
-  text-align: center;
-  transition: 
-    right .5s ease,
-    opacity .5s ease,
-    left .5s ease;
-  opacity: 0;
-}
-
-.hover-box p {
-  left: 0;
-  opacity: 1;
-  background: rgba(0,0,0,.3);
-}
-
-.hover-box:hover span {
-  right: 0;
-  opacity: 1;
-}
-
-.hover-box:hover p {
-  opacity: 0;
-  left: 100%; 
-}
-
-.description {
-  display: block;
-  padding: 10px;
-}
-
-.projecttext {
-  text-align: center;
-  font-weight: bold;
-  color: #8262FF;
-  font-size: 20px;
-  padding: 16px 32px;
 }
 
 /*-----------------------------*/
+
 
 /* -------Bottom Section----------*/
 .sectionfinal{
@@ -591,6 +514,12 @@ p {
   height: 100%;
   text-align: center;
   padding-top: 20px;
+  font-size: 1vw;
 }
 
+@media screen and (max-width: 1100px) {
+  .sectionfinal{
+    font-size: 11px;
+  }
+}
 /*-----------------------------*/
