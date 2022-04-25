@@ -4,11 +4,11 @@
 /* -------Colours----------*/
 
 
-.darkgrey {
-  color: #59646d;
+.grey {
+  color: #333;
 }
 .lightpurp {
-  color: #AFA9C7;
+  color: #899299;
 }
 .purple {
   color: #8262FF;
@@ -23,11 +23,11 @@
 
 /* -------Navigation Bar----------*/
 html, body{
-  font-family: "Fira Code";
+  font-family: BioRhyme;
   font-weight: bold;
 	font-size:13px;
-	color: #AFA9C7;
-	background-color: #222629; 
+	color: #333;
+	background-color: #fff; 
   overflow-y: auto;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -35,7 +35,8 @@ html, body{
 
 .topnav {
   overflow: hidden;
-  background-color: #222629;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   transition: 0.4s;
   position: fixed;
   width: 100%;
@@ -43,15 +44,16 @@ html, body{
 }
 
 .topnav a {
-  float: right;
   display: block;
-  color: #AFA9C7;
   text-align: center;
-  padding: 40px 16px;
+  padding-top: 60px;
+  padding-right: 15px;
   text-decoration: none;
-  font-size: 13px;
-  margin-right: 50px;
+  font-size: 15px;
+  margin-right: 15px;
   position: relative;
+  float:left;
+  transition: 0.5s;
 }
 
 .topnav a:hover {
@@ -67,8 +69,8 @@ html, body{
   height: 1em;
   margin-left:10%;
   width: 80%;
-  border-bottom: 3px solid #8262FF;
-  margin-top: 20px;
+  border-bottom: 3px solid #cbbeff;
+  margin-top: 10px;
   opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -83,9 +85,18 @@ html, body{
 }
 
 .topnav b {
-  font-weight: bold;
+  display: block;
   color: #8262FF;
-  font-size:17px;
+  text-align: center;
+  margin-top: 57px;
+  text-decoration: none;
+  position: relative;
+  float:left;
+  transition: 0.5s;
+  padding-right: -10px;
+  border-left: 2px solid #8262FF;
+  height: 25px;
+  padding-right: 10px;
 }
 
 .topnav ol {
@@ -95,47 +106,59 @@ html, body{
 
 
 .logo {
-  margin-top: 20px;
-  margin-left: 37px;
-  height: 75px;
+  margin-top: 30px;
+  margin-left: 75px;
+  height: 85px;
   float: left;
   text-decoration: none;
   text-align: center;
-  padding: 11px 16px;
+  padding: 11px 50px;
+  transition: 0.5s;
+}
+
+.logo:hover {
+  opacity: 20%;
+}
+
+.addspace {
+  width: 470px
 }
 
 .topnav .icon {
   font-size: 25px;
-  margin-right: 55px;
+  margin-right: 75px;
   margin-top: 10px;
   display: none;
-  color: #59646d;
+  color: #333;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1310px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
+    transition: none;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1310px) {
   .topnav a {display: none;}
 }
 
-@media screen and (max-width: 900px) {
-  .topnav.responsive {position: relative;}
+@media screen and (max-width: 1310px) {
+  .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
-    margin-right: 65px;
+    margin-right: 85px;
     margin-top: 25px;
     position: absolute;
     right: 0;
     top: 0;
+    font-size: 25px;
   }
   .topnav .logo {
     float: none;
     text-align: left;
+    padding-right: 10px;
   }
   .topnav.responsive a {
     float: none;
@@ -145,7 +168,17 @@ html, body{
     display: block;
     text-decoration: none;
     z-index:1;
+    padding-bottom: 20px;
+    font-size: 17px;
+    margin-top: -20px;
   }
+  .topnav a.effect-underline:after{
+    border-bottom: none;
+  }
+  .topnav b {
+    display: none;
+  }
+  
 }
 
 /*-----------------------------*/
@@ -155,7 +188,7 @@ html, body{
 .sidenav {
   margin-top: 315px;
   height: 100%;
-  width: 200px;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -165,25 +198,35 @@ html, body{
 }
 
 .sidenav a {
-  margin-left: 47px;
+  margin-left: 123px;
   padding: 6px 6px 6px 32px;
-  text-decoration: none;
+  transition: 0.5s;
   font-size: 25px;
-  color: #AFA9C7;
   display: block;
-
 }
 
 .sidenav a:hover {
   color: #8262FF;
+
 }
 
 .vl {
-  margin-left: 88px;
-  border-left: 2px solid #59646d;
+  margin-left: 166px;
+  border-left: 2px solid #333;
   height: 350px;
 }
 /*-----------------------------*/
+
+@media screen and (max-width: 1310px) {
+  .sidenav a {
+    margin-left: 50px;
+    transition: 0.5s;
+  }
+  .vl {
+    margin-left: 93px;
+    transition: 0.5s;
+  }
+}
 
 @media screen and (max-width: 900px) {
   .sidenav {
@@ -193,8 +236,63 @@ html, body{
 
 
 /* -------Home Section----------*/
+
+.sectiontitle{
+  margin-left: 20px;
+  color: #59646d;
+  font-size: 2vw;
+}
+
+.section1 {
+	background-image : url('../img/Web_bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	padding-bottom: 3rem;
+  min-height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  height: 100%;
+  padding-left: 16%; /* Same as the width of the sidenav */
+  padding-right: 8%;
+  overflow-x: hidden;
+}
+
+.section2 {
+	background-image : url('../img/Web_bg4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	padding-bottom: 3rem;
+  min-height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  height: 100%;
+  padding-left: 16%; /* Same as the width of the sidenav */
+  padding-right: 8%;
+  overflow-x: hidden;
+}
+
+.section3 {
+	background-image : url('../img/brain.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	padding-bottom: 3rem;
+  min-height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  height: 100%;
+  padding-left: 16%; /* Same as the width of the sidenav */
+  padding-right: 8%;
+  overflow-x: hidden;
+}
+
 .section {
-	background: #222629;
+  background-color: #fff;
 	padding-bottom: 3rem;
   min-height: 100vh;
   overflow-y: hidden;
@@ -208,29 +306,39 @@ html, body{
 
 
 h1 {
-  color: #AFA9C7;
+  color: #333;
   font-weight: bold;
-  font-size: 6.7vw;
+  font-size: 3.7vw;
   line-height: 100%;
   margin: 10px;
-  margin-top: 250px;
+  margin-top: 300px;
+  transition: 0.2s;
+  margin-left: 20px;
 }
 .text {
-  margin-top: -60px;
-  margin-left: 0px;
+  margin-top: -70px;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 700px) {
   .section{
   margin-left: -3%;
-  padding-right: 10%;
+  padding-left: 15%;
   }
+  .section1{
+    margin-left: -3%;
+    padding-left: 25%;
+    }
+
+  h1 {
+    font-size: 35px;
+    }
+
   .text {
-    font-size: 0.6px;
     margin-left: 6px;
   }
   .word{
-    margin-left: 5px;
+    margin-left: -8px;
   }
 }
 
@@ -238,11 +346,11 @@ c {
   word-break: keep-all;
   text-align: center;
   font-weight: bold;
-	font-size:2.5vw;
+	font-size:25px;
   display: inline-block;
   vertical-align: top;
   margin: 0;
-  color: #8262FF;
+  color: #59646d;
 }
 .word {
   position: absolute;
@@ -291,7 +399,7 @@ c {
 
 .icon {
   margin-top: 18px;
-  color:#59646d;
+  color:#333;
 }
 
 .icon:hover {
@@ -305,51 +413,100 @@ c {
 
 .hl {
   margin-top: 2.4vw;
-  margin-left: 10px;
-  border-bottom: 2px solid;
-  width: 50%;
+  border-bottom: 2px solid #c7ccd0;
+  width: 80%;
   display: inline-block;
-}
-
-
-.sectiontitle{
-  font-size: 3vw;
+  margin-left: 50px;
 }
 
 .avatar{
-  margin-top: 40px;
-  height: 300px;
-  width: 300px;
+  margin-top: 65px;
+  height: 260px;
+  width: 260px;
   border-radius: 1%;
-  display: inline-block;
+  margin-left: 45px;
+  transition: 0.5s;
+  display: inline;
+  float:left;
 }
 
-.abouttext {
-  padding: 30px 30px 0px 30px;
+.avatar:hover{
+  opacity: 1%;
+}
+
+#about .abouttext {
+  color: #59646d;
+  padding-top: 50px;
+  padding-left: 7.5vw;
   display: inline-block;
-  width: 60%;
+  width: 52%;
   position: relative;
+  font-size: 13px;
 }
 
 #about a{
-  color: #8262FF;
+  color: #59646d;
+  margin-bottom: 0.5px;
+  border-bottom: 1px #c7ccd0 dashed;
+  transition: 0.5s;
 }
 
 #about a:hover {
-  border-bottom: 2px solid #8262FF;
+  color: #8262FF;
+  border-bottom: 1px #8262FF dashed;
 }
 
 #about b{
+  color: #333;
   position: relative;
-  margin-top: -30px;
+  border-bottom: 1px #8262FF dashed;
+}
+
+#about c {
+  color: #8262FF;
+  float: right;
+  margin-right: 3px;
+  font-size: 1.6vw;
+  padding-top: 5px;
+}
+
+#about .quote {
+  color: #333;
+  font-size: 1.5vw;
+  margin-left: 20px;
+}
+
+.circles{
+  height: 250px;
+  width: auto;
+  border-radius: 1%;
+  transition: 0.5s;
+  display: inline;
+  opacity: 70%;
 }
 
 @media screen and (max-width: 700px) {
-  .abouttext {
-    font-size: 2vw;
-    width: 100%;
-    margin-left: -20px;
+  #about .abouttext {
+    font-size: 2.5vw;
+    width: 90%;
+    margin-left: 0px;
+    float: none;
+    margin-left: -5px;
   }
+  #about .quote {
+    font-size: 2.5vw;
+    margin-left: -3px;
+  }
+  #about c {
+    margin-right: 5%;
+    font-size: 2.6vw;
+    width: 80%;
+  }
+  .sectiontitle{
+    margin-left: -3px;
+    font-size: 20px;
+  }
+  
 }
 
 /*-----------------------------*/
@@ -357,157 +514,96 @@ c {
 
 /* -------Experience Section----------*/
 
-.descrip {
-  width: 400px;
-  background-color: #282d31;
-  padding: 50px;
-  margin: 20px;
-  border-radius: 1%;
-  box-shadow:1px 1px 15px rgba(0, 0, 0, 0.25);
-  display: inline-block;
+.container {
+  margin-left: 0px;
+  width: 90%;
 }
 
-.containers {
-  position: relative;
-  width: 100%;
-}
-.containers:hover .image {
-  opacity: 0.3;
-}
-.containers:hover .aboutimage {
-  opacity: 0.05;
-}
-
-.containers:hover .middle {
-  opacity: 1;
-}
-
-p {
-  margin: 0;
-}
-.tab {
-  float: left;
-  width: 15%;
-  height: 300px;
-  margin-left: 30px;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  display: block;
-  font-family: "Fira Code";
-  font-weight: bold;
-  background-color: inherit;
+.jobtitle {
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight:bolder;
   color: #59646d;
-  padding: 10px 16px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 15px;
-  border-left: 2px solid #282d31;
+  border-bottom: 1px #c7ccd0 dashed;
+  transition: 0.5s;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #282d31;
-  color: #8262FF;
-  border-left: 2px solid #59646d;
+.jobtitle:hover {
+  color:#8262FF;
+  border-bottom: 1px #8262FF dashed;
 }
 
-/* Create an active/current "tab button" class */
-.tab button.active {
-  border-left: 3px solid #8262FF;
-  color: #8262FF;
+
+.jobrole {
+  font-size: 17px;
+  color: #333;
 }
 
-/* Style the tab content */
-.tabcontent {
-  float: left;
+.jobinfo {
+  font-size: 12px;
+  font-weight:lighter;
+  color: #59646d;
+}
+
+.words {
+  font-weight:200;
+  font-size: 14px;
+}
+
+.jobimage{
+  height: 150px;
+  width: auto;
+  border-radius: 1%;
+  margin-left: 50px;
+  transition: 0.5s;
+  display: inline;
+  float:left;
+}
+
+.jobimage2{
+  height: 150px;
+  width: auto;
+  border-radius: 1%;
+  margin-left: 50px;
+  transition: 0.5s;
+  display: inline;
+  float:left;
+  padding-left: 30px;
+  padding-right: 45px;
+}
+
+.jobimage3{
+  height: 150px;
+  width: auto;
+  border-radius: 1%;
   margin-left: 30px;
+  transition: 0.5s;
+  display: inline;
+  float:left;
+  padding-left: 30px;
+  padding-right: 45px;
+}
+
+.avatar:hover{
+  opacity: 60%;
+}
+
+.abouttext {
+  color: #59646d;
+  padding-top: 50px;
+  padding-left: 40px;
+  display: inline-block;
   width: 60%;
-  border-left: none;
-  height: 300px;
+  position: relative;
+  font-size: 14px;
 }
-
-.exptitle {
-  font-size: 22px;
-}
-
-.exptitle:hover {
-  color: #8262FF;
-}
-
-.exprole {
-  font-size: 18px;
-  font-weight: lighter;
-}
-
-.expdate {
-  font-size: 15px;
-  font-weight: lighter;
-}
-
-.expdesc {
-  font-size: 13px;
-  font-weight: lighter;
-}
-
-.contactme {
-  margin-left: 40px;
-  margin-top: 35%;
-  font-size: 13px;
-
-}
-
-.experience{
-  margin-top: 40px;
-  height: 75px;
-  min-height: 60px;
-  min-width: 60px;
-  border-radius: 50%;
-}
-
-
-@media screen and (max-width: 1200px) {
-  .tabcontent {
-    margin-left: 22%;
-    width: 80%;
-  }
-  .tab {
-    margin-left: -70px;
-  }
-  .tab button {
-    font-size: 1.5vw;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .tab button {
-    font-size: 2vw;
-  }
-  .exptitle {
-    font-size: 3vw;
-  }
-  .exprole {
-    font-size: 2.6vw;
-  }
-  .expdate {
-    font-size: 2.6vw;
-  }
-  .expdesc {
-    font-size: 2vw;
-  }
-
-}
-
 /*-----------------------------*/
 
 
 /* -------Bottom Section----------*/
 .sectionfinal{
+  background-image : url('../img/Web_bg.png');
+  background-position: center;
 	padding-bottom: 3rem;
   overflow-y: hidden;
   position: relative;
@@ -516,6 +612,7 @@ p {
   text-align: center;
   padding-top: 20px;
   font-size: 1vw;
+  color: #333;
 }
 
 @media screen and (max-width: 1100px) {
