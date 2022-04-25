@@ -1,2 +1,2 @@
 Personal Portfolio
-<img src="preview.png">
+<img src="assets/img/preview.png">
