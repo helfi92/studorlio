@@ -4,15 +4,15 @@
 <style>
 
 ::selection {
-  color: #8262FF;
-  background: #32373b;
+  color: #fff;
+  background: #8262FF;
 }
 </style>
 </style> 
-	<title>Jarett Dewbury</title>
+	<title>Jarett Dewbury - Aspiring Engineer</title>
 
 	<!-- css files -->
-	<link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
@@ -25,11 +25,14 @@
 	<body>
 
 	<div class="topnav" id="myTopnav">
-		<ol><img class="logo" src="assets/img/weblogo.png" ></ol>
-		<ol><a href="#projects" class="effect-underline"><b>〈 </b> Projects <b> 〉</b></a></ol>
-		<ol><a href="#experience" class="effect-underline"><b>〈 </b> Experience <b> 〉</b></a></ol>
-		<ol><a href="#about" class="effect-underline"><b>〈 </b> About <b> 〉</b></a></ol>
-		<ol><a href="#home" class="effect-underline"><b>〈 </b> Home <b> 〉</b></a></ol>
+		<ol><img class="logo" draggable="false" src="assets/img/logo.png" ></ol><a class="addspace"></a>
+		<ol><a href="#home" class="effect-underline grey">&ensp;&ensp;Home</a></ol>
+		<ol><a href="#about" class="effect-underline grey">&ensp;&ensp;About</a></ol>
+		<ol><a href="#experience" class="effect-underline grey">&ensp;&ensp;Experience</a></ol>
+		<ol><a href="#projects" class="effect-underline grey">&ensp;&ensp;Projects</a></ol><b></b>
+		<!-- <ol><a href="#projects" class="effect-underline purple">&ensp;&ensp;Blog</a></ol> BLOG COMING SOON--> 
+		<ol><a href="mailto:jdewbury@uwaterloo.ca" class="effect-underline purple" >&ensp;&ensp;Contact</a></ol>
+		
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		<i class="fa fa-align-justify" aria-hidden="true"></i>
 		</a>
@@ -61,7 +64,7 @@
 			</span>
 		</a>
 		-->
-		<a href="https://codepen.io/jdewbury" class="nav-item">
+		<a href="https://codepen.io/jdewbury" target="_blank" class="nav-item">
 		<span class="icon">
 			<i class="fa fa-codepen" style="font-size:24px"></i>
 		</span>
@@ -72,7 +75,7 @@
 
 
 	<!-- Home Section -->
-	<section class="section" id="home">
+	<section class="section1" id="home">
 			<h1>Jarett Dewbury</h1>
 				<br>
 				<br>
@@ -91,75 +94,68 @@
 	</section>	
 	
 	<!-- About Section -->	
-	<section class="section" id="about"><br><br><br><br><br>
-		<c class="sectiontitle lightpurp">About</c><hr class="hl purple"><br>
-		<img class="avatar" src="assets/img/myavatar.png">
+	<section class="section3" id="about"><br><br><br><br><br>
+	<hr class="hl purple">
+	<img class="avatar" draggable="false" src="assets/img/avatar.jpg">
 			<div class = "abouttext">
-				I'm an aspiring developer and researcher looking to share my passions with those around me. I am 
+				I am an aspiring developer and researcher looking to explore my passions while positively impacting around me. I am 
 				a <a href="https://uwaterloo.ca/future-students/programs/biomedical-engineering" target="_blank">Biomedical Engineering</a> undergraduate at the University of Waterloo, where I am pursuing specialization in Artificial Intelligence and Neural Engineering. <br /><br />
-				I am currently looking to explore a variety of topics such as human computer interaction, deep learning, 
-				artificial intelligence, 
-				neural engineering, software engineering, and research exploring the intersection of these fields! <br /><br />
+				I am currently exploring a variety of topics ranging from brain-machine interfaces, deep learning, machine learning, artificial intelligence, neural engineering, signal processing, software engineering, and research exploring the intersection of these fields with medical applications!  <br /><br />
+				This summer I will be working as a Medical Artificial Intelligence Research Assistant at the University of Waterloo under the supervision of <a href="https://uwaterloo.ca/systems-design-engineering/profile/bptripp" target="_blank">Dr. Bryan Tripp</a>. <br /><br />
+				
 				Outside of academia, my passions focus around <a href="https://www.eliteprospects.com/player/582668/jarrett-dewbury" target="_blank">ice hockey</a>, bike rides, and all things food.<br>
-				<br><br>
+				<img class="circles" draggable="false" src="assets/img/circle.gif">
 			</div>
-	</section>	
+			<div class = "quote">
+				❝We are continually faced by <b>great opportunities</b> brilliantly <b>disguised</b> as <b>insoluble problems</b>.❞<br>
+				<c>— Lee Iacocca</c>
+			</div>
+		</section>	
 
 
 	<!-- Experience Section -->	
-	<section class="section" id="experience"><br><br><br>
-		<c class="sectiontitle lightpurp"> Experience</c><hr class="hl purple"><br><br><br><br>
-		<div class="tab">
-			<button class="tablinks" onclick="openCity(event, 'WATOLINK')" id="defaultOpen">WATOLINK</button>
-			<button class="tablinks" onclick="openCity(event, 'Waterloop')">Waterloop</button>
-			<button class="tablinks" onclick="openCity(event, 'Math2²Everyone')">Math2²Everyone</button>
-			  </div>
-		  
-		  <div id="WATOLINK" class="tabcontent">
-			<a class="exptitle lightpurp" href="https://teamwaterloop.ca/" target="_blank">WATOLINK</a><br>
-			<p class="exprole purple">Biosignal Research Lead</p>
-			<p class="expdate darkgrey">OCTOBER 2021 - Present</p>
-			<p class="expdate darkgrey">Waterloo, ON</p><br><br>
-			<p class="expdesc lightpurp">
-			Watolink is a Neuroengineering Design Team focused on developing a brain-computer interface (BCI) model to translate EEG signals into specific user commands.
-			As a member of the Biosignal Research Team, I have had the opportunity to explore and analyze the most optimal stimuli characteristics for effective signal detection. 
-			I cannot provide more specifics for now, as we will be competing in the NeuroTechX2022 Competition.
-			</p>
-		  </div>
-		  
-		  <div id="Waterloop" class="tabcontent">
-			<a class="exptitle lightpurp" href="https://www.watolink.com/" target="_blank">Waterloop</a><br>
-			<p class="exprole purple">Propulsion Team</p>
-			<p class="expdate darkgrey">SEPTEMBER 2021 - Present</p>
-			<p class="expdate darkgrey">Waterloo, ON</p><br><br>
-			<p class="expdesc lightpurp">
-			Waterloop is a hyperloop design team formed as a response to the 'SpaceX Hyperloop Pod Challenge'. As a member of the Propulsion Team, I had the opportunity to explore the 
-			possibility of electromagnetic levitation within the hyperloop pod, through the utilization of a linear induction motor (LIM). I also had the opportunity to analyze and repair
-			the LIM coil configuration, as well as hand-repair physical components of the motor. 
-			</p>
-		  </div>
-		  
-		  <div id="Math2²Everyone" class="tabcontent">
-			<a class="exptitle lightpurp" href="https://www.linkedin.com/company/math2%C2%B2everyone/?viewAsMember=true" target="_blank">Math2²Everyone</a><br>
-			<p class="exprole purple">Founder</p>
-			<p class="expdate darkgrey">SEPTEMBER 2018 - JUNE 2021</p>
-			<p class="expdate darkgrey">London, ON</p><br><br>
-			<p class="expdesc lightpurp">
-			Math2²Everyone was a self-started company with the intent to remove any barriers with learning and receiving necessary support in various levels of mathematics.
-			I had the opportunity to support over 15 highschool and university students in their prospective mathematics courses on a weekly basis, assessing academic performance
-			and developing personalized learning models all free of charge. 
-			</p>
-		  </div>
-		</div>
-	</div>
+	<section class="section2" id="experience"><br><br><br><br><br><br>
+		<c class="sectiontitle"> Experience</c><br><br><br><br>
+		<div class="w3-container">
+		<img class="jobimage purple" draggable="false" src="assets/img/waterloo.png">
+		<a class="jobtitle" href="https://uwaterloo.ca/future-students/programs/biomedical-engineering" target="_blank">University of Waterloo</a>
+				<div class="jobrole">Medical Artificial Intelligence Research Assistant<br>
+					<div class="jobinfo">MAY 2022 - PRESENT<br>WATERLOO, ON<br><br>
+						<div class="words">Incoming Medical Artificial Intelligence Research Assistant supervised under Dr. Bryan Tripp
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><br><br><br><br>
+		<div class="container">
+			<img class="jobimage2 purple" draggable="false" src="assets/img/watolink.png">
+			<a class="jobtitle" href="https://www.watolink.com/" target="_blank">WATOLINK</a>
+				<div class="jobrole">Biosignal Research Team Lead<br>
+					<div class="jobinfo">OCTOBER 2021 - PRESENT<br>WATERLOO, ON<br><br>
+						<div class="words">Working with Neural Interfaces and steady state visually evoked potential brain computer interface technology
+						</div>
+					</div>
+				</div>
+		</div><br><br><br><br>
+		<div class="w3-container">
+			<img class="jobimage3 purple" draggable="false" src="assets/img/M22E.png">
+			<a class="jobtitle" href="https://math22everyone.github.io/" target="_blank">Math2²Everyone</a>
+				<div class="jobrole">Founder<br>
+					<div class="jobinfo">SEPTEMBER 2018 - PRESENT<br>WATERLOO, ON<br><br>
+						<div class="words">A self-started company with the intent to remove barriers associated with learning, and providing necessary support in various levels of mathematics
+						</div>
+					</div>
+				</div>
+		</div><br><br><br><br>
+
 	<!--
-	<p class="contactme purple">I am always open to new and challenging opportunities! If you have something in mind or would like to chat, please <a href="mailto:jdewbury@uwaterloo.ca" style ="color:#AFA9C7;">contact me</a></p>
+	
 	-->
 	</section>	
 
 	<!-- Project Section -->	
-	<section class="section" id="projects"><br><br><br>
-		<c class="sectiontitle lightpurp"> Projects</c><hr class="hl purple"><br><br><br><br>
+	<section class="section" id="projects"><br><br><br><br><br><br>
+		<c class="sectiontitle"> Projects</c><br><br><br><br>
 		<p class="exprole darkgrey">Stay tuned for projects! For now, you can check out my projects <a href="https://github.com/Jdewbury" style ="color:#AFA9C7;">here</a></p>
 	</section>	
 
@@ -198,26 +194,6 @@ function myFunction() {
 	  }
 	}
 </script>
-
-<script>
-	function openCity(evt, cityName) {
-	  var i, tabcontent, tablinks;
-	  tabcontent = document.getElementsByClassName("tabcontent");
-	  for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-	  }
-	  tablinks = document.getElementsByClassName("tablinks");
-	  for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	  }
-	  document.getElementById(cityName).style.display = "block";
-	  evt.currentTarget.className += " active";
-	}
-	
-	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click();
-	</script>
-
 
 
 </body>
