@@ -156,6 +156,7 @@ html, body{
     font-size: 25px;
   }
   .topnav .logo {
+    margin-left: 8%;
     float: none;
     text-align: left;
     padding-right: 10px;
@@ -170,7 +171,7 @@ html, body{
     z-index:1;
     padding-bottom: 20px;
     font-size: 17px;
-    margin-top: -20px;
+    margin-top: -30px;
   }
   .topnav a.effect-underline:after{
     border-bottom: none;
@@ -416,7 +417,7 @@ c {
   border-bottom: 2px solid #c7ccd0;
   width: 80%;
   display: inline-block;
-  margin-left: 50px;
+  margin-left: 8%;
 }
 
 .avatar{
@@ -424,7 +425,7 @@ c {
   height: 260px;
   width: 260px;
   border-radius: 1%;
-  margin-left: 45px;
+  margin-left: 8%;
   transition: 0.5s;
   display: inline;
   float:left;
@@ -554,7 +555,7 @@ c {
   height: 150px;
   width: auto;
   border-radius: 1%;
-  margin-left: 50px;
+  margin-left: 8%;
   transition: 0.5s;
   display: inline;
   float:left;
@@ -564,7 +565,7 @@ c {
   height: 150px;
   width: auto;
   border-radius: 1%;
-  margin-left: 50px;
+  margin-left: 8%;
   transition: 0.5s;
   display: inline;
   float:left;
@@ -580,7 +581,7 @@ c {
   transition: 0.5s;
   display: inline;
   float:left;
-  padding-left: 30px;
+  padding-left: 6%;
   padding-right: 45px;
 }
 
@@ -602,7 +603,7 @@ c {
 
 /* -------Bottom Section----------*/
 .sectionfinal{
-  background-image : url('../img/Web_bg.png');
+  background-image : url('../img/web_bg.png');
   background-position: center;
 	padding-bottom: 3rem;
   overflow-y: hidden;
