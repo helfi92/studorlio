@@ -319,6 +319,7 @@ h1 {
 .text {
   margin-top: -70px;
   margin-left: 10px;
+  margin-right: 60px;
 }
 
 @media screen and (max-width: 700px) {
@@ -423,8 +424,8 @@ c {
 
 .avatar{
   margin-top: 65px;
-  height: 260px;
   width: 260px;
+  height: relative;
   border-radius: 1%;
   margin-left: 8%;
   transition: 0.5s;
@@ -464,15 +465,15 @@ c {
 #about c {
   color: #8262FF;
   float: right;
-  margin-right: 3px;
+  margin-right: 8%;
   font-size: 1.6vw;
   padding-top: 5px;
 }
 
 #about .quote {
   color: #333;
-  font-size: 1.5vw;
-  margin-left: 20px;
+  font-size: 2vw;
+  margin-left: 13%;
 }
 
 .circles{
@@ -497,7 +498,7 @@ c {
     margin-left: -3px;
   }
   #about c {
-    margin-right: 5%;
+    margin-right: 4%;
     font-size: 2.6vw;
     width: 80%;
   }
