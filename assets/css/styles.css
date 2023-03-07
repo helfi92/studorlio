@@ -19,7 +19,7 @@ section{
 
 .section-1 {
 	background: rgb(38,49,89);
-background: radial-gradient(circle,  rgba(216,205,181,1) 7%, rgba(38,49,89,1) 25%);
+background: radial-gradient(circle,  rgba(216,205,181,1) 10%, rgba(38,49,89,1) 37%);
 }
 
 .section-2 {
@@ -44,7 +44,7 @@ a.nav-item:hover {
 }
 
 .avatar{
-	height:200px;
+	height:400px;
 	border-radius: 50%;
 }
 
@@ -80,9 +80,16 @@ a.nav-item:hover {
 }
 
 .intro {
-	text-align: justify;
+	text-align: center;
 	width: 80%;
 	margin: 0 auto;
+}
+.footer{
+	padding: 5px;
+	background: transparent;
+}
+.footer img{
+	max-height: 40px;
 }
 
 .void-background {
