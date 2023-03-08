@@ -3,13 +3,35 @@ html, body{
 	color: #dfdfdf;
 	background-color: #495579;
 }
-
+h1{
+	color: black;
+	text-align: center;
+}
 a {
   color: #00d1b2;
 }
 
 a:hover {
   color: #00d1b2;
+}
+p{
+	text-align: justify;
+}
+
+main-rp{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	Gap: 10px;
+}
+
+.index{
+	background: rgb(38,49,89);
+	background: radial-gradient(circle,  rgba(216,205,181,1) 10%, rgba(38,49,89,1) 37%);
+	grid-row: auto;
+	border: 2px solid rgba(7, 59, 79, 0.5);
+}
+.rp{
+	grid-column: span 2;
 }
 
 section{
