@@ -6,6 +6,20 @@ html, body{
 h1{
 	color: black;
 	text-align: center;
+	margin-bottom:40px;
+}
+h2{
+	color: black;
+	margin-top: 30px;
+	margin-bottom:20px;
+}
+li{
+	color: black;
+}
+h3{
+	color: black;
+	margin-top: 30px;
+	margin-bottom:20px;
 }
 a {
   color: #00d1b2;
@@ -16,22 +30,55 @@ a:hover {
 }
 p{
 	text-align: justify;
+	margin-bottom: 10px;
+}
+
+div img{
+	display: block;
+	object-fit: contain;
+	margin: auto;
+	max-height: 70%;
+	max-width: 70%;
 }
 
 main-rp{
 	display: grid;
 	grid-template-columns: auto auto auto;
-	Gap: 10px;
+	grid-template-rows: auto auto auto;
+	column-gap: 15px;
+	row-gap: 0;
+	align-content: space-evenly;
 }
 
 .index{
 	background: rgb(38,49,89);
-	background: radial-gradient(circle,  rgba(216,205,181,1) 10%, rgba(38,49,89,1) 37%);
-	grid-row: auto;
-	border: 2px solid rgba(7, 59, 79, 0.5);
+	background: radial-gradient(circle,  rgba(216,205,181,1) 30%, rgba(38,49,89,1) 57%);
+	height: 300px;
+	border: 2px solid rgb(0,49,89);
+
 }
+.avatar-index{
+	height: 300px;
+	border-radius: 50%;
+}
+
 .rp{
 	grid-column: span 2;
+	grid-row: span 2;
+}
+
+figure {
+  border: 1px #cccccc solid;
+  padding: 4px;
+  margin: auto;
+}
+
+figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
 }
 
 section{
@@ -41,7 +88,7 @@ section{
 
 .section-1 {
 	background: rgb(38,49,89);
-background: radial-gradient(circle,  rgba(216,205,181,1) 10%, rgba(38,49,89,1) 37%);
+background: radial-gradient(circle,  rgba(216,205,181,1) 10%, rgba(38,49,89,1) 35%);
 }
 
 .section-2 {
