@@ -6,20 +6,18 @@ html, body{
 h1{
 	color: black;
 	text-align: center;
-	margin-bottom:40px;
+	padding: 40px;
 }
 h2{
 	color: black;
-	margin-top: 30px;
-	margin-bottom:20px;
+padding: 20px;
 }
 li{
 	color: black;
 }
 h3{
 	color: black;
-	margin-top: 30px;
-	margin-bottom:20px;
+padding: 20px;
 }
 a {
   color: #00d1b2;
@@ -30,7 +28,7 @@ a:hover {
 }
 p{
 	text-align: justify;
-	margin-bottom: 10px;
+	padding: 10px;
 }
 
 div img{
@@ -81,7 +79,7 @@ figure {
 
 figcaption {
   background-color: black;
-  color: white;
+  color: rgba(216,205,181,1);
   font-style: italic;
   padding: 2px;
 	text-align: center;
@@ -93,8 +91,8 @@ figcaption {
 
 }
 .nav-list {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  background-color: rgb(38,49,89);
+  /* border: 1px solid #ccc; */
   padding: 10px;
 	grid-column: 1/2;
 	overflow-y: auto
@@ -114,7 +112,7 @@ figcaption {
 
 .nav-list a {
   text-decoration: none;
-	color: blue;
+	color: rgba(216,205,181,1);
 }
 
 .nav-list a:hover {
@@ -130,7 +128,7 @@ figcaption {
   font-size: 18px;
   line-height: 1;
   margin-right: 5px;
-	color: blue;
+	color: rgba(216,205,181,1);
 }
 
 
@@ -219,6 +217,32 @@ a.nav-item:hover {
 .void-background {
 	background-color: transparent;
 }
+
+/* download buttom */
+
+.download-button {
+    background-color:  #495579;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .download-button:hover {
+    background-color:  #2980b9;
+  }
+
+  .download-button:active {
+    background-color: #1c6ea4;
+  }
+
+/* cellphone */
 
 @media screen and (max-width: 768px) {
 	.nav-menu {
