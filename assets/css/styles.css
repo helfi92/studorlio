@@ -76,7 +76,7 @@ figure {
   border: 1px #cccccc solid;
   padding: 4px;
   margin: auto;
-	height: 70%;
+	height: 80%;
 }
 
 figcaption {
@@ -224,7 +224,9 @@ a.nav-item:hover {
 	.nav-menu {
 		background-color: #063647;
 	}
-
+body{
+	padding: 1%;
+}
 	.nav-toggle:hover {
 		background-color: transparent;
 	}
@@ -237,12 +239,7 @@ a.nav-item:hover {
 		background-color: #fff;
 	}
 
-}
-
-/* For navegation list of titles and subtitles */
-
-@media only screen and (max-width: 600px) {
-  .nav-list {
+	.nav-list {
     overflow: auto;
   }
 
@@ -259,4 +256,7 @@ a.nav-item:hover {
   .nav-list li:before {
     content: none;
   }
+
 }
+
+/* For navegation list of titles and subtitles */
