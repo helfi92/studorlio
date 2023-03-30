@@ -7,10 +7,12 @@ h1{
 	color: black;
 	text-align: center;
 	padding: 40px;
+	font-weight: bold;
 }
 h2{
 	color: black;
 padding: 20px;
+font-weight: bold;
 }
 li{
 	color: black;
@@ -69,6 +71,8 @@ main-rp{
 	grid-column: span 2;
 	grid-row: span 2;
 }
+
+/* figures */
 
 figure {
   border: 1px #cccccc solid;
@@ -269,6 +273,39 @@ a.nav-item:hover {
 }
 
 
+/* canva */
+
+.canva{
+	width: auto;
+	height: 500px;
+	box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+	overflow: hidden;
+	border-radius: 8px;
+	will-change: transform;
+	border: 1px #cccccc solid;
+	padding: 4px;
+	margin: auto;
+	text-align: center;
+}
+
+.canva iframe{
+	display: 	block;
+	position: relative;
+	width: 70%;
+	height: 95%;
+	top: 0;
+	border: none;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+}
+.canva li{
+	  background-color: black;
+	  color: rgba(216,205,181,1);
+	  font-style: italic;
+	  padding: 2px;
+		text-align: center;
+}
 
 /* cellphone */
 
