@@ -90,7 +90,7 @@ figcaption {
 }
 
 .cv{
-	display: grid;
+	display: contents;
 	text-align: center;
 	padding: 2px;
 }
