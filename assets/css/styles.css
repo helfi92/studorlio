@@ -81,6 +81,13 @@ figure {
 	height: 80%;
 }
 
+figure img{
+	width: 70%;
+	aspect-ratio: 3/2;
+	object-fit: contain;
+	mix-blend-mode: color-burn;
+}
+
 figcaption {
   background-color: black;
   color: rgba(216,205,181,1);
