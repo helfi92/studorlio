@@ -314,6 +314,23 @@ a.nav-item:hover {
 		text-align: center;
 }
 
+
+/* for code listing */
+
+pre{
+    counter-reset: line;
+}
+code{
+    counter-increment: line;
+}
+code:before{
+    content: counter(line);
+}
+
+code:before{
+    -webkit-user-select: none;
+}
+
 /* cellphone */
 
 @media only screen and (max-width: 900px) {
