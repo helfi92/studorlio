@@ -1,3 +1,11 @@
+/* global variables */
+:root {
+	--primary-clr:red;
+}
+/* call variable example h1{
+	color: var(--primary-clr)
+} */
+
 html, body{
 	font-size:16px;
 	color: #dfdfdf;
