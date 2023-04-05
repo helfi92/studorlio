@@ -83,7 +83,7 @@ figure {
 
 figure img{
 	width: 70%;
-	aspect-ratio: 3/2;
+	aspect-ratio: 16/9;
 	object-fit: contain;
 	mix-blend-mode: color-burn;
 }
@@ -95,6 +95,8 @@ figcaption {
   padding: 2px;
 	text-align: center;
 }
+
+/* cv section */
 
 .cv{
 	display: contents;
@@ -190,6 +192,16 @@ a.nav-item:hover {
 	max-width:100%;
 	max-height:175px;
 	margin-bottom:15px;
+}
+
+/* projects */
+
+.title{
+	background: #495579;
+}
+.project{
+	display: grid;
+	grid-template-columns: auto auto auto;
 }
 
 .project-figure {
@@ -333,7 +345,7 @@ code:before{
 
 /* cellphone */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
 	.nav-menu {
 		background-color: #063647;
 	}
