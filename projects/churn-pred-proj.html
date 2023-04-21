@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Churn Prediction Project</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+
+	<link rel="icon" type="image/x-icon" href="https://i.ibb.co/0nHTTFb/image103.png">
+	<meta name="author" content="Alejandro Pinto">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="https://www.linkedin.com/in/alejandro-pinto-07a90417a/	" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-linkedin"></i>
+					</span>
+				</a>
+				<a href="https://github.com/AlejandroPinto5" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>
+				<a href="https://twitter.com/Alejo_Pintirris" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-twitter"></i>
+					</span>
+				</a>
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="../index.html"><b>About</b></a>
+				<a class="nav-item" href="../index.html"><b>Projects</b></a>
+					<!-- <a class="nav-item" href="cv_AP.pdf" target="_blank" download> -->
+						<!-- <button class="download-button"><b>cv</b></button></a> -->
+			</div>
+
+			<span class="nav-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+
+		</nav>
+
+      <!-- start page -->
+      <main-rp>
+        <div class="index">
+  				<!-- Source: https://flic.kr/p/pAZBNK -->
+  				<img class="avatar-index container nav-item" href="../index.html" src="https://i.ibb.co/nwjS0FL/image33.png">
+  				<!-- Navegation list -->
+  				<nav class="nav-list nav-menu">
+  					<ul>
+  							<li><a href="#dataaDictionary">Data Dictionary</a></li>
+								<li><a href="#process">Process to Follow</a></li>
+								<li><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/Churn_prediction_project.ipynb">Google Colab Notebook</a></li>
+  					</ul>
+  				</nav>
+  			</div>
+        <div class="rp box">
+          <h1>Churn Prediction using Logistic Regression</h1>
+          <p>Predicting Whether a Customer Will Churn or Not. The target outcome which it wants to predict is churn. Churn is defined as as the costumer falling below the minimum value required. First of all, it presents Data dictionary:</p>
+
+          <ol>
+            <h2 id="dataDictionary"><li>Data Dictionary</li></h2>
+            <p>There are multiple variables in the dataset which can be cleanly divided in 3 categories:</p>
+            <ol>
+              <h3><li>Demographic information about customers</li></h3>
+              <ul>
+                <li><b>customer_id</b> - Customer id</li>
+                <li><b>vintage</b> - Vintage of the customer with the bank in number of days</li>
+                <li><b>age</b> - Age of customer</li>
+                <li><b>gender</b> - Gender of customer</li>
+                <li><b>dependents</b> - Number of dependents</li>
+                <li><b>occupation</b> - Occupation of the customer </li>
+                <li><b>city</b> - City of customer (anonymised)</li>
+              </ul>
+              <h3><li>Customer Bank Relationship</li></h3>
+              <ul>
+                <li><b>customer_nw_category</b> - Net worth of customer (3:Low 2:Medium 1:High)</li>
+                <li><b>branch_code</b> - Branch Code for customer account</li>
+                <li><b>days_since_last_transaction</b> - No of Days Since Last Credit in Last 1 year</li>
+              </ul>
+              <h3><li>Transactional Information</li></h3>
+              <ul>
+                <li><b>current_balance</b> - Balance as of today</li>
+                <li><b>previous_month_end_balance</b> - End of Month Balance of previous month</li>
+                <li><b>average_monthly_balance_prevQ</b> - Average monthly balances (AMB) in Previous Quarter</li>
+                <li><b>average_monthly_balance_prevQ2</b> - Average monthly balances (AMB) in previous to previous quarter</li>
+                <li><b>current_month_credit</b> - Total Credit Amount current month</li>
+                <li><b>previous_month_credit</b> - Total Credit Amount previous month</li>
+                <li><b>current_month_debit</b> - Total Debit Amount current month</li>
+                <li><b>previous_month_debit</b> - Total Debit Amount previous month</li>
+                <li><b>current_month_balance</b> - Average Balance of current month</li>
+                <li><b>previous_month_balance</b> - Average Balance of previous month</li>
+                <li><b>churn</b> - Average balance of customer falls below minimum balance in the next quarter (1/0)</li>
+              </ul>
+            </ol>
+            <h2 id="process"><li>Process to Follow</li></h2>
+            <p>Now, that we understand the dataset in detail. It is time to build a logistic regression model to predict the churn.</p>
+            <ul>
+              <li>Load Data and Packages for model building & preprocessing.</li>
+              <li>Preprocessing & Missing value imputation.</li>
+              <li>Select features on the basis of EDA Conclusions & build baseline model.</li>
+              <li>Decide Evaluation Metric on the basis of business problem.</li>
+              <li>Build model using all features and compare with baseline.</li>
+              <li>Use Reverse Feature Elimination to find the top features and build model using the top 10 features and compare.</li>
+            </ul>
+            <h2 id="notebook"><li>Google Colab Notebook</li></h2>
+              <p>You can find the notebook here: <a href="https://github.com/AlejandroPinto5/linear-models/blob/main/Churn_prediction_project.ipynb">Churn Prediction Project</a></p>
+          </ol>
+        </div>
+<!-- <a  href="netflix-analysis/pieplot.html"><b>test chart on html</b></a> -->
+<!-- <p>test:</p>
+<pre>
+<code>python</code>
+<code>hello</code>
+<code>world</code>
+</pre> -->
+    </main-rp>
+
+  <!-- Footer -->
+  <section class="footer">
+    <img src="https://i.ibb.co/jR7YH3p/sign.png" alt="Image">
+  </section>
+
+  <!-- Scripts  -->
+  <script src="../controller.js"></script>
+</body>
+</html>
