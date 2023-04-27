@@ -13,6 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<!-- Bootstrap -->
+	ç
 	<!-- <link rel="stylesheet" type="text/css"  href="assets/css/bootstrap.css"> -->
 	<!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->
 </head>
@@ -83,22 +84,7 @@ programming.</p> -->
 			<div class="container">
 				<div class="has-text-centered">
 					<h3 class="title is-3"><b>Projects</b></h3>
-					<hr>
-					<div class="clearfix"></div>
 				</div>
-				<div class="categories">
-		      <ul class="cat">
-		        <li>
-		          <ol class="type">
-		            <li><a href="#" data-filter="*" class="active">All</a></li>
-		            <li><a href="#" data-filter=".python">Python</a></li>
-		            <li><a href="#" data-filter=".sql">SQL</a></li>
-		            <li><a href="#" data-filter=".bi">Power BI</a></li>
-		          </ol>
-		        </li>
-		      </ul>
-		      <div class="clearfix"></div>
-		    </div>
 
 				<div class="project">
 					<!-- Project EDA -->
@@ -107,8 +93,8 @@ programming.</p> -->
 							<article>
 								<div>	<a href="projects/eda.html">
 									<figure class="image project-figure">
-										<img src="https://i.ibb.co/vJtTSFV/quatum.jpg" alt="Image" class="img-responsive" >
-								<figcaption class="img-responsive" >	Several project about 'Exploratory Data Analysis'.</figcaption></a>
+										<img src="https://i.ibb.co/vJtTSFV/quatum.jpg" alt="Image">
+								<figcaption >	Several project about 'Exploratory Data Analysis'.</figcaption></a>
 									</figure>
 								</div>
 							</article>
@@ -120,7 +106,7 @@ programming.</p> -->
 							<article>
 								<div>
 									<figure class="image project-figure">
-										<img src="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" alt="Image" class="img-responsive" >
+										<img src="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" alt="Image">
 									<a href="https://github.com/AlejandroPinto5/Streaming-platform"><figcaption >	Netflix Data Analysis.</figcaption></a>
 									</figure>
 								</div>
@@ -133,7 +119,7 @@ programming.</p> -->
 							<article>
 								<div> <a href="projects/eucaristicschool.html">
 									<figure class="image project-figure">
-										<img src="https://i.ibb.co/ZT7ttQV/download.png" alt="Image" class="img-responsive" >
+										<img src="https://i.ibb.co/ZT7ttQV/download.png" alt="Image">
 									<figcaption >	Insights into Student Performance in High School Physics. </figcaption></a>
 									</figure>
 								</div>
@@ -146,7 +132,7 @@ programming.</p> -->
 							<article>
 								<div> <a href="projects/churn-pred-proj.html">
 									<figure class="image project-figure">
-										<img src="https://i.ibb.co/sq9ckQS/Screenshot-from-2023-04-25-10-39-29.png" alt="Image" class="img-responsive" >
+										<img src="https://i.ibb.co/sq9ckQS/Screenshot-from-2023-04-25-10-39-29.png" alt="Image">
 									<figcaption >	Churn Prediction Project Using Logistic Regression. </figcaption></a>
 									</figure>
 								</div>
@@ -159,7 +145,7 @@ programming.</p> -->
 						<article>
 							<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/linear_regressaion.ipynb">
 								<figure class="image project-figure">
-									<img src="https://i.ibb.co/BcjcQ60/Screenshot-from-2023-04-18-10-16-02.png" alt="Image" class="img-responsive" >
+									<img src="https://i.ibb.co/BcjcQ60/Screenshot-from-2023-04-18-10-16-02.png" alt="Image">
 								<figcaption >
 										Linear regression model.</figcaption></a>
 								</figure>
@@ -169,11 +155,11 @@ programming.</p> -->
 				</div>
 				<!-- project ab testing and kpi -->
 			<div class="column">
-				<div class="box project-text jello-horizontal sql">
+				<div class="box project-text jello-horizontal">
 					<article>
 						<div><a href="projects/case-study.html">
 							<figure class="image project-figure">
-								<img src="https://i.ibb.co/MVjG1WF/images-1.jpg" alt="Image" class="img-responsive" >
+								<img src="https://i.ibb.co/MVjG1WF/images-1.jpg" alt="Image">
 							<figcaption >
 									Leveraging Machine Learning for Data-Driven Optimization in Online Grocery Business: A Online Grocery store Case Study".</figcaption></a>
 							</figure>
@@ -182,12 +168,12 @@ programming.</p> -->
 				</div>
 			</div>
 				<!-- project linear regression -->
-			<div class="column bi">
+			<div class="column">
 				<div class="box project-text jello-horizontal">
 					<article>
 						<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/logistic_regression.ipynb">
 							<figure class="image project-figure">
-								<img src="https://i.ibb.co/9ckvnPY/Screenshot-from-2023-04-18-11-15-37.png" alt="Image" class="img-responsive" >
+								<img src="https://i.ibb.co/9ckvnPY/Screenshot-from-2023-04-18-11-15-37.png" alt="Image">
 							<figcaption >
 									Logistic regression model implemented on titanic survival problem.</figcaption></a>
 							</figure>
@@ -196,12 +182,12 @@ programming.</p> -->
 				</div>
 			</div>
 						<!-- project knn -->
-					<div class="column bi">
+					<div class="column">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div><a href="https://github.com/AlejandroPinto5/KNN-algorithm">
 									<figure class="image project-figure">
-										<img src="https://i.ibb.co/VwG8PFb/Screenshot-from-2023-03-22-11-23-01.png" alt="Image" class="img-responsive" >
+										<img src="https://i.ibb.co/VwG8PFb/Screenshot-from-2023-03-22-11-23-01.png" alt="Image">
 									<figcaption >KNN-algorithm implemented on a simple model looking the best k with elbow method. Evaluation metric F1 is used.</figcaption></a>
 									</figure>
 								</div>
@@ -209,14 +195,12 @@ programming.</p> -->
 						</div>
 					</div>
 					<!-- project k-fold technique -->
-				<div class="row column python col-sm-6 col-md-3 col-lg-3">
+				<div class="column">
 					<div class="box project-text jello-horizontal">
-						<div class="hover-bg"> <a href="projects/eda.html">
-							<div class="clearfix"></div>
 						<article>
 							<div><a href="https://github.com/AlejandroPinto5/K-fold-Cross-Validation">
 								<figure class="image project-figure">
-									<img src="https://i.ibb.co/M2bHnqB/Screenshot-from-2023-04-04-18-59-25.png" alt="python" class="img-responsive" >
+									<img src="https://i.ibb.co/M2bHnqB/Screenshot-from-2023-04-04-18-59-25.png" alt="Image">
 								<figcaption >
 K-fold Cross Validation technique using data cleaned and finding an optimal k value.</figcaption></a>
 								</figure>
@@ -228,6 +212,147 @@ K-fold Cross Validation technique using data cleaned and finding an optimal k va
 				</div>
 			</div>
 		</section>
+
+		<!-- Social -->
+		<!-- <section id="social" class="section section-3">
+			<div class="container">
+				<div class="has-text-centered">
+					<h3 class="title is-3">Let's Socialize</h3>
+				</div>
+				<div class="social-container columns">
+					<div class="column is-6 has-text-centered">
+						<a target="_blank" href="https://ca.linkedin.com/in/hassan-ali-6132468a"><img class="" src="assets/img/linkedin.png"></a>
+					</div>
+					<div class="column is-6 has-text-centered">
+						<a target="_blank" href="https://www.facebook.com/Hassan.Helfi"><img class="" src="assets/img/facebook.png"></a>
+					</div>
+				</div>
+			</div>
+		</section> -->
+
+			<!-- test section -->
+
+			<!-- Portfolio Section -->
+<!-- <div id="works-section"> -->
+<section id="projects" class="section section-2">
+  <div class="container"> <!-- Container -->
+    <div class="section-title">
+      <h2>Our Portfolio</h2>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".python">Python</a></li>
+            <li><a href="#" data-filter=".sql">SQL</a></li>
+            <li><a href="#" data-filter=".bi">Power BI</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-3 col-lg-3 python">
+          <div class="portfolio-item jello-horizontal">
+            <div class="hover-bg"> <a href="projects/eda.html" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Exploratory Data Analysis</h4>
+                <small>directed by S.E.N.A.</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="https://i.ibb.co/vJtTSFV/quatum.jpg" class="img-responsive" alt="python"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>netflix project</h4>
+                <small>Python</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://i.ibb.co/ZT7ttQV/download.png" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Jesus Project</h4>
+                <small>SQL</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="https://i.ibb.co/ZT7ttQV/download.png" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>Web Design</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/04.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>App Development</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/05.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 branding">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/06.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>Branding</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/06.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/07.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>App Development, Branding</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/07.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/08.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>Web Design</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- </div> -->
+
+
+
+
 
 		<!-- Footer -->
 		<section class="footer">
