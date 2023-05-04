@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
 	<link rel="stylesheet" tybpe="text/css" href="assets/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/prettyPhoto.css">
 
 	<link rel="icon" type="image/x-icon" href="https://i.ibb.co/0nHTTFb/image103.png">
 	<meta name="author" content="ALejandro Pinto">
@@ -84,26 +83,23 @@ programming.</p> -->
 				<div class="has-text-centered">
 					<h3 class="title is-3"><b>Projects</b></h3>
 					<hr>
-					<div class="clearfix"></div>
 				</div>
-				<div class="categories">
+				<div id="myBtnContainer" class="categories python">
 		      <ul class="cat">
 		        <li>
 		          <ol class="type">
-		            <li><a href="#" data-filter="*" class="active">All</a></li>
-		            <li><a href="#" data-filter=".python">Python</a></li>
-		            <li><a href="#" data-filter=".sql">SQL</a></li>
-		            <li><a href="#" data-filter=".bi">Power BI</a></li>
+		            <li><a href="#" class="btn" onclick="filterSelection('all')" class="active">All</a></li>
+		            <li><a href="#" class="btn" onclick="filterSelection('python')" data-filter=".python">Python</a></li>
+		            <li><a href="#" class="btn" data-filter=".sql">SQL</a></li>
+		            <li><a href="#" class="btn" data-filter=".bi">Power BI</a></li>
 		          </ol>
 		        </li>
 		      </ul>
-		      <div class="clearfix"></div>
 		    </div>
 
-				<div class="project">
-					<!-- Project EDA -->
-					<div class="column">
-						<div class="box project-text jello-horizontal">
+				<div class="project portfolio-items">
+						<!-- Project EDA -->
+						<div class="portfolio-items box project-text jello-horizontal python">
 							<article>
 								<div>	<a href="projects/eda.html">
 									<figure class="image project-figure">
@@ -113,9 +109,8 @@ programming.</p> -->
 								</div>
 							</article>
 						</div>
-					</div>
 					<!-- Project Netflix -->
-					<div class="column">
+					<!-- <div class="column">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div>
@@ -126,9 +121,8 @@ programming.</p> -->
 								</div>
 							</article>
 						</div>
-					</div>
+					</div> -->
 					<!-- Project 2 -->
-					<div class="column">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div> <a href="projects/eucaristicschool.html">
@@ -139,9 +133,7 @@ programming.</p> -->
 								</div>
 							</article>
 						</div>
-					</div>
 					<!-- Project Churn -->
-					<div class="column">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div> <a href="projects/churn-pred-proj.html">
@@ -152,9 +144,7 @@ programming.</p> -->
 								</div>
 							</article>
 						</div>
-					</div>
 					<!-- project linear regression -->
-				<div class="column">
 					<div class="box project-text jello-horizontal">
 						<article>
 							<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/linear_regressaion.ipynb">
@@ -166,9 +156,7 @@ programming.</p> -->
 							</div>
 						</article>
 					</div>
-				</div>
 				<!-- project ab testing and kpi -->
-			<div class="column">
 				<div class="box project-text jello-horizontal sql">
 					<article>
 						<div><a href="projects/case-study.html">
@@ -180,9 +168,20 @@ programming.</p> -->
 						</div>
 					</article>
 				</div>
+			<!-- project decision tree implementation -->
+			<div class="box project-text jello-horizontal sql">
+				<article>
+					<div><a href="projects/case-study.html">
+						<figure class="image project-figure">
+							<img src="https://i.ibb.co/2FWF6MV/Screenshot-from-2023-04-28-10-51-13.png" alt="Image" class="img-responsive" >
+						<figcaption >
+								Decision tree model with maximum depth of 3. Gini impurity is implemented.
+						</figcaption></a>
+						</figure>
+					</div>
+				</article>
 			</div>
 				<!-- project linear regression -->
-			<div class="column bi">
 				<div class="box project-text jello-horizontal">
 					<article>
 						<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/logistic_regression.ipynb">
@@ -194,9 +193,7 @@ programming.</p> -->
 						</div>
 					</article>
 				</div>
-			</div>
 						<!-- project knn -->
-					<div class="column bi">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div><a href="https://github.com/AlejandroPinto5/KNN-algorithm">
@@ -207,12 +204,10 @@ programming.</p> -->
 								</div>
 							</article>
 						</div>
-					</div>
+
 					<!-- project k-fold technique -->
-				<div class="row column python col-sm-6 col-md-3 col-lg-3">
 					<div class="box project-text jello-horizontal">
 						<div class="hover-bg"> <a href="projects/eda.html">
-							<div class="clearfix"></div>
 						<article>
 							<div><a href="https://github.com/AlejandroPinto5/K-fold-Cross-Validation">
 								<figure class="image project-figure">
@@ -224,34 +219,16 @@ K-fold Cross Validation technique using data cleaned and finding an optimal k va
 						</article>
 					</div>
 				</div>
-
 				</div>
-			</div>
 		</section>
 
 		<!-- Footer -->
 		<section class="footer">
 			<img src="https://i.ibb.co/jR7YH3p/sign.png" alt="Image">
 		</section>
+		<!-- SCRIPTS -->
+		<script src="assets/js/controller.js"></script>
+		<script src="assets/js/filter.js"></script>
 
-		<!-- Scripts  -->
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/SmoothScroll.js"></script>
-		<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-		<script type="text/javascript" src="js/jquery.isotope.js"></script>
-		<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
-		<script type="text/javascript" src="js/contact_me.js"></script>
-
-		<!-- Javascripts
-		    ================================================== -->
-		<script type="text/javascript" src="js/main.js"></script>
-		</body>
-		</html>
-
-		<script src="controller.js"></script>
 	</body>
 </html>
