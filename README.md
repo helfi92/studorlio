@@ -1,5 +1,5 @@
 # 💫 About Me:
-Physicist | Data Scientist
+Data Scientist | Data Analyst
 
 
 ## 🌐 Socials:
