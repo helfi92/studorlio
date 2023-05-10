@@ -1,7 +1,7 @@
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("box");
+  x = document.getElementsByClassName("column");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
@@ -45,57 +45,57 @@ for (var i = 0; i < btns.length; i++) {
 /*====================================
 Portfolio Isotope Filter
 ======================================*/
-$(window).load(function() {
-    var $container = $('.portfolio-items');
-    $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
-    $('.cat a').click(function() {
-        $('.cat .active').removeClass('active');
-        $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-        return false;
-    });
-
-});
+// $(window).load(function() {
+//     var $container = $('.portfolio-items');
+//     $container.isotope({
+//         filter: '*',
+//         animationOptions: {
+//             duration: 750,
+//             easing: 'linear',
+//             queue: false
+//         }
+//     });
+//     $('.cat a').click(function() {
+//         $('.cat .active').removeClass('active');
+//         $(this).addClass('active');
+//         var selector = $(this).attr('data-filter');
+//         $container.isotope({
+//             filter: selector,
+//             animationOptions: {
+//                 duration: 750,
+//                 easing: 'linear',
+//                 queue: false
+//             }
+//         });
+//         return false;
+//     });
+//
+// });
 
 
 
     // ====================== Filtering ======================
-
-    _filter : function( $atoms ) {
-      var filter = this.options.filter === '' ? '*' : this.options.filter;
-
-      if ( !filter ) {
-        return $atoms;
-      }
-
-      var hiddenClass    = this.options.hiddenClass,
-          hiddenSelector = '.' + hiddenClass,
-          $hiddenAtoms   = $atoms.filter( hiddenSelector ),
-          $atomsToShow   = $hiddenAtoms;
-
-      if ( filter !== '*' ) {
-        $atomsToShow = $hiddenAtoms.filter( filter );
-        var $atomsToHide = $atoms.not( hiddenSelector ).not( filter ).addClass( hiddenClass );
-        this.styleQueue.push({ $el: $atomsToHide, style: this.options.hiddenStyle });
-      }
-
-      this.styleQueue.push({ $el: $atomsToShow, style: this.options.visibleStyle });
-      $atomsToShow.removeClass( hiddenClass );
-
-      return $atoms.filter( filter );
-    },
+    //
+    // _filter : function( $atoms ) {
+    //   var filter = this.options.filter === '' ? '*' : this.options.filter;
+    //
+    //   if ( !filter ) {
+    //     return $atoms;
+    //   }
+    //
+    //   var hiddenClass    = this.options.hiddenClass,
+    //       hiddenSelector = '.' + hiddenClass,
+    //       $hiddenAtoms   = $atoms.filter( hiddenSelector ),
+    //       $atomsToShow   = $hiddenAtoms;
+    //
+    //   if ( filter !== '*' ) {
+    //     $atomsToShow = $hiddenAtoms.filter( filter );
+    //     var $atomsToHide = $atoms.not( hiddenSelector ).not( filter ).addClass( hiddenClass );
+    //     this.styleQueue.push({ $el: $atomsToHide, style: this.options.hiddenStyle });
+    //   }
+    //
+    //   this.styleQueue.push({ $el: $atomsToShow, style: this.options.visibleStyle });
+    //   $atomsToShow.removeClass( hiddenClass );
+    //
+    //   return $atoms.filter( filter );
+    // },

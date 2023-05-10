@@ -83,14 +83,14 @@ programming.</p> -->
 					<h3 class="title is-3"><b>Projects</b></h3>
 					<hr>
 				</div>
-				<div id="myBtnContainer" class="categories python">
+				<div id="myBtnContainer" class="categories">
 		      <ul class="cat">
 		        <li>
 		          <ol class="type">
-		            <li><a href="#" class="btn" onclick="filterSelection('all')" class="active">All</a></li>
-		            <li><a href="#" class="btn" onclick="filterSelection('python')" data-filter=".python">Python</a></li>
-		            <li><a href="#" class="btn" data-filter=".sql">SQL</a></li>
-		            <li><a href="#" class="btn" data-filter=".bi">Power BI</a></li>
+								<li><a class="btn active" onclick="filterSelection('all')">All</a></li>
+		            <li><a class="btn" onclick="filterSelection('python')">Python</a></li>
+		            <li><a class="btn" onclick="filterSelection('sql')">SQL</a></li>
+		            <li><a class="btn" onclick="filterSelection('powerbi')">Power BI</a></li>
 		          </ol>
 		        </li>
 		      </ul>
@@ -98,7 +98,8 @@ programming.</p> -->
 
 				<div class="project portfolio-items">
 						<!-- Project EDA -->
-						<div class="portfolio-items box project-text jello-horizontal python">
+						<div class="column python">
+						<div class="portfolio-items box project-text jello-horizontal">
 							<article>
 								<div>	<a href="projects/eda.html">
 									<figure class="image project-figure">
@@ -108,8 +109,9 @@ programming.</p> -->
 								</div>
 							</article>
 						</div>
-					<!-- Project Netflix -->
-					<div class="column">
+						</div>
+					<!-- Project eda taxi trip -->
+					<div class="column python">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div>
@@ -122,6 +124,7 @@ programming.</p> -->
 						</div>
 					</div>
 					<!-- Project 2 -->
+					<div class="column python">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div> <a href="projects/eucaristicschool.html">
@@ -131,8 +134,10 @@ programming.</p> -->
 									</figure>
 								</div>
 							</article>
+							</div>
 						</div>
 					<!-- Project Churn -->
+					<div class="column">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div> <a href="projects/churn-pred-proj.html">
@@ -142,8 +147,10 @@ programming.</p> -->
 									</figure>
 								</div>
 							</article>
+							</div>
 						</div>
 					<!-- project linear regression -->
+					<!-- <div class="column"> -->
 					<!-- <div class="box project-text jello-horizontal">
 						<article>
 							<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/linear_regressaion.ipynb">
@@ -153,10 +160,11 @@ programming.</p> -->
 										Linear regression model.</figcaption></a>
 								</figure>
 							</div>
-						</article>
+						</article></div>
 					</div> -->
 						<!-- project predicting taxi trip Ç -->
-						<div class="box project-text jello-horizontal sql">
+						<div class="column sql">
+						<div class="box project-text jello-horizontal">
 							<article>
 					<div><a href="https://github.com/AlejandroPinto5/EDA-projects/blob/main/NYC-taxi-project/Pred_taxi_project.ipynb">
 						<figure class="image project-figure">
@@ -166,9 +174,11 @@ programming.</p> -->
 						</figure>
 					</div>
 				</article>
+				</div>
 			</div>
 				<!-- project ab testing and kpi -->
-				<div class="box project-text jello-horizontal sql">
+				<div class="column sql">
+				<div class="box project-text jello-horizontal">
 					<article>
 						<div><a href="projects/case-study.html">
 							<figure class="image project-figure">
@@ -178,9 +188,11 @@ programming.</p> -->
 							</figure>
 						</div>
 					</article>
+					</div>
 				</div>
 			<!-- project decision tree implementation -->
-			<div class="box project-text jello-horizontal sql">
+			<div class="column sql">
+			<div class="box project-text jello-horizontal">
 				<article>
 					<div><a href="https://github.com/AlejandroPinto5/Decision-Tree/blob/main/Desicion_Tree_Implementation.ipynb">
 						<figure class="image project-figure">
@@ -191,9 +203,10 @@ programming.</p> -->
 						</figure>
 					</div>
 				</article>
-
+			</div>
 		</div>
 				<!-- project linear regression -->
+				<div class="column">
 				<div class="box project-text jello-horizontal">
 					<article>
 						<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/logistic_regression.ipynb">
@@ -204,8 +217,10 @@ programming.</p> -->
 							</figure>
 						</div>
 					</article>
+					</div>
 				</div>
 						<!-- project knn -->
+						<div class="column">
 						<div class="box project-text jello-horizontal">
 							<article>
 								<div><a href="https://github.com/AlejandroPinto5/KNN-algorithm">
@@ -215,9 +230,11 @@ programming.</p> -->
 									</figure>
 								</div>
 							</article>
+							</div>
 						</div>
 
 					<!-- project k-fold technique -->
+					<div class="column">
 					<div class="box project-text jello-horizontal">
 						<div class="hover-bg"> <a href="projects/eda.html">
 						<article>
@@ -230,6 +247,7 @@ K-fold Cross Validation technique using data cleaned and finding an optimal k va
 							</div>
 						</article>
 					</div>
+				</div>
 				</div>
 				</div>
 		</section>

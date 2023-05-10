@@ -236,6 +236,7 @@ animation:rotate-center 0.4s} @keyframes rotate-center{0%{transform:rotate(0)}10
 .project{
 	display: grid;
 	grid-template-columns: auto auto auto;
+	/* overflow: hidden; */
 }
 
 /* ----------------------------------------------
@@ -393,10 +394,23 @@ code:before{
 
 	/* filter */
 .show{
+	display: block;
 
 }
 .btn{
+	cursor: pointer;
+}
+.btn:hover {
+  background-color: #ddd;
+}
 
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+.column{
+	float: left;
+	display: none;
 }
 /* test section */
 
