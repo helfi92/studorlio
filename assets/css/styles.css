@@ -1,6 +1,6 @@
 /* global variables */
 :root {
-	--primary-clr:red;
+	--primary-clr: #495579;
 }
 /* call variable example h1{
 	color: var(--primary-clr)
@@ -255,10 +255,6 @@ animation:rotate-center 0.4s} @keyframes rotate-center{0%{transform:rotate(0)}10
 	max-width: 256px;
 }
 
-.project-text {
-	text-align: justify;
-}
-
 .box {
 	background-color: #77898B;
 	border: 2px solid rgba(7, 59, 79, 0.5);
@@ -393,7 +389,111 @@ code:before{
 }
 
 	/* filter */
-.show{
+	/* * {
+	  box-sizing: border-box;
+	}
+
+	html,
+	body {
+	  position: relative;
+	  height: 100%;
+	} */
+
+	.filter-links {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  display: block;
+	  width: 100%;
+	  height:auto;
+	  overflow: hidden;
+	  background: --primary-clr;
+	  border-bottom:1px solid #E4D7D7;
+	}
+
+	.filter-links li {
+	  display: inline;
+	  float: left;
+	}
+
+	.filter-links li a {
+	  display: block;
+	  color: black;
+	  padding: 1em 2em;
+	  text-decoration: none;
+	}
+
+	.filter-links li a:hover {
+	  color: red;
+	}
+
+	.filter-sections {
+	  width: 100%;
+	  display: block;
+	  overflow: hidden;
+	}
+
+	.filter-sections div {
+	  opacity: 0;
+	  display: none;
+	  min-height: 50px;
+	  margin: 0.5em;
+	  text-align: center;
+	  padding: 2em 1em;
+	  float: left;
+	  transition: all 500s ease;
+	}
+
+	.view {
+	  display: block !important;
+	  opacity: 1 !important;
+	  transform: scale(1) rotate(0deg);
+	  border-radius:4px;
+	  /* animation: selected 300ms 1 ease-in-out; */
+	}
+
+	@keyframes selected {
+	  0% {
+	    border-radius:100%;
+	    transform: scale(0) rotate(-180deg);
+	  }
+	}
+
+	.python{
+	  background-color:yellow;
+	  color:black;
+	}
+	.sql{
+	  background:blue;
+	  color:white;
+	}
+	.powerbi{
+	  background:red;
+	  color:white;
+	}
+	/* .php{
+	  background:brown;
+	  color:white;
+	} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .show{
 	display: block;
 
 }
@@ -411,7 +511,7 @@ code:before{
 .column{
 	float: left;
 	display: none;
-}
+} */
 /* test section */
 
 .categories {
