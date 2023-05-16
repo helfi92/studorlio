@@ -389,96 +389,70 @@ code:before{
 }
 
 	/* filter */
-	/* * {
-	  box-sizing: border-box;
-	}
-
-	html,
-	body {
-	  position: relative;
-	  height: 100%;
-	} */
-
-	.filter-links {
-	  margin: 0;
-	  padding: 0;
-	  list-style: none;
-	  display: block;
-	  width: 100%;
-	  height:auto;
-	  overflow: hidden;
-	  background: --primary-clr;
-	  border-bottom:1px solid #E4D7D7;
-	}
-
-	.filter-links li {
-	  display: inline;
-	  float: left;
-	}
-
-	.filter-links li a {
-	  display: block;
-	  color: black;
-	  padding: 1em 2em;
-	  text-decoration: none;
-	}
-
-	.filter-links li a:hover {
-	  color: red;
-	}
-
 	.filter-sections {
-	  width: 100%;
-	  display: block;
-	  overflow: hidden;
+		padding: 1rem;
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		grid-gap: 5px;
 	}
 
-	.filter-sections div {
-	  opacity: 0;
-	  display: none;
-	  min-height: 50px;
-	  margin: 0.5em;
-	  text-align: center;
-	  padding: 2em 1em;
-	  float: left;
-	  transition: all 500s ease;
+	.filterItems {
+		/* background-color: #222f3e; */
+		border-radius: 5px;
+		display: none;
+		overflow: hidden;
+		/* height: 150px; */
 	}
 
-	.view {
-	  display: block !important;
-	  opacity: 1 !important;
-	  transform: scale(1) rotate(0deg);
-	  border-radius:4px;
-	  /* animation: selected 300ms 1 ease-in-out; */
+	.filterItems > img{
+		width: 100%;
 	}
 
-	@keyframes selected {
-	  0% {
-	    border-radius:100%;
-	    transform: scale(0) rotate(-180deg);
-	  }
+	.show {
+		display: block;
+		animation: 350ms showing linear;
 	}
 
-	.python{
-	  background-color:yellow;
-	  color:black;
+	#sort-options{
+		margin-top: 15px;
 	}
-	.sql{
-	  background:blue;
-	  color:white;
+
+	.btn {
+		border: none;
+		padding: 12px 16px;
+		background-color: #182C61;
+		cursor: pointer;
+		color: #CAD3C8;
+		font-size: 0.8rem;
+		font-family: sans-serif;
+		border-radius: 4px;
+		transition: 350ms;
 	}
-	.powerbi{
-	  background:red;
-	  color:white;
+
+	.btn:hover {
+		color: #CAD3C8;
+		background-color: #8395a7;
 	}
-	/* .php{
-	  background:brown;
-	  color:white;
-	} */
 
+	.btn:focus{
+		outline: none;
+		background-color: #3B3B98;
+		color: white;
+		font-weight: bold;
+	}
 
+	.btn:active {
+		background-color: #5f27cd;
+		color: white;
+	}
 
-
+	@keyframes showing{
+		from{
+			opacity: 0;
+		}to{
+			opacity: 1;
+		}
+	}
 
 
 

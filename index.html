@@ -73,7 +73,7 @@
 <!-- <p> I have more than a year of experience in the area of teaching university
 students and secondary education in the teaching of physics, maths and
 programming.</p> -->
-</div>
+				</div>
 		</section>
 
 		<!-- Projects -->
@@ -83,169 +83,149 @@ programming.</p> -->
 					<h3 class="title is-3"><b>Projects</b></h3>
 					<hr>
 				</div>
-		      <ul class="filter-links">
-								<li><a href="#">All</a></li>
-		            <li><a href="#">Python</a></li>
-		            <li><a href="#">SQL</a></li>
-		            <li><a href="#">Power BI</a></li>
-		      </ul>
+				<!-- Control buttons -->
+				<div id="sort-options">
+				  <button class="btn active" onclick="filterSelection('all')"> All</button>
+				  <button class="btn" onclick="filterSelection('python')"> Python</button>
+				  <button class="btn" onclick="filterSelection('sql')"> SQL</button>
+				  <button class="btn" onclick="filterSelection('powerbi')"> Power BI</button>
+				  <!-- <button class="btn" onclick="filterSelection('color')"> Colors</button> -->
+				</div>
 
 				<div class="filter-sections">
-						<!-- Project EDA -->
-						<div class="sql">
-							<div class="box jello-horizontal">
-							<article>
-								<div>	<a href="projects/eda.html">
-									<figure class="image project-figure">
-										<img src="https://i.ibb.co/vJtTSFV/quatum.jpg" alt="Image" class="img-responsive" >
-								<figcaption class="img-responsive" >	Several project about 'Exploratory Data Analysis'.</figcaption></a>
-									</figure>
-								</div>
-							</article>
-						</div>
-
-						</div>
+					<!-- Project EDA -->
+					<div class="box jello-horizontal filterItems sql">
+						<article>
+							<a href="projects/eda.html">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/vJtTSFV/quatum.jpg" alt="Image" class="img-responsive" >
+									<figcaption class="img-responsive" >	Several project about 'Exploratory Data Analysis'.
+									</figcaption>
+								</figure>
+							</a>
+						</article>
+					</div>
 					<!-- Project eda taxi trip -->
-					<div class="python">
-						<div class="box project-text jello-horizontal">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<img src="https://i.ibb.co/41RzPH3/Screenshot-from-2023-05-07-09-58-36.png" alt="Image" class="img-responsive" >
-									<a href="projects/taxi-proj.html"><figcaption >	EDA for Taxi trip duration in NYC.</figcaption></a>
-									</figure>
-								</div>
-							</article>
-						</div>
+					<div class="box project-text jello-horizontal filterItems python">
+						<article>
+							<a href="projects/taxi-proj.html">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/41RzPH3/Screenshot-from-2023-05-07-09-58-36.png" alt="Image" class="img-responsive" >
+									<figcaption >	EDA for Taxi trip duration in NYC.
+									</figcaption>
+								</figure>
+							</a>
+						</article>
 					</div>
 					<!-- Project 2 -->
-					<div class="python">
-						<div class="box jello-horizontal">
-							<article>
-								<div> <a href="projects/eucaristicschool.html">
-									<figure class="image project-figure">
-										<img src="https://i.ibb.co/ZT7ttQV/download.png" alt="Image" class="img-responsive" >
-									<figcaption >	Insights into Student Performance in High School Physics. </figcaption></a>
-									</figure>
-								</div>
-							</article>
-							</div>
-						</div>
-					<!-- Project Churn -->
-					<div class="python">
-						<div class="box jello-horizontal">
-							<article>
-								<div> <a href="projects/churn-pred-proj.html">
-									<figure class="image project-figure">
-										<img src="https://i.ibb.co/sq9ckQS/Screenshot-from-2023-04-25-10-39-29.png" alt="Image" class="img-responsive" >
-									<figcaption >	Churn Prediction Project Using Logistic Regression. </figcaption></a>
-									</figure>
-								</div>
-							</article>
-							</div>
-						</div>
-					<!-- project linear regression -->
-					<!-- <div class="python"> -->
-					<!-- <div class="box jello-horizontal">
+					<div class="box jello-horizontal filterItems python">
 						<article>
-							<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/linear_regressaion.ipynb">
+							<a href="projects/eucaristicschool.html">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/ZT7ttQV/download.png" alt="Image" class="img-responsive" >
+									<figcaption >	Insights into Student Performance in High School Physics.
+									</figcaption>
+								</figure>
+							</a>
+						</article>
+					</div>
+					<!-- Project Churn -->
+					<div class="box jello-horizontal filterItems python">
+						<article>
+							<a href="projects/churn-pred-proj.html">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/sq9ckQS/Screenshot-from-2023-04-25-10-39-29.png" alt="Image" class="img-responsive" >
+									<figcaption >	Churn Prediction Project Using Logistic Regression. </figcaption>
+								</figure>
+							</a>
+						</article>
+					</div>
+					<!-- project linear regression -->
+					<!-- <div class="box jello-horizontal filterItems python">
+						<article>
+							<a href="https://github.com/AlejandroPinto5/linear-models/blob/main/linear_regressaion.ipynb">
 								<figure class="image project-figure">
 									<img src="https://i.ibb.co/BcjcQ60/Screenshot-from-2023-04-18-10-16-02.png" alt="Image" class="img-responsive" >
-								<figcaption >
-										Linear regression model.</figcaption></a>
+									<figcaption>Linear regression model.
+									</figcaption>
 								</figure>
-							</div>
-						</article></div>
+							</a>
+						</article>
 					</div> -->
-						<!-- project predicting taxi trip Ç -->
-						<div class="python">
-						<div class="box jello-horizontal">
-							<article>
-					<div><a href="https://github.com/AlejandroPinto5/EDA-projects/blob/main/NYC-taxi-project/Pred_taxi_project.ipynb">
-						<figure class="image project-figure">
-							<img src="https://i.ibb.co/h8NbfCP/Screenshot-from-2023-05-08-13-10-20.png" alt="Image" class="img-responsive" >
-						<figcaption >
-							Comparison between linear Regression and Desicion tree to predict taxi trip duration.</figcaption></a>
-						</figure>
+					<!-- project predicting taxi trip Ç -->
+					<div class="box jello-horizontal filterItems python">
+						<article>
+							<a href="https://github.com/AlejandroPinto5/EDA-projects/blob/main/NYC-taxi-project/Pred_taxi_project.ipynb">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/h8NbfCP/Screenshot-from-2023-05-08-13-10-20.png" alt="Image" class="img-responsive" >
+									<figcaption>Comparison between linear Regression and Desicion tree to predict taxi trip duration.
+									</figcaption>
+								</figure>
+							</a>
+						</article>
 					</div>
-				</article>
-				</div>
-			</div>
-				<!-- project ab testing and kpi -->
-				<div class="python">
-				<div class="box jello-horizontal">
-					<article>
-						<div><a href="projects/case-study.html">
-							<figure class="image project-figure">
-								<img src="https://i.ibb.co/MVjG1WF/images-1.jpg" alt="Image" class="img-responsive" >
-							<figcaption >
-									Leveraging Machine Learning for Data-Driven Optimization in Online Grocery Business: A Online Grocery store Case Study".</figcaption></a>
-							</figure>
-						</div>
-					</article>
+					<!-- project ab testing and kpi -->
+					<div class=" box jello-horizontal filterItems python">
+						<article>
+							<a href="projects/case-study.html">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/MVjG1WF/images-1.jpg" alt="Image" class="img-responsive" >
+									<figcaption>Leveraging Machine Learning for Data-Driven Optimization in Online Grocery Business: A Online Grocery store Case Study".
+									</figcaption>
+								</figure>
+							</a>
+						</article>
 					</div>
-				</div>
 			<!-- project decision tree implementation -->
-			<div class="python">
-			<div class="box jello-horizontal">
+			<div class="box jello-horizontal filterItems python">
 				<article>
-					<div><a href="https://github.com/AlejandroPinto5/Decision-Tree/blob/main/Desicion_Tree_Implementation.ipynb">
+					<a href="https://github.com/AlejandroPinto5/Decision-Tree/blob/main/Desicion_Tree_Implementation.ipynb">
 						<figure class="image project-figure">
 							<img src="https://i.ibb.co/2FWF6MV/Screenshot-from-2023-04-28-10-51-13.png" alt="Image" class="img-responsive" >
-						<figcaption >
-								Decision tree model with maximum depth of 3. Gini impurity is implemented.
-						</figcaption></a>
+							<figcaption>Decision tree model with maximum depth of 3. Gini impurity is implemented.
+							</figcaption>
 						</figure>
-					</div>
+					</a>
+				</article>
+			</div>
+			<!-- project linear regression -->
+			<div class="box jello-horizontal filterItems python">
+				<article>
+					<a href="https://github.com/AlejandroPinto5/linear-models/blob/main/logistic_regression.ipynb">
+						<figure class="image project-figure">
+							<img src="https://i.ibb.co/9ckvnPY/Screenshot-from-2023-04-18-11-15-37.png" alt="Image" class="img-responsive" >
+							<figcaption>Logistic regression model implemented on titanic survival problem.
+							</figcaption>
+						</figure>
+					</a>
+				</article>
+			</div>
+			<!-- project knn -->
+			<div class="box jello-horizontal filterItems python">
+				<article>
+					<a href="https://github.com/AlejandroPinto5/KNN-algorithm">
+						<figure class="image project-figure">
+							<img src="https://i.ibb.co/VwG8PFb/Screenshot-from-2023-03-22-11-23-01.png" alt="Image" class="img-responsive" >
+							<figcaption >KNN-algorithm implemented on a simple model looking the best k with elbow method. Evaluation metric F1 is used.
+							</figcaption>
+						</figure>
+					</a>
+				</article>
+			</div>
+			<!-- project k-fold technique -->
+			<div class="box jello-horizontal filterItems powerbi">
+				<article>
+					<a href="https://github.com/AlejandroPinto5/K-fold-Cross-Validation">
+						<figure class="image project-figure">
+							<img src="https://i.ibb.co/M2bHnqB/Screenshot-from-2023-04-04-18-59-25.png" alt="python" class="img-responsive" >
+							<figcaption> K-fold Cross Validation technique using data cleaned and finding an optimal k value.
+							</figcaption>
+						</figure>
+					</a>
 				</article>
 			</div>
 		</div>
-				<!-- project linear regression -->
-				<div class="python">
-				<div class="box jello-horizontal">
-					<article>
-						<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/logistic_regression.ipynb">
-							<figure class="image project-figure">
-								<img src="https://i.ibb.co/9ckvnPY/Screenshot-from-2023-04-18-11-15-37.png" alt="Image" class="img-responsive" >
-							<figcaption >
-									Logistic regression model implemented on titanic survival problem.</figcaption></a>
-							</figure>
-						</div>
-					</article>
-					</div>
-				</div>
-						<!-- project knn -->
-						<div class="python">
-						<div class="box jello-horizontal">
-							<article>
-								<div><a href="https://github.com/AlejandroPinto5/KNN-algorithm">
-									<figure class="image project-figure">
-										<img src="https://i.ibb.co/VwG8PFb/Screenshot-from-2023-03-22-11-23-01.png" alt="Image" class="img-responsive" >
-									<figcaption >KNN-algorithm implemented on a simple model looking the best k with elbow method. Evaluation metric F1 is used.</figcaption></a>
-									</figure>
-								</div>
-							</article>
-							</div>
-						</div>
-
-					<!-- project k-fold technique -->
-					<div class="python">
-					<div class="box jello-horizontal">
-						<div class="hover-bg"> <a href="projects/eda.html">
-						<article>
-							<div><a href="https://github.com/AlejandroPinto5/K-fold-Cross-Validation">
-								<figure class="image project-figure">
-									<img src="https://i.ibb.co/M2bHnqB/Screenshot-from-2023-04-04-18-59-25.png" alt="python" class="img-responsive" >
-								<figcaption >
-K-fold Cross Validation technique using data cleaned and finding an optimal k value.</figcaption></a>
-								</figure>
-							</div>
-						</article>
-					</div>
-				</div>
-				</div>
-				</div>
-		</section>
+	</section>
 
 		<!-- Footer -->
 		<section class="footer">
