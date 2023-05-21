@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alejandro Pinto</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" tybpe="text/css" href="assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/prettyPhoto.css">
+
+	<link rel="icon" type="image/x-icon" href="https://i.ibb.co/0nHTTFb/image103.png">
+	<meta name="author" content="ALejandro Pinto">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<!-- Bootstrap -->
+	ç
+	<!-- <link rel="stylesheet" type="text/css"  href="assets/css/bootstrap.css"> -->
+	<!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="https://www.linkedin.com/in/alejandro-pinto-07a90417a/	" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-linkedin"></i>
+					</span>
+				</a>
+				<a href="https://github.com/AlejandroPinto5" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>
+				<a href="https://twitter.com/Alejo_Pintirris" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-twitter"></i>
+					</span>
+				</a>
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="#about"><b>About</b></a>
+				<a class="nav-item" href="#projects"><b>Projects</b></a>
+					<a class="nav-item" href="cv_AP.pdf" target="_blank" download>
+						<button class="download-button"><b>cv</b></button></a>
+			</div>
+
+			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+			<span class="nav-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</nav>
+
+		<!-- About Me -->
+		<section id="about" class="section section-1">
+			<!-- <div class="container"></br> -->
+				<!-- <p class="intro">
+								Welcome	</p>
+			</div> -->
+			<div class="container has-text-centered">
+				<!-- Source: https://flic.kr/p/pAZBNK -->
+				<img class="avatar" src="https://i.ibb.co/nwjS0FL/image33.png">
+			</div>
+				<div class="cv">
+				<p>I'm Alejandro Pinto and this is my portfolio. Physicist with more than a year of research experience performing
+					computational calculations, data analysis using python language, and
+					delivery of scientific reports.
+					<p> As a physicist, I have extensive experience in analyzing complex data sets and developing models to describe and predict physical phenomena. This experience has given me a strong foundation in data analysis, statistics, and mathematics, which I have been able to apply to real-world problems in various fields.</p>
+
+					<p>My proficiency in Python has enabled me to develop efficient and scalable data pipelines and perform data analysis using popular libraries such as NumPy, Pandas, seaborn, Plotly and Scikit-Learn. I have also developed several data-driven solutions using machine learning algorithms that have helped organizations optimize their operations and improve their bottom line.</p>
+<!-- <p> I have more than a year of experience in the area of teaching university
+students and secondary education in the teaching of physics, maths and
+programming.</p> -->
+</div>
+		</section>
+
+		<!-- Projects -->
+		<section  id="projects" class="section section-2">
+			<div class="container">
+				<div class="has-text-centered">
+					<h3 class="title is-3"><b>Projects</b></h3>
+				</div>
+
+				<div class="project">
+					<!-- Project EDA -->
+					<div class="column">
+						<div class="box project-text jello-horizontal">
+							<article>
+								<div>	<a href="projects/eda.html">
+									<figure class="image project-figure">
+										<img src="https://i.ibb.co/vJtTSFV/quatum.jpg" alt="Image">
+								<figcaption >	Several project about 'Exploratory Data Analysis'.</figcaption></a>
+									</figure>
+								</div>
+							</article>
+						</div>
+					</div>
+					<!-- Project Netflix -->
+					<div class="column">
+						<div class="box project-text jello-horizontal">
+							<article>
+								<div>
+									<figure class="image project-figure">
+										<img src="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" alt="Image">
+									<a href="https://github.com/AlejandroPinto5/Streaming-platform"><figcaption >	Netflix Data Analysis.</figcaption></a>
+									</figure>
+								</div>
+							</article>
+						</div>
+					</div>
+					<!-- Project 2 -->
+					<div class="column">
+						<div class="box project-text jello-horizontal">
+							<article>
+								<div> <a href="projects/eucaristicschool.html">
+									<figure class="image project-figure">
+										<img src="https://i.ibb.co/ZT7ttQV/download.png" alt="Image">
+									<figcaption >	Insights into Student Performance in High School Physics. </figcaption></a>
+									</figure>
+								</div>
+							</article>
+						</div>
+					</div>
+					<!-- Project Churn -->
+					<div class="column">
+						<div class="box project-text jello-horizontal">
+							<article>
+								<div> <a href="projects/churn-pred-proj.html">
+									<figure class="image project-figure">
+										<img src="https://i.ibb.co/sq9ckQS/Screenshot-from-2023-04-25-10-39-29.png" alt="Image">
+									<figcaption >	Churn Prediction Project Using Logistic Regression. </figcaption></a>
+									</figure>
+								</div>
+							</article>
+						</div>
+					</div>
+					<!-- project linear regression -->
+				<div class="column">
+					<div class="box project-text jello-horizontal">
+						<article>
+							<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/linear_regressaion.ipynb">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/BcjcQ60/Screenshot-from-2023-04-18-10-16-02.png" alt="Image">
+								<figcaption >
+										Linear regression model.</figcaption></a>
+								</figure>
+							</div>
+						</article>
+					</div>
+				</div>
+				<!-- project ab testing and kpi -->
+			<div class="column">
+				<div class="box project-text jello-horizontal">
+					<article>
+						<div><a href="projects/case-study.html">
+							<figure class="image project-figure">
+								<img src="https://i.ibb.co/MVjG1WF/images-1.jpg" alt="Image">
+							<figcaption >
+									Leveraging Machine Learning for Data-Driven Optimization in Online Grocery Business: A Online Grocery store Case Study".</figcaption></a>
+							</figure>
+						</div>
+					</article>
+				</div>
+			</div>
+				<!-- project linear regression -->
+			<div class="column">
+				<div class="box project-text jello-horizontal">
+					<article>
+						<div><a href="https://github.com/AlejandroPinto5/linear-models/blob/main/logistic_regression.ipynb">
+							<figure class="image project-figure">
+								<img src="https://i.ibb.co/9ckvnPY/Screenshot-from-2023-04-18-11-15-37.png" alt="Image">
+							<figcaption >
+									Logistic regression model implemented on titanic survival problem.</figcaption></a>
+							</figure>
+						</div>
+					</article>
+				</div>
+			</div>
+						<!-- project knn -->
+					<div class="column">
+						<div class="box project-text jello-horizontal">
+							<article>
+								<div><a href="https://github.com/AlejandroPinto5/KNN-algorithm">
+									<figure class="image project-figure">
+										<img src="https://i.ibb.co/VwG8PFb/Screenshot-from-2023-03-22-11-23-01.png" alt="Image">
+									<figcaption >KNN-algorithm implemented on a simple model looking the best k with elbow method. Evaluation metric F1 is used.</figcaption></a>
+									</figure>
+								</div>
+							</article>
+						</div>
+					</div>
+					<!-- project k-fold technique -->
+				<div class="column">
+					<div class="box project-text jello-horizontal">
+						<article>
+							<div><a href="https://github.com/AlejandroPinto5/K-fold-Cross-Validation">
+								<figure class="image project-figure">
+									<img src="https://i.ibb.co/M2bHnqB/Screenshot-from-2023-04-04-18-59-25.png" alt="Image">
+								<figcaption >
+K-fold Cross Validation technique using data cleaned and finding an optimal k value.</figcaption></a>
+								</figure>
+							</div>
+						</article>
+					</div>
+				</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Social -->
+		<!-- <section id="social" class="section section-3">
+			<div class="container">
+				<div class="has-text-centered">
+					<h3 class="title is-3">Let's Socialize</h3>
+				</div>
+				<div class="social-container columns">
+					<div class="column is-6 has-text-centered">
+						<a target="_blank" href="https://ca.linkedin.com/in/hassan-ali-6132468a"><img class="" src="assets/img/linkedin.png"></a>
+					</div>
+					<div class="column is-6 has-text-centered">
+						<a target="_blank" href="https://www.facebook.com/Hassan.Helfi"><img class="" src="assets/img/facebook.png"></a>
+					</div>
+				</div>
+			</div>
+		</section> -->
+
+			<!-- test section -->
+
+			<!-- Portfolio Section -->
+<!-- <div id="works-section"> -->
+<section id="projects" class="section section-2">
+  <div class="container"> <!-- Container -->
+    <div class="section-title">
+      <h2>Our Portfolio</h2>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".python">Python</a></li>
+            <li><a href="#" data-filter=".sql">SQL</a></li>
+            <li><a href="#" data-filter=".bi">Power BI</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-3 col-lg-3 python">
+          <div class="portfolio-item jello-horizontal">
+            <div class="hover-bg"> <a href="projects/eda.html" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Exploratory Data Analysis</h4>
+                <small>directed by S.E.N.A.</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="https://i.ibb.co/vJtTSFV/quatum.jpg" class="img-responsive" alt="python"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>netflix project</h4>
+                <small>Python</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="https://i.ibb.co/Nj54ZSH/Screenshot-from-2023-03-28-11-08-44.png" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://i.ibb.co/ZT7ttQV/download.png" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Jesus Project</h4>
+                <small>SQL</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="https://i.ibb.co/ZT7ttQV/download.png" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>Web Design</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/04.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>App Development</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/05.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 branding">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/06.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>Branding</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/06.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/07.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>App Development, Branding</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/07.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/08.jpg" rel="prettyPhoto">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+                <small>Web Design</small>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- </div> -->
+
+
+
+
+
+		<!-- Footer -->
+		<section class="footer">
+			<img src="https://i.ibb.co/jR7YH3p/sign.png" alt="Image">
+		</section>
+
+		<!-- Scripts  -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/SmoothScroll.js"></script>
+		<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+		<script type="text/javascript" src="js/jquery.isotope.js"></script>
+		<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+		<script type="text/javascript" src="js/contact_me.js"></script>
+
+		<!-- Javascripts
+		    ================================================== -->
+		<script type="text/javascript" src="js/main.js"></script>
+		</body>
+		</html>
+
+		<script src="controller.js"></script>
+	</body>
+</html>

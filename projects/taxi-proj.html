@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exploratory Data Analysis</title>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+
+	<link rel="icon" type="image/x-icon" href="https://i.ibb.co/0nHTTFb/image103.png">
+	<meta name="author" content="Alejandro Pinto">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="nav container void-background">
+			<!-- This "nav-menu" is hidden on mobile -->
+			<!-- Add the modifier "is-active" to display it on mobile -->
+			<div class="nav-left">
+				<a href="https://www.linkedin.com/in/alejandro-pinto-07a90417a/	" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-linkedin"></i>
+					</span>
+				</a>
+				<a href="https://github.com/AlejandroPinto5" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-github"></i>
+					</span>
+				</a>
+				<a href="https://twitter.com/Alejo_Pintirris" class="nav-item">
+					<span class="icon">
+						<i class="fa fa-twitter"></i>
+					</span>
+				</a>
+			</div>
+
+			<div class="nav-right nav-menu">
+				<a class="nav-item" href="../index.html"><b>About</b></a>
+				<a class="nav-item" href="../index.html"><b>Projects</b></a>
+					<!-- <a class="nav-item" href="cv_AP.pdf" target="_blank" download> -->
+						<!-- <button class="download-button"><b>cv</b></button></a> -->
+			</div>
+
+			<span class="nav-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</nav>
+
+
+        <!-- Here start you page -->
+        <main-rp>
+          <div class="index">
+            <!-- Source: https://flic.kr/p/pAZBNK -->
+            <img class="avatar-index container nav-item" href="../index.html" src="https://i.ibb.co/m0cLrhd/both-data.png">
+            <!-- Navegation list -->
+            <nav class="nav-list nav-menu">
+              <ul>
+                  <li><a href="eda">Dictionary</a></li>
+								  <li><a href="colab">Notebook</a></li>
+									<li><a href="con">Conclusions</a></li>
+
+              </ul>
+            </nav>
+          </div>
+          <div class="rp box">
+            <h1>New York city Taxi Drive duration</h1>
+            <p>To improve the efficiency of taxi dispatching systems for such services, it is important to be able to predict how long a driver will have his taxi occupied. If a dispatcher knew approximately when a taxi driver would be ending their current ride, they would be better able to identify which driver to assign to each pickup request. This project is to build a model that predicts the total ride duration of taxi trips in New York City.</p>
+
+            <ol>
+              <h2 id="eda"><li>Dictionary</li></h2>
+                <p>Let's check the data files! According to the data description we should find the following columns:</p>
+                  <ul>
+                    <li><b>id:</b> a unique identifier for each trip.</li>
+                    <li><b>vendor_id:</b>a code indicating the provider associated with the trip record</li>
+                    <li><b>pickup_datetime:</b>date and time when the meter was engaged.</li>
+                    <li><b>dropoff_datetime:</b>date and time when meter was disengaged.</li>
+                    <li><b>passenger_count:</b>the number of passengers in the vehicle (driver entered value)</li>
+                    <li><b>pickup_longitude:</b>the longitud where the meter eas engaged</li>
+                    <li><b>pickup_latitude:</b> the latitude where the meter was engaged</li>
+                    <li><b>dropoff_longitude:</b> the longitude where the meter was disengaged</li>
+                    <li><b>dropoff_latitude:</b> the latitude where the meter was disengaged</li>
+                    <li><b>store_and_fwd_flag:</b> this flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server (Y=store and forward; N=not a store and forward trip)</li>
+                    <li><b>trip_duration:</b> (target) duration of the trip in seconds</li>
+                  </ul>
+                <p>Here, we have 2 variables dropoff_datetime and store_and_fwd_flag which are not available before the trip starts and hence will not be used as features to the model.</p>
+								<h2 id="colab"><li>Data Analysis</li> </h2>
+								<p>Here, you can find googlee Colab notebook: <a href="https://github.com/AlejandroPinto5/EDA-projects/blob/main/NYC-taxi-project/EDA_taxi_proj.ipynb">Data Analysis of NYC taxi trip duration. </a></p>
+              <h2 id="con"><li>Conclusions:</li> </h2>
+								<ul>
+									<li>The majority of rides follow a rather smooth distribution that looks almost log-normal with a peak just around exp(6.5) i.e. about 17 minutes.</li>
+									<li>There are several suspiciously short rides with less than 10 seconds duration.</li>
+									<li>As discussed earlier, there are a few huge outliers near 12.</li>
+									<li>Most of the trips involve only 1 passenger. There are trips with 7-9 passengers but they are very low in number.</li>
+									<li>Vendor 2 has more number of trips as compared to vendor 1</li>
+									<li>Number of pickups for weekends is much lower than week days with a peak on Thursday (4). Note that here weekday is a decimal number, where 0 is Sunday and 6 is Saturday.</li>
+									<li>Number of pickups as expected is highest in late evenings. However, it is much lower during the morning peak hours.</li>
+									<li>We see that most trips are concentrated between these lat long only with a few significant clusters. These clusters are represented by the numerous peaks in the lattitude and longitude histograms</li>
+									<li>Trip durations are definitely shorter for late night and early morning hours that can be attributed to low traffic density</li>
+									<li>It follows a similar pattern when compared to number of pickups indicating a correlation between number of pickups and trip duration</li>
+									<li>Median trip duration does not vary much as can be seen from the above plot for different vendors.</li>
+									<li>The boxplot clearly shows that there not much of a difference in distribution for the most frequently occuring passenger count values - 1, 2, 3.</li>
+									<li>Another key observation is that the number of outliers are reduced for higher passenger counts but that only comes down to the individual frequencies of each passenger count.</li>
+									<li>From the correlation heatmap we see that the lattitude and longitude features have higher correlation with the target as compared to the other features.</li>
+								</ul>
+            </ol>
+
+        </div>
+
+        </main-rp>
+
+
+              <!-- Footer -->
+<section class="footer">
+	<img src="https://i.ibb.co/jR7YH3p/sign.png" alt="Image">
+</section>
+            		<!-- Scripts  -->
+    	<script src="../controller.js"></script>
+	</body>
+</html>
