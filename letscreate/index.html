@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Let's Create Network — PENNIO</title>
+  <meta name="description" content="The Let's Create Network is a PENNIO-led creative network where African creatives learn to work in strong teams, build serious work, and grow through structure, critique, and proof." />
+  <meta property="og:title" content="The Let's Create Network — PENNIO" />
+  <meta property="og:description" content="The Let's Create Network is a PENNIO-led creative network for African creatives." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pennio.agency/og-cover.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.8rem, 1rem + 5vw, 5.8rem);
+      --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --color-bg: #060606;
+      --color-surface: #0d0d0d;
+      --color-surface-2: #141414;
+      --color-surface-3: #1a1a1a;
+      --color-border: rgba(255,255,255,.085);
+      --color-divider: rgba(255,255,255,.06);
+      --color-text: #f4efe8;
+      --color-text-muted: #b3aba1;
+      --color-text-faint: #787067;
+      --color-primary: #f26522;
+      --color-primary-hover: #ff7d3d;
+      --color-primary-soft: rgba(242,101,34,.10);
+      --radius-sm: .5rem; --radius-md: .9rem; --radius-lg: 1.25rem; --radius-xl: 1.8rem; --radius-full: 999px;
+      --shadow-md: 0 18px 40px rgba(0,0,0,.28);
+      --shadow-lg: 0 28px 80px rgba(0,0,0,.45);
+      --font-body: 'General Sans', Inter, sans-serif;
+      --content: 1180px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background: linear-gradient(180deg, #090909 0%, #050505 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; border: 0; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(calc(100% - 2rem), var(--content)); margin-inline: auto; }
+    .accent-africa { color: var(--color-primary); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; color: var(--color-text-faint); font-size: var(--text-xs); }
+    .site-header {
+      position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--color-divider);
+      background: rgba(10,10,10,.82); backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .brand { font-size: var(--text-sm); font-weight: 700; letter-spacing: -.03em; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:.55rem; }
+    .brand-lockup span { font-size:.88rem; font-weight:600; letter-spacing:-.02em; }
+    .brand-lockup svg { animation: navMarkBreathe 3.6s ease-in-out infinite; transform-origin: center; }
+    @keyframes navMarkBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    @media (prefers-reduced-motion: reduce) { .brand-lockup svg { animation: none !important; } }
+    .nav-links { display: flex; gap: 1.8rem; color: var(--color-text-muted); font-size: var(--text-sm); }
+    .nav-links a:hover { color: var(--color-text); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .85rem 1.2rem;
+      border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; transition: .18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--color-primary); color: #fff4ed; }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary { background: rgba(255,255,255,.03); color: var(--color-text); border: 1px solid var(--color-border); }
+    .btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+    .hero {
+      min-height: 92vh; display: grid; align-items: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--color-divider);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: auto -8% -18% -8%; height: 52%;
+      background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 54px 54px; transform: perspective(900px) rotateX(76deg); transform-origin: center top; opacity: .38;
+    }
+    .hero-inner {
+      width: min(calc(100% - 2rem), 980px); margin-inline: auto; text-align: center; display: grid; gap: var(--space-5); position: relative; z-index: 1;
+    }
+    h1, h2, h3 { letter-spacing: -.05em; line-height: .98; }
+    h1 { font-size: clamp(3rem, 5.8vw, 6.2rem); max-width: 14ch; margin-inline: auto; }
+    h2 { font-size: var(--text-2xl); max-width: 12ch; }
+    h3 { font-size: var(--text-lg); line-height: 1.08; }
+    p { color: var(--color-text-muted); max-width: 64ch; }
+    .hero p { margin-inline: auto; }
+    .hero-copy { font-size: clamp(1.2rem, 1rem + .6vw, 1.65rem); max-width: 42ch; font-weight: 500; color: var(--color-text); }
+    .hero-sub { color: var(--color-text-faint); }
+    #formStatus.success, #partnerFormStatus.success { color: #f0c8b2; }
+    #formStatus.error, #partnerFormStatus.error { color: #ff9a6a; }
+    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .85rem; }
+    .section { padding-block: clamp(var(--space-12), 7vw, var(--space-24)); border-bottom: 1px solid var(--color-divider); }
+    .section-header { display: grid; gap: var(--space-3); margin-bottom: var(--space-8); text-align: center; justify-items: center; }
+    .section-header h2, .section-header p, .section-header .eyebrow { margin-inline: auto; text-align: center; }
+    .section-header h2 { max-width: 14ch; }
+    .section-header p { margin-inline: auto; }
+    .problem-panel,
+    .partner-panel,
+    .apply-panel,
+    .card,
+    .modal,
+    .qualify-card {
+      border: 1px solid var(--color-border); background: linear-gradient(180deg, rgba(19,19,19,.96), rgba(12,12,12,.96));
+      box-shadow: var(--shadow-md);
+    }
+    .problem-panel {
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-8); padding: clamp(var(--space-6), 4vw, var(--space-10)); border-radius: var(--radius-xl);
+    }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .pillar {
+      padding: clamp(var(--space-6), 4vw, var(--space-10)); border-right: 1px solid var(--color-divider); display: grid; gap: var(--space-4); min-height: 430px;
+    }
+    .pillar:last-child { border-right: 0; }
+    .pillar-no { font-size: clamp(4rem, 10vw, 6rem); color: rgba(255,255,255,.06); font-weight: 700; line-height: .9; }
+    .feature-stack { display: grid; gap: var(--space-10); }
+    .feature-row { display: grid; grid-template-columns: .98fr 1.02fr; gap: clamp(var(--space-6), 4vw, var(--space-12)); align-items: center; }
+    .feature-row:nth-child(even) { grid-template-columns: 1.02fr .98fr; }
+    .feature-row:nth-child(even) .feature-card { order: 2; }
+    .feature-row:nth-child(even) .feature-copy { order: 1; }
+    .feature-card {
+      min-height: 320px; border-radius: var(--radius-xl); border: 1px solid var(--color-border); position: relative; overflow: hidden;
+      background: linear-gradient(145deg, rgba(242,101,34,.08), rgba(255,255,255,.015) 35%, rgba(255,255,255,.025)); box-shadow: var(--shadow-md);
+    }
+    .feature-card::before, .feature-card::after, .mini-ui { content: ""; position: absolute; border-radius: 1rem; }
+    .feature-card::before { width: 180px; height: 180px; right: 12%; top: 10%; background: linear-gradient(145deg, rgba(242,101,34,.16), rgba(255,255,255,.04)); }
+    .feature-card::after { width: 46%; height: 44%; left: 8%; bottom: 8%; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .mini-ui { border: 1px solid rgba(255,255,255,.1); background: rgba(10,10,10,.72); box-shadow: var(--shadow-md); }
+    .ui-a { width: 54%; height: 78px; left: 8%; top: 12%; }
+    .ui-b { width: 42%; height: 112px; right: 8%; top: 28%; }
+    .ui-c { width: 48%; height: 88px; left: 18%; bottom: 12%; }
+    .feature-copy { display: grid; gap: var(--space-4); }
+    .list { display: grid; gap: .8rem; }
+    .list li { list-style: none; display: flex; gap: .8rem; color: var(--color-text-muted); }
+    .list li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary); margin-top: .6rem; flex: 0 0 auto; }
+    .qualify-wrap { background: linear-gradient(180deg, #f5f1eb 0%, #f2ece4 100%); color: #18130f; }
+    .qualify-wrap .eyebrow, .qualify-wrap p, .qualify-wrap .list li { color: #6c635b; }
+    .qualify-wrap h2, .qualify-wrap h3, .qualify-wrap strong { color: #15110d; }
+    .qualify-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    .apply-header-center { width: 100%; justify-items: center; }
+    .apply-header-center h2 { text-align: center; max-width: 24ch; }
+    .apply-header-center p { text-align: center; max-width: 42ch; }
+    .qualify-card { padding: var(--space-5); border-radius: var(--radius-lg); background: rgba(255,255,255,.72); box-shadow: 0 14px 34px rgba(20,12,8,.08); }
+    .apply-bar { margin-top: var(--space-6); padding: var(--space-4) var(--space-5); border-radius: 1rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; background: rgba(242,101,34,.08); border: 1px solid rgba(242,101,34,.16); color: #6c4d3b; }
+    .apply-panel { margin-top: var(--space-6); padding: clamp(var(--space-6), 5vw, var(--space-10)); border-radius: var(--radius-xl); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    .field { display: grid; gap: .55rem; }
+    .field label { color: var(--color-text-faint); font-size: var(--text-xs); letter-spacing: .12em; text-transform: uppercase; }
+    .field input, .field textarea, .field select {
+      width: 100%; min-height: 56px; padding: 1rem; border-radius: .95rem; border: 1px solid rgba(255,255,255,.08); background: #171717; color: var(--color-text);
+    }
+    .field textarea { min-height: 140px; resize: vertical; }
+    .field.full { grid-column: 1 / -1; }
+    .partner-panel { padding: clamp(var(--space-8), 5vw, var(--space-12)); border-radius: var(--radius-xl); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+    .card { padding: var(--space-5); border-radius: var(--radius-lg); display: grid; gap: var(--space-3); }
+    .site-footer { padding: var(--space-10) 0; background: #090909; }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: var(--space-6); align-items: end; }
+    .footer-links { display: flex; gap: 1rem; flex-wrap: wrap; color: var(--color-text-muted); font-size: var(--text-sm); }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(5,5,5,.72); backdrop-filter: blur(12px); display: none; align-items: center; justify-content: center; padding: 1rem; z-index: 60; }
+    .modal-overlay.active { display: flex; }
+    .modal { width: min(100%, 860px); max-height: 88vh; overflow: auto; border-radius: 1.5rem; }
+    .modal-header { position: sticky; top: 0; display: flex; align-items: start; justify-content: space-between; gap: var(--space-4); padding: var(--space-5); border-bottom: 1px solid var(--color-divider); background: rgba(13,13,13,.94); }
+    .modal-body { padding: var(--space-5); display: grid; gap: var(--space-5); }
+    .close-btn { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--color-border); background: rgba(255,255,255,.03); color: var(--color-text); }
+    .close-btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+
+    .success-state, .partner-success-state { display: none; text-align: center; padding: var(--space-12) 0 var(--space-4); }
+    .success-state.show, .partner-success-state.show { display: block; }
+    .success-icon {
+      width: 64px; height: 64px; border: 2px solid var(--color-primary); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--color-primary);
+      margin: 0 auto var(--space-5);
+    }
+    .success-state h3, .partner-success-state h3 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); margin-bottom: .6rem; color: var(--color-text); }
+    .success-state p, .partner-success-state p { max-width: 38ch; margin-inline: auto; color: var(--color-text-muted); }
+
+    .ladder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-6); }
+    .ladder-step { padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: rgba(255,255,255,.01); }
+    .ladder-step h4 { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-1); }
+    .ladder-step p { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+    .share-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+    .share-item { padding: var(--space-4); border: 1px solid var(--color-divider); border-radius: var(--radius-sm); font-family: monospace; font-size: var(--text-xs); color: var(--color-text-faint); background: rgba(0,0,0,.2); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 1024px) {
+      .problem-panel, .partner-panel, .feature-row, .modal-grid, .footer-grid, .form-grid, .qualify-grid, .grid-3, .ladder-grid { grid-template-columns: 1fr; }
+      .pillar { border-right: 0; border-bottom: 1px solid var(--color-divider); min-height: auto; }
+      .pillar:last-child { border-bottom: 0; }
+      .feature-row:nth-child(even) .feature-card, .feature-row:nth-child(even) .feature-copy { order: initial; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 720px) {
+      .hero { min-height: 84vh; }
+      .hero-actions { display: grid; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="https://pennio.agency" class="brand brand-lockup" aria-label="PENNIO home" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" aria-hidden="true" style="width:18px;height:auto;flex:0 0 auto;"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="currentColor"/></svg><span>PENNIO</span></a>
+      <nav class="nav-links">
+        <a href="#problem">The Problem</a>
+        <a href="#system">What We Build</a>
+        <a href="#apply">Apply</a>
+      </nav>
+      <a class="btn btn-primary" href="#apply">Apply for the 10-Week Cohort</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <h1>Fail in community. Build with guides. Grow in public.</h1>
+        <p class="hero-copy">The Let’s Create Network is a PENNIO-led learning system where African creatives build real work, share imperfect drafts, and grow through structure, critique, and proof.</p>
+        <p class="hero-sub">Start with a public challenge. Grow through a 10-week cohort. Stay through the network.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#apply">Apply for the 10-Week Cohort</a>
+          <button class="btn btn-secondary" data-modal-open="cohort">See the 10-Week Flow</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bridge">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">The Entry Ladder</span>
+          <h2>A clear path into the room.</h2>
+          <p>We do not expect polished finality on day one. Progression is stepped.</p>
+        </div>
+        <div class="ladder-grid">
+          <div class="ladder-step">
+            <h4>1. The 7-Day Challenge</h4>
+            <p>A short sprint to test your focus, show your raw thinking, and clear the initial bar.</p>
+          </div>
+          <div class="ladder-step">
+            <h4>2. Live Failure Lab</h4>
+            <p>An entry point session where rough concepts and imperfect work are picked apart constructively.</p>
+          </div>
+          <div class="ladder-step">
+            <h4>3. 10-Week Cohort</h4>
+            <p>An intensive deep-dive team studio built entirely around real briefs and structured standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="problem-panel">
+          <div>
+            <h2>African creatives do not have a talent problem. They have a system problem.</h2>
+          </div>
+          <div>
+            <p>Community is still the oldest operating system. The Let's Create Network builds the structure that unlocks it for creative work. Everything inside the network exists to produce stronger creatives through structure, not scattered encouragement.</p>
+            <ul class="list" style="margin-top: var(--space-4);">
+              <li>Talented people are learning entirely alone.</li>
+              <li>Feedback is highly inconsistent or shallow.</li>
+              <li>Good work rarely compounds into real, permanent opportunity.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="system">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">What we build</span>
+          <h2>Three pillars. One system.</h2>
+          <p>Everything inside <span class="accent-africa">The Let's Create Network</span> is built around one idea: better systems produce better creatives.</p>
+        </div>
+        <div class="grid-3 card" style="padding:0; overflow:hidden;">
+          <article class="pillar">
+            <div class="pillar-no">01</div>
+            <h3>Cohort Studio</h3>
+            <p>Short, serious cohort cycles where mixed-skill teams learn to work like a full-stack creative unit. You leave with stronger process and one serious body of work.</p>
+            <ul class="list">
+              <li>Creative direction, design, copy, strategy, and production.</li>
+              <li>Real briefs, deadlines, and critique culture.</li>
+              <li>Outputs can include campaigns, brands, content, video, or digital products.</li>
+            </ul>
+          </article>
+          <article class="pillar">
+            <div class="pillar-no">02</div>
+            <h3>Community Network</h3>
+            <p>A living system where participants stay connected long after a single cohort ends. You keep the room even after the cycle ends.</p>
+            <ul class="list">
+              <li>Peer review, learning loops, and shared standards.</li>
+              <li>Alumni pathways into future cohorts and leadership.</li>
+              <li>Long-term belonging, not one-off participation.</li>
+            </ul>
+          </article>
+          <article class="pillar">
+            <div class="pillar-no">03</div>
+            <h3>Opportunity Engine</h3>
+            <p>Proof, mentorship, and partnerships that move strong creatives closer to real opportunity. Access to reviews, briefs, visibility, and selected work opportunities as the network grows.</p>
+            <ul class="list">
+              <li>Access to partner networks, reviews, and design sprints.</li>
+              <li>Merit-based progression inside the network.</li>
+              <li>Opportunity routed through trust and quality.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container feature-stack">
+        <div class="feature-row">
+          <div class="feature-card" aria-hidden="true">
+            <span class="mini-ui ui-a"></span>
+            <span class="mini-ui ui-b"></span>
+            <span class="mini-ui ui-c"></span>
+          </div>
+          <div class="feature-copy">
+            <span class="eyebrow">How learning works</span>
+            <h3>Build real work, not practice work.</h3>
+            <p>The cohort is built around real work. Teams move through strategy, concept, design, copy, critique, and refinement until the final output holds together.</p>
+            <ul class="list">
+              <li><strong>Weeks 1–2:</strong> Orientation and team formation.</li>
+              <li><strong>Weeks 3–5:</strong> Strategy and core ideation.</li>
+              <li><strong>Weeks 6–8:</strong> Hard execution and continuous critique.</li>
+              <li><strong>Weeks 9–10:</strong> Final refinement and public network showcase.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-card" aria-hidden="true">
+            <span class="mini-ui ui-a"></span>
+            <span class="mini-ui ui-b"></span>
+            <span class="mini-ui ui-c"></span>
+          </div>
+          <div class="feature-copy">
+            <span class="eyebrow">Why the system compounds</span>
+            <h3>Grow in public. Stay in the system.</h3>
+            <p>After the cohort, creatives don't disappear. Their work, relationships, and growth stay inside the system and keep compounding. Alumni become the mentors for the next intake.</p>
+            <ul class="list">
+              <li>Cross-pollination is built into the workflow.</li>
+              <li>An organic progress route verified via the system.</li>
+              <li>Opportunities flow through the network because the work is trusted.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Living Lab</span>
+          <h2>The Work Floor</h2>
+          <p>What people might share here—imperfect drafts, unpolished logic, and raw system architecture layout scripts before final production review.</p>
+        </div>
+        <div class="share-grid">
+          <div class="share-item">// rough vector plot map<br>identity_bounds = grid.symmetry(0.618);</div>
+          <div class="share-item">/* copy angle 04 */<br>"Your talent isn't missing. The scaffolding is."</div>
+          <div class="share-item"># strategy outline draft<br>Target: African founders moving early in 2026.</div>
+          <div class="share-item">// audio session routing<br>vocal_bus.send(failure_lab_monitors);</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section qualify-wrap" id="apply">
+      <div class="container">
+        <div class="section-header apply-header-center">
+          <span class="eyebrow">Apply</span>
+          <h2>Apply if you’re ready to be seen trying.</h2>
+          <p>This is for people who want to grow through real work, real critique, and real consistency. Every application is reviewed for fit.</p>
+        </div>
+        <div class="qualify-grid">
+          <div class="qualify-card">
+            <span class="eyebrow">This is for you if</span>
+            <ul class="list" style="margin-top:1rem;">
+              <li>You want to learn by building inside a team.</li>
+              <li>You care about strong thinking, not just execution.</li>
+              <li>You can commit real attention over 10 weeks.</li>
+              <li>You want your work to improve through critique.</li>
+            </ul>
+          </div>
+          <div class="qualify-card">
+            <span class="eyebrow">Who should wait</span>
+            <ul class="list" style="margin-top:1rem;">
+              <li>You want a casual community with no deadlines.</li>
+              <li>You want praise without revision.</li>
+              <li>You are not available for focused collaboration.</li>
+              <li>You are still unsure whether the craft matters to you.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="apply-bar">
+          <strong>The first cohorts are intentionally lean.</strong>
+          <span>High standard. Selective intake. Quality over noise.</span>
+        </div>
+        <div class="apply-panel">
+          <form class="form-grid" id="applyForm">
+            <input type="hidden" name="_subject" value="New The Let's Create Network application" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="field"><label for="lc-name">Full Name</label><input id="lc-name" name="name" required placeholder="Your name" autocomplete="name" /></div>
+            <div class="field"><label for="lc-email">Email</label><input id="lc-email" type="email" name="email" required placeholder="you@email.com" autocomplete="email" /></div>
+            <div class="field">
+              <label for="lc-discipline">Primary Discipline</label>
+              <select id="lc-discipline" name="discipline" required>
+                <option value="" disabled selected>Select your lane</option>
+                <option>Brand Design</option>
+                <option>Product Design</option>
+                <option>Copy / Writing</option>
+                <option>Strategy</option>
+                <option>Video / Motion</option>
+                <option>Development</option>
+                <option>Marketing / Growth</option>
+                <option>Illustration / Art</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="lc-commitment">Can you commit weekly time for 10 weeks?</label>
+              <select id="lc-commitment" name="commitment" required>
+                <option value="" disabled selected>Select readiness</option>
+                <option>Yes, fully</option>
+                <option>Mostly, with some constraints</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field full"><label for="lc-portfolio">Portfolio / Instagram / Behance</label><input id="lc-portfolio" name="portfolio" placeholder="@yourhandle or portfolio link" /></div>
+            <div class="field full">
+              <label for="lc-weakness">What skill, confidence gap, or creative weakness are you actively trying to improve?</label>
+              <textarea id="lc-weakness" name="weakness" required placeholder="Be completely specific. Leaning into weakness helps us calibrate critique paths."></textarea>
+            </div>
+            <div class="field full"><label for="lc-reason">Why do you want to join?</label><textarea id="lc-reason" name="reason" required placeholder="Be specific. Generic answers get generic results."></textarea></div>
+            <div class="field full">
+              <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;">Submit Application</button>
+              <p style="text-align: center; font-size: var(--text-xs); color: #6c635b; margin-top: var(--space-2);">We review every application personally. We do not spam or share your information.</p>
+            </div>
+            <p class="hero-sub" id="formStatus" style="text-align:center; max-width:none;">Every application is reviewed personally.</p>
+          </form>
+          <div class="success-state" id="successMsg" aria-live="polite">
+            <div class="success-icon">✓</div>
+            <h3>Message received.</h3>
+            <p>Your application is in. We will review it personally and reach out if there is a fit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="partners">
+      <div class="container">
+        <div class="partner-panel">
+          <div>
+            <span class="eyebrow">For partners</span>
+            <h2>Support the system behind the talent.</h2>
+            <p><span class="accent-africa">The Let's Create Network</span> is building a serious pipeline for creative growth. Strong partners help build the system early, then benefit from what it produces long-term.</p>
+            <div style="display:flex; gap:.85rem; flex-wrap:wrap; margin-top:1.2rem;">
+              <button class="btn btn-primary" data-modal-open="partners">Open partner sheet</button>
+              <button class="btn btn-secondary" data-modal-open="funding">What funding covers</button>
+            </div>
+          </div>
+          <div class="card">
+            <span class="eyebrow">Partner pathways</span>
+            <ul class="list">
+              <li>Fund a cohort, track, or learning experience.</li>
+              <li>Support tools, venue, mentor time, or documentation.</li>
+              <li>Create access to internships, reviews, and projects.</li>
+              <li>Help shape a stronger creative ecosystem.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-lockup"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" aria-hidden="true" style="width:18px;height:auto;flex:0 0 auto;"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="currentColor"/></svg><span>PENNIO</span></div>
+        <p style="margin-top:1rem;">The <span class="accent-africa">Let's Create</span> Network is a PENNIO-led creative movement for African talent.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#problem">The Problem</a>
+        <a href="#system">What We Build</a>
+        <a href="#apply">Apply</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow" id="modal-kicker">Details</div>
+          <h3 id="modal-title">Popup</h3>
+        </div>
+        <button class="close-btn" id="modal-close" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const modalData = {
+      cohort: {
+        kicker: 'Cohort model',
+        title: 'How the cohort works',
+        body: `
+          <div class="card">
+            <ul class="list">
+              <li>A 10-week cycle built around one real brief.</li>
+              <li>Mixed-skill teams. Four defined roles.</li>
+              <li>Every team member joins every critique session.</li>
+              <li>The work itself becomes the teacher.</li>
+            </ul>
+          </div>
+          <div style="margin-top:var(--space-4);">
+            <h5 style="color:var(--color-text); margin-bottom:var(--space-1); font-size:var(--text-sm);">Who it's for</h5>
+            <p style="font-size:var(--text-xs); color:var(--color-text-muted); margin-bottom:var(--space-3);">Serious builders looking for structure over validation.</p>
+            <h5 style="color:var(--color-text); margin-bottom:var(--space-1); font-size:var(--text-sm);">What a week looks like</h5>
+            <p style="font-size:var(--text-xs); color:var(--color-text-muted); margin-bottom:var(--space-3);">Deep sprint coordination early in the week, hard creation, concluding in ruthless weekend critique.</p>
+            <h5 style="color:var(--color-text); margin-bottom:var(--space-1); font-size:var(--text-sm);">What you leave with</h5>
+            <p style="font-size:var(--text-xs); color:var(--color-text-muted);">An uncompromised case study showing precise strategic and aesthetic execution.</p>
+          </div>`
+      },
+      partners: {
+        kicker: 'Partner sheet',
+        title: 'Support the System Architecture',
+        body: `
+          <div class="modal-grid">
+            <div>
+              <p style="font-size:var(--text-sm); margin-bottom:var(--space-4); color:var(--color-text-muted);">We work with forward-thinking organizations, studio leaders, and founders to cultivate elite engineering and aesthetic talent pipelines across the continent.</p>
+              <div class="card" style="margin-bottom:var(--space-3); padding:var(--space-3);">
+                <h4 style="font-size:var(--text-xs); text-transform:uppercase; color:var(--color-primary); letter-spacing:.1em; margin-bottom:var(--space-1);">Direct Placement</h4>
+                <p style="font-size:var(--text-xs); color:var(--color-text-muted);">Secure deep access to senior cohort graduates across specialized design, strategy, and technical development nodes.</p>
+              </div>
+              <div class="card" style="padding:var(--space-3);">
+                <h4 style="font-size:var(--text-xs); text-transform:uppercase; color:var(--color-primary); letter-spacing:.1em; margin-bottom:var(--space-1);">Brief Sponsorship</h4>
+                <p style="font-size:var(--text-xs); color:var(--color-text-muted);">Underwrite a multi-week technical brief rooted entirely in real ecosystem parameters.</p>
+              </div>
+            </div>
+            <div>
+              <form class="form-grid" id="partnerForm" style="grid-template-columns:1fr;">
+                <input type="hidden" name="_subject" value="New Let's Create Network Partner Alignment Inquiry" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+                <div class="field"><label style="font-size:.65rem;">Organization Name</label><input name="org_name" required placeholder="Company or Studio name" style="min-height:48px; padding:.75rem;" /></div>
+                <div class="field"><label style="font-size:.65rem;">Contact Email</label><input type="email" name="org_email" required placeholder="name@company.com" style="min-height:48px; padding:.75rem;" /></div>
+                <div class="field">
+                  <label style="font-size:.65rem;">Primary Alignment Vector</label>
+                  <select name="partner_intent" required style="min-height:48px; padding:.75rem; background:#171717;">
+                    <option value="" disabled selected>Select pathway</option>
+                    <option>Talent Pipeline Access</option>
+                    <option>Live Brief Underwriting</option>
+                    <option>Infrastructure / Node Funding</option>
+                    <option>Other Structural Support</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label style="font-size:.65rem;">Strategic Context</label>
+                  <textarea name="partner_notes" required placeholder="Briefly describe what you seek to back or unlock." style="min-height:80px; padding:.75rem; font-size:var(--text-xs);"></textarea>
+                </div>
+                <div class="field">
+                  <button type="submit" id="partnerSubmitBtn" class="btn btn-primary" style="width:100%; min-height:44px; font-size:var(--text-xs);">Submit Intent</button>
+                </div>
+                <p id="partnerFormStatus" style="font-size:10px; color:var(--color-text-faint); text-align:center;">Direct framework inquiry routing secured.</p>
+              </form>
+              <div class="partner-success-state" id="partnerSuccessMsg" aria-live="polite">
+                <div class="success-icon" style="width:40px; height:40px; font-size:1rem; margin-bottom:var(--space-2);">✓</div>
+                <h3 style="font-size:var(--text-sm);">Intent Tracked.</h3>
+                <p style="font-size:var(--text-xs); color:var(--color-text-muted);">We will establish contact directly via our partnership framework leads.</p>
+              </div>
+            </div>
+          </div>`
+      },
+      funding: {
+        kicker: 'Funding breakdown',
+        title: 'What funding covers',
+        body: `
+          <div class="card"><ul class="list"><li>Mentor support and critique time.</li><li>Space, electricity, and internet access.</li><li>Media capture and public documentation.</li><li>Participant support where possible.</li></ul></div>`
+      }
+    };
+
+    const overlay = document.getElementById('modal-overlay');
+    const modalTitle = document.getElementById('modal-title');
+    const modalKicker = document.getElementById('modal-kicker');
+    const modalBody = document.getElementById('modal-body');
+    const closeBtn = document.getElementById('modal-close');
+
+    function openModal(key){
+      const item = modalData[key];
+      if(!item) return;
+      modalKicker.textContent=item.kicker;
+      modalTitle.textContent=item.title;
+      modalBody.innerHTML=item.body;
+      overlay.classList.add('active');
+      document.body.style.overflow='hidden';
+
+      if(key === 'partners') {
+        initializePartnerForm();
+      }
+    }
+
+    function closeModal(){ overlay.classList.remove('active'); document.body.style.overflow=''; }
+    document.querySelectorAll('[data-modal-open]').forEach(el=>el.addEventListener('click',()=>openModal(el.getAttribute('data-modal-open'))));
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e)=>{ if(e.target===overlay) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && overlay.classList.contains('active')) closeModal(); });
+  </script>
+<script>
+    const form = document.getElementById('applyForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+    const successMsg = document.getElementById('successMsg');
+    if(form){
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // honeypot: bots fill hidden fields, humans never see this one
+        if (form.querySelector('[name="_honey"]').value) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+        formStatus.textContent = 'Submitting your application...';
+        formStatus.className = 'hero-sub';
+        try {
+          const payload = Object.fromEntries(new FormData(form));
+          const res = await fetch('https://formsubmit.co/ajax/ea0da421e8e6e82457be40792262eeed', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if(!res.ok || data.success === 'false'){ throw new Error('Submission failed'); }
+          form.reset();
+          form.style.display = 'none';
+          formStatus.style.display = 'none';
+          if(successMsg) successMsg.classList.add('show');
+        } catch(err) {
+          formStatus.textContent = 'Submission failed. Please try again or contact PENNIO directly.';
+          formStatus.className = 'hero-sub error';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Application';
+        }
+      });
+    }
+
+    function initializePartnerForm() {
+      const pForm = document.getElementById('partnerForm');
+      const pSubmitBtn = document.getElementById('partnerSubmitBtn');
+      const pFormStatus = document.getElementById('partnerFormStatus');
+      const pSuccessMsg = document.getElementById('partnerSuccessMsg');
+
+      if(pForm) {
+        pForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (pForm.querySelector('[name="_honey"]').value) return;
+
+          pSubmitBtn.disabled = true;
+          pSubmitBtn.textContent = 'Transmitting...';
+          pFormStatus.textContent = 'Routing connection logs...';
+          try {
+            const payload = Object.fromEntries(new FormData(pForm));
+            const res = await fetch('https://formsubmit.co/ajax/ea0da421e8e6e82457be40792262eeed', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            if(!res.ok || data.success === 'false'){ throw new Error('Transmission failed'); }
+            pForm.reset();
+            pForm.style.display = 'none';
+            pFormStatus.style.display = 'none';
+            if(pSuccessMsg) pSuccessMsg.classList.add('show');
+          } catch(err) {
+            pFormStatus.textContent = 'Transmission error. Retry or route via network mail directly.';
+            pFormStatus.className = 'error';
+            pSubmitBtn.disabled = false;
+            pSubmitBtn.textContent = 'Submit Intent';
+          }
+        });
+      }
+    }
+</script>
+</body>
+</html>

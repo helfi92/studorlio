@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PENNIO — OG Cover Card (1200x630)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange: #F26522;
+    --black: #050505;
+    --off-black: #0A0A0A;
+    --white: #FFFFFF;
+    --grey3: rgba(255,255,255,0.35);
+    --grey4: rgba(255,255,255,0.60);
+    --line: rgba(255,255,255,0.09);
+  }
+  html { background: #000; }
+  body { font-family: 'Inter', sans-serif; background: #000; color: var(--white); -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; align-items: center; padding: 28px 20px 60px; }
+
+  .bar { width: 1200px; max-width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .bar-label { font-size: 0.72rem; font-weight: 600; color: var(--grey4); letter-spacing: 0.04em; }
+  .bar-label b { color: var(--white); font-weight: 700; }
+  .exp { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; padding: 8px 18px; border-radius: 5px; border: none; background: var(--white); color: #000; cursor: pointer; }
+  .exp:disabled { opacity: 0.5; }
+
+  /* ---- THE CARD: exactly 1200 x 630 (Open Graph 1.91:1) ---- */
+  .og {
+    position: relative; width: 1200px; height: 630px; overflow: hidden;
+    background: var(--off-black); flex-shrink: 0;
+    transform-origin: top left;
+  }
+  .og .grid3d {
+    position: absolute; bottom: -14%; left: -50%; width: 200%; height: 88%;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(to top, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 5.5% 11%;
+    transform: perspective(60vh) rotateX(61deg) translateY(-16px);
+    mask-image: linear-gradient(to top, black 4%, transparent 66%);
+    -webkit-mask-image: linear-gradient(to top, black 4%, transparent 66%);
+    z-index: 0;
+  }
+  .og .glow {
+    position: absolute; top: -26%; right: -12%; width: 66%; height: 96%;
+    background: radial-gradient(ellipse at center, rgba(242,101,34,0.20) 0%, rgba(242,101,34,0.05) 42%, transparent 72%);
+    z-index: 0;
+  }
+  /* faint oversized logomark, bled off the right edge as a brand watermark */
+  .og .mark-bleed {
+    position: absolute; right: -78px; top: 50%; transform: translateY(-50%);
+    opacity: 0.06; z-index: 0; line-height: 0;
+  }
+  .og .mark-bleed svg { width: 430px; height: auto; display: block; }
+
+  .og-inner { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 58px 68px; }
+
+  .og-top { display: flex; align-items: center; gap: 11px; }
+  .og-top svg { width: 26px; height: auto; display: block; }
+  .og-wordmark { font-size: 1.32rem; font-weight: 700; letter-spacing: -0.015em; }
+  .og-wordmark span { color: var(--orange); }
+
+  .og-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 22px; }
+  .og-eyebrow::before { content: ''; width: 30px; height: 1.5px; background: var(--orange); }
+
+  /* No max-width: the <br> sets the break. A ch-based cap re-wrapped line two
+     and split "next" from "decade", which reads as a typo at feed size. */
+  .og-h1 { font-size: 4.4rem; font-weight: 800; line-height: 1.04; letter-spacing: -0.035em; white-space: nowrap; }
+  .og-h1 em { font-style: italic; font-weight: 300; color: var(--grey4); }
+
+  .og-bottom { display: flex; align-items: flex-end; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 24px; }
+  .og-sub { font-size: 1.06rem; font-weight: 300; line-height: 1.5; color: var(--grey4); max-width: 46ch; }
+  .og-domain { display: inline-flex; align-items: center; gap: 10px; font-size: 1.06rem; font-weight: 700; color: var(--white); white-space: nowrap; padding-left: 32px; }
+  .og-domain::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+  .note { width: 1200px; max-width: 100%; margin-top: 20px; font-size: 0.74rem; color: var(--grey4); line-height: 1.6; border-left: 2px solid var(--line); padding-left: 14px; }
+  .note b { color: var(--white); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="bar-label"><b>PENNIO OG Cover</b> · 1200 × 630 · serves the homepage, /audit and /letscreate</span>
+  <button class="exp" id="btn" onclick="exportCard()">↓ Export JPEG</button>
+</div>
+
+<div class="og" id="card">
+  <div class="grid3d"></div>
+  <div class="glow"></div>
+  <div class="mark-bleed">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="#FFFFFF"/></svg>
+  </div>
+
+  <div class="og-inner">
+    <div class="og-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="#FFFFFF"/></svg>
+      <span class="og-wordmark">PENNIO<span>.</span></span>
+    </div>
+
+    <div>
+      <span class="og-eyebrow">Brand Architecture Studio</span>
+      <h1 class="og-h1">Bold brands for<br>Africa's <em>next decade.</em></h1>
+    </div>
+
+    <div class="og-bottom">
+      <p class="og-sub">Brand systems, web, and growth creative built as one connected system.</p>
+      <span class="og-domain">pennio.agency</span>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <b>Why this headline.</b> One card fronts the homepage, the checklist funnel and letscreate, so it carries the brand-level line rather than a page-specific offer. It matches the homepage h1 word for word, so the card never promises something the landing page does not say.
+</div>
+
+<script>
+async function exportCard() {
+  // Rendered headlessly at 2x via Playwright for the committed file. This button
+  // is for eyeballing a re-export after an edit; it grabs a same-size PNG.
+  const btn = document.getElementById('btn');
+  btn.disabled = true; btn.textContent = 'Use the render script for the real file';
+  setTimeout(() => { btn.disabled = false; btn.textContent = '↓ Export JPEG'; }, 2600);
+}
+</script>
+</body>
+</html>

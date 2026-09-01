@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Brand Architecture Checklist — PENNIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange: #F26522;
+    --black: #050505;
+    --off-black: #0A0A0A;
+    --white: #FFFFFF;
+    --grey3: rgba(0,0,0,0.35);
+    --grey4: rgba(0,0,0,0.55);
+    --grey5: rgba(0,0,0,0.75);
+    --line: rgba(0,0,0,0.12);
+  }
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--white); }
+  body { font-family: 'Inter', sans-serif; color: var(--black); -webkit-font-smoothing: antialiased; }
+
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always; }
+  .page:last-child { page-break-after: avoid; }
+
+  /* shared chrome */
+  .pg-top { display: flex; align-items: center; justify-content: space-between; padding: 16mm 16mm 0; }
+  .pg-brand { display: flex; align-items: center; gap: 6px; }
+  .pg-wordmark { font-size: 11px; font-weight: 700; letter-spacing: -0.01em; color: var(--black); }
+  .pg-wordmark span { color: var(--orange); }
+  .pg-pagenum { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; color: var(--grey3); }
+  .pg-foot { position: absolute; bottom: 14mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 6mm; }
+  .pg-foot span { font-size: 8.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey3); }
+
+  /* COVER */
+  #cover { background: var(--black); color: var(--white); }
+  #cover .pg-wordmark { color: var(--white); }
+  #cover .pg-pagenum { color: rgba(255,255,255,0.35); }
+  #cover .cover-body { position: absolute; top: 50%; left: 16mm; right: 16mm; transform: translateY(-58%); }
+  #cover .cover-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 10mm; }
+  #cover .cover-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--orange); }
+  #cover h1 { font-size: 40px; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 8mm; }
+  #cover h1 em { font-style: italic; font-weight: 300; color: rgba(255,255,255,0.55); }
+  #cover .cover-sub { font-size: 13px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.6); max-width: 130mm; }
+  #cover .cover-foot { position: absolute; bottom: 16mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 6mm; }
+  #cover .cover-foot .l { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  #cover .cover-foot .r { font-size: 12px; font-weight: 600; color: var(--white); }
+
+  /* INTRO */
+  #intro .pg-body { padding: 26mm 16mm 0; }
+  #intro .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin-bottom: 6mm; }
+  #intro h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 10mm; max-width: 150mm; }
+  #intro p { font-size: 12.5px; font-weight: 400; line-height: 1.75; color: var(--grey5); max-width: 150mm; margin-bottom: 6mm; }
+  #intro .howto { margin-top: 10mm; background: rgba(242,101,34,0.06); border: 1px solid rgba(242,101,34,0.22); border-radius: 3px; padding: 8mm 10mm; }
+  #intro .howto-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 3mm; }
+  #intro .howto p { font-size: 11.5px; color: var(--grey5); margin: 0; }
+
+  /* PILLAR PAGES */
+  .pillar .pg-body { padding: 24mm 16mm 0; }
+  .pillar-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 4mm; }
+  .pillar-num { font-size: 60px; font-weight: 800; font-style: italic; color: rgba(0,0,0,0.08); line-height: 1; position: absolute; top: 22mm; right: 16mm; }
+  .pillar h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4mm; }
+  .pillar .pillar-note { font-size: 11.5px; font-weight: 300; color: var(--grey4); line-height: 1.6; max-width: 140mm; margin-bottom: 12mm; }
+  .item-list { display: flex; flex-direction: column; }
+  .item { display: flex; gap: 6mm; align-items: flex-start; border-top: 1px solid var(--line); padding: 7mm 0; }
+  .item:last-child { border-bottom: 1px solid var(--line); }
+  .box { width: 5mm; height: 5mm; border: 1.5px solid var(--black); border-radius: 2px; flex-shrink: 0; margin-top: 0.5mm; }
+  .item-text { font-size: 12px; font-weight: 400; line-height: 1.55; color: var(--black); }
+  .item-n { font-size: 9px; font-weight: 700; color: var(--grey3); min-width: 6mm; margin-top: 1mm; }
+
+  /* SCORE PAGE */
+  #score .pg-body { padding: 26mm 16mm 0; }
+  #score h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10mm; }
+  .score-rows { display: flex; flex-direction: column; gap: 4mm; margin-bottom: 14mm; }
+  .score-row { display: flex; gap: 8mm; align-items: flex-start; border-radius: 3px; padding: 6mm 8mm; }
+  .score-row.good { background: rgba(242,101,34,0.07); border: 1px solid rgba(242,101,34,0.25); }
+  .score-row.mid { background: rgba(0,0,0,0.03); border: 1px solid var(--line); }
+  .score-row.low { background: var(--black); }
+  .score-range { font-size: 15px; font-weight: 800; min-width: 26mm; }
+  .score-row.low .score-range { color: var(--white); }
+  .score-desc { font-size: 11.5px; font-weight: 400; line-height: 1.55; color: var(--grey5); }
+  .score-row.low .score-desc { color: rgba(255,255,255,0.7); }
+  #score .cta-block { border-top: 1px solid var(--line); padding-top: 10mm; }
+  #score .cta-block h3 { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 4mm; }
+  #score .cta-block p { font-size: 11.5px; font-weight: 300; line-height: 1.6; color: var(--grey5); max-width: 140mm; margin-bottom: 6mm; }
+  .cta-pill { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); font-size: 11px; font-weight: 700; padding: 4mm 8mm; border-radius: 100px; }
+</style>
+</head>
+<body>
+
+<div class="page" id="cover">
+  <div class="pg-top">
+    <div class="pg-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="14" height="18"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg>
+      <span class="pg-wordmark">PENNIO<span>.</span></span>
+    </div>
+    <span class="pg-pagenum">FREE DIAGNOSTIC</span>
+  </div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">Brand Architecture Studio</div>
+    <h1>The Brand<br>Architecture<br><em>Checklist.</em></h1>
+    <p class="cover-sub">15 questions to run before your next ad dollar. Three pillars: Meaning, System, Voice. Five minutes, honestly answered.</p>
+  </div>
+  <div class="cover-foot">
+    <span class="l">A PENNIO Diagnostic</span>
+    <span class="r">pennio.agency</span>
+  </div>
+</div>
+
+<div class="page" id="intro">
+  <div class="pg-top">
+    <div class="pg-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg>
+      <span class="pg-wordmark">PENNIO<span>.</span></span>
+    </div>
+    <span class="pg-pagenum">02 / 06</span>
+  </div>
+  <div class="pg-body">
+    <div class="eyebrow">Before You Start</div>
+    <h2>This is not an ad problem.<br>Most of the time, it never was.</h2>
+    <p>Founders usually reach for a new ad account, a new agency, or a new hook when the numbers stop moving. Rarely do they reach for the brand underneath the ad. Performance marketing amplifies whatever signal a brand is already sending. If the signal is weak, the spend just scales the problem faster.</p>
+    <p>This checklist covers the three pillars PENNIO builds before any campaign starts: what the brand means, what system it runs on, and what voice carries it. Go through all 15 items honestly. Check only what is actually true today, not what you plan to fix next quarter.</p>
+    <div class="howto">
+      <div class="howto-lbl">How to use this</div>
+      <p>Read each statement. Check the box only if it is true right now, without qualification. Count your checks at the end and read the diagnosis on the last page.</p>
+    </div>
+  </div>
+  <div class="pg-foot"><span>The Brand Architecture Checklist</span><span>pennio.agency</span></div>
+</div>
+
+<div class="page pillar" id="meaning">
+  <div class="pg-top">
+    <div class="pg-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg>
+      <span class="pg-wordmark">PENNIO<span>.</span></span>
+    </div>
+    <span class="pg-pagenum">03 / 06</span>
+  </div>
+  <div class="pillar-num">01</div>
+  <div class="pg-body">
+    <div class="pillar-tag">Pillar 01</div>
+    <h2>Meaning</h2>
+    <p class="pillar-note">The position you defend and the customer you built for. Everything else is downstream of this.</p>
+    <div class="item-list">
+      <div class="item"><span class="item-n">01</span><div class="box"></div><span class="item-text">We can state our market position in one sentence without using the words "innovative," "leading," or "premium."</span></div>
+      <div class="item"><span class="item-n">02</span><div class="box"></div><span class="item-text">We know the exact customer this brand is for, and we can also say clearly who it is not for.</span></div>
+      <div class="item"><span class="item-n">03</span><div class="box"></div><span class="item-text">If a competitor copied our logo tomorrow, our position in the market would still be different from theirs.</span></div>
+      <div class="item"><span class="item-n">04</span><div class="box"></div><span class="item-text">Everyone on the team could explain what the brand stands for in their own words, and those explanations would agree.</span></div>
+      <div class="item"><span class="item-n">05</span><div class="box"></div><span class="item-text">We have not changed our core positioning in the last 12 months just because a campaign underperformed.</span></div>
+    </div>
+  </div>
+  <div class="pg-foot"><span>The Brand Architecture Checklist</span><span>pennio.agency</span></div>
+</div>
+
+<div class="page pillar" id="system">
+  <div class="pg-top">
+    <div class="pg-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg>
+      <span class="pg-wordmark">PENNIO<span>.</span></span>
+    </div>
+    <span class="pg-pagenum">04 / 05</span>
+  </div>
+  <div class="pillar-num">02</div>
+  <div class="pg-body">
+    <div class="pillar-tag">Pillar 02</div>
+    <h2>System</h2>
+    <p class="pillar-note">The visual rules that let anyone execute the brand correctly without you in the room.</p>
+    <div class="item-list">
+      <div class="item"><span class="item-n">06</span><div class="box"></div><span class="item-text">Our visual identity has documented rules (color, type, logo use, spacing) that exist outside one designer's head.</span></div>
+      <div class="item"><span class="item-n">07</span><div class="box"></div><span class="item-text">Our website, social pages, and any printed materials look like they belong to the same business at a glance.</span></div>
+      <div class="item"><span class="item-n">08</span><div class="box"></div><span class="item-text">We could hand our brand assets to a new designer today and they would know exactly what is and is not allowed.</span></div>
+      <div class="item"><span class="item-n">09</span><div class="box"></div><span class="item-text">Our color palette and typography were chosen for a reason we can explain, not because they looked good on a moodboard.</span></div>
+      <div class="item"><span class="item-n">10</span><div class="box"></div><span class="item-text">Nothing in our current materials was built by copying a competitor's layout with our name swapped in.</span></div>
+    </div>
+  </div>
+  <div class="pg-foot"><span>The Brand Architecture Checklist</span><span>pennio.agency</span></div>
+</div>
+
+<div class="page pillar" id="voice">
+  <div class="pg-top">
+    <div class="pg-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg>
+      <span class="pg-wordmark">PENNIO<span>.</span></span>
+    </div>
+    <span class="pg-pagenum">05 / 06</span>
+  </div>
+  <div class="pillar-num">03</div>
+  <div class="pg-body">
+    <div class="pillar-tag">Pillar 03</div>
+    <h2>Voice</h2>
+    <p class="pillar-note">The specific vocabulary that carries the system across every platform without losing coherence.</p>
+    <div class="item-list">
+      <div class="item"><span class="item-n">11</span><div class="box"></div><span class="item-text">We have a documented tone of voice, not just a logo file.</span></div>
+      <div class="item"><span class="item-n">12</span><div class="box"></div><span class="item-text">Our Instagram captions, website copy, and sales messages sound like the same person wrote them.</span></div>
+      <div class="item"><span class="item-n">13</span><div class="box"></div><span class="item-text">We know the three words we want a stranger to use when describing us after one visit to our page.</span></div>
+      <div class="item"><span class="item-n">14</span><div class="box"></div><span class="item-text">Our headlines do not rely on "quality," "excellence," or "passion" to do the work of a real claim.</span></div>
+      <div class="item"><span class="item-n">15</span><div class="box"></div><span class="item-text">If we removed our logo from our last five posts, a regular follower could still tell it was us.</span></div>
+    </div>
+  </div>
+  <div class="pg-foot"><span>The Brand Architecture Checklist</span><span>pennio.agency</span></div>
+</div>
+
+<div class="page" id="score">
+  <div class="pg-top">
+    <div class="pg-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg>
+      <span class="pg-wordmark">PENNIO<span>.</span></span>
+    </div>
+    <span class="pg-pagenum">06 / 06</span>
+  </div>
+  <div class="pg-body">
+    <div class="eyebrow" style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);margin-bottom:6mm;">Your Score</div>
+    <h2>Count every box you checked.<br>Then read what it means.</h2>
+    <div class="score-rows">
+      <div class="score-row good">
+        <span class="score-range">12&ndash;15</span>
+        <span class="score-desc">Foundation is solid. Ad spend on this brand will compound instead of leaking out through a gap in the architecture.</span>
+      </div>
+      <div class="score-row mid">
+        <span class="score-range">7&ndash;11</span>
+        <span class="score-desc">Partial foundation. Some of your current ad spend is already paying to expose one or more of the gaps above.</span>
+      </div>
+      <div class="score-row low">
+        <span class="score-range">0&ndash;6</span>
+        <span class="score-desc">No foundation yet. Every naira spent on ads right now is subsidizing a brand that has not decided what it is.</span>
+      </div>
+    </div>
+    <div class="cta-block">
+      <h3>This is exactly what PENNIO builds.</h3>
+      <p>Meaning, system, and voice, built as one connected foundation before a single naira goes to media spend. Applications are reviewed manually. We respond within 48 hours.</p>
+      <span class="cta-pill">Apply at pennio.agency</span>
+    </div>
+  </div>
+  <div class="pg-foot"><span>The Brand Architecture Checklist</span><span>&#169; PENNIO</span></div>
+</div>
+
+</body>
+</html>

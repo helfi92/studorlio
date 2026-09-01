@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://pennio.agency/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Confirmed live via direct fetch on 2026-08-19. Ogbifo intentionally excluded —
+       confirmed still in build, not yet public. Re-check before every deploy;
+       a sitemap entry is a promise to search engines that the page resolves. -->
+  <url>
+    <loc>https://pennio.agency/letscreate</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- /audit ships in this same commit as audit/index.html, so it resolves on
+       deploy. Trailing slash matches the canonical tag on the page itself —
+       keep the two in sync if either ever changes. -->
+  <url>
+    <loc>https://pennio.agency/audit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>

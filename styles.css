@@ -1,0 +1,465 @@
+:root {
+  --pennio-orange: #FF6A00;
+  --pennio-yellow: #FFD600;
+  --pennio-black: #000000;
+  --pennio-white: #FFFFFF;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Now linked in HTML */
+  color: var(--pennio-black);
+  background-color: var(--pennio-white);
+  padding-top: 80px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background: var(--pennio-orange);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--pennio-white);
+  text-decoration: none;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--pennio-white);
+  font-weight: 600;
+  transition: 0.3s;
+}
+.nav-links a:hover { opacity: 0.8; }
+
+.cta-btn {
+  background: var(--pennio-yellow);
+  color: var(--pennio-black);
+  border-radius: 6px;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.cta-btn:hover {
+  background: var(--pennio-white);
+  color: var(--pennio-orange);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  min-height: 80vh;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta {
+  background: var(--pennio-orange);
+  color: var(--pennio-white);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 28px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.cta.alt {
+  background: var(--pennio-yellow);
+  color: var(--pennio-black);
+}
+.cta:hover {
+  background: var(--pennio-black);
+  color: var(--pennio-yellow);
+}
+
+/* Portfolio Button */
+#openPortfolio {
+  background: var(--pennio-orange);
+  color: var(--pennio-white);
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+#openPortfolio:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  background: var(--pennio-yellow);
+  color: var(--pennio-black);
+}
+
+/* NEW: PDF Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2000; /* Sit on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+  padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 0; /* Remove padding here */
+  border: 1px solid #888;
+  width: 90%; /* Could be more responsive */
+  max-width: 900px; /* Max width for larger screens */
+  height: 80vh; /* Set a height for the modal content */
+  position: relative;
+  border-radius: 8px;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.modal-content iframe {
+  width: 100%;
+  flex-grow: 1; /* Make iframe take up available space */
+  border: none; /* Remove iframe default border */
+  border-bottom-left-radius: 8px; /* Match modal border radius */
+  border-bottom-right-radius: 8px;
+}
+
+.modal .close {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute; /* Position close button */
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 2001; /* Ensure close button is above iframe */
+  background: var(--pennio-black);
+  color: var(--pennio-white);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: var(--pennio-white);
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* BYLT Section */
+.bylt-section {
+  background: #fafafa;
+  padding: 80px 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--pennio-orange), var(--pennio-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.section-sub {
+  color: #555;
+  margin: 10px auto 50px;
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+/* Service Cards Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  padding: 0 15px;
+}
+
+.service-card {
+  background: var(--pennio-white);
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(255,106,0,0.25);
+}
+
+.service-icon {
+  font-size: 2.3rem;
+  color: var(--pennio-orange);
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  margin: 8px 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* BYLT4U Highlight */
+.bylt4u {
+  background: var(--pennio-black);
+  border: 2px solid var(--pennio-yellow);
+  color: var(--pennio-white);
+  position: relative;
+  animation: glowPulse 3s ease-out 1;
+}
+.bylt4u .service-icon { color: var(--pennio-yellow); }
+.bylt4u h3, .bylt4u p { color: var(--pennio-white); }
+.bylt4u:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255,214,0,0.4);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--pennio-yellow);
+  color: var(--pennio-black);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Glow Animation */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 0 rgba(255,214,0,0); }
+  50% { box-shadow: 0 0 25px rgba(255,214,0,0.7); }
+  100% { box-shadow: 0 0 0 rgba(255,214,0,0); }
+}
+
+/* Instagram */
+#instagram {
+  padding: 60px 20px;
+}
+.instagram-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.instagram-media {
+  margin: 0 auto;
+}
+
+/* Contact */
+#contact {
+  max-width: 650px;
+  margin: 80px auto;
+  padding: 30px 20px;
+  background: var(--pennio-white);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#contact h2 {
+  color: var(--pennio-orange);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+#contact .intro {
+  margin-bottom: 25px;
+  color: #333;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--pennio-orange);
+  outline: none;
+}
+
+button[type="submit"] {
+  background: var(--pennio-orange);
+  color: var(--pennio-white);
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button[type="submit"]:hover {
+  background: var(--pennio-yellow);
+  color: var(--pennio-black);
+}
+
+/* Footer */
+footer {
+  background: var(--pennio-black);
+  color: var(--pennio-white);
+  padding: 25px;
+  text-align: center;
+}
+footer a {
+  color: var(--pennio-yellow);
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  color: var(--pennio-orange);
+}
+
+/* Hamburger Visibility */
+#menu-toggle {
+  display: none; /* Hidden by default on desktop */
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--pennio-white);
+  cursor: pointer;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block; /* Show hamburger on mobile */
+    margin-left: 15px; /* Add some space if needed */
+  }
+
+  /* Hide original nav links and CTA button */
+  .nav-links, .cta-btn {
+    display: none;
+  }
+
+  /* Mobile menu styles when active */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background: var(--pennio-orange);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  .nav-links.active ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links.active a {
+    padding: 10px 20px;
+    display: block;
+  }
+
+  .cta-btn.active {
+    display: block; /* Show CTA button in mobile menu as well if desired */
+    position: absolute;
+    top: 10px; /* Aligned with header */
+    right: 20px;
+    z-index: 1001; /* Ensure it's above the opened menu */
+    background: var(--pennio-yellow);
+    color: var(--pennio-black);
+  }
+
+  /* Adjust hero section padding for mobile when menu is open to prevent overlap */
+  body.menu-open {
+    padding-top: calc(80px + 100px); /* Adjust based on your nav-links.active height */
+  }
+
+  .hero h2 { font-size: 1.6rem; }
+  .service-card { max-width: 90%; }
+  #contact { margin: 40px 15px; }
+
+  .modal-content {
+    width: 95%; /* Adjust for smaller screens */
+    height: 90vh; /* Make modal take more vertical space */
+    margin-top: 20px;
+  }
+}

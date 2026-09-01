@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Campaign production files (ad source HTML, PNG exports) are internal working
+# material, not public web content. Kept in the repo so the team can reach them
+# by direct URL, but excluded from search indexing.
+#
+# Note: this is not access control. robots.txt only asks compliant crawlers not
+# to index; anyone with the URL can still fetch these. Do not put anything
+# genuinely confidential under a public static host.
+Disallow: /campaign/
+
+Sitemap: https://pennio.agency/sitemap.xml

@@ -1,136 +1,907 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Portfolio</title>
-	<!-- css files -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-
-	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-	<meta name="author" content="Hassan Ali">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PENNIO · Full-Stack Creative Agency for African Startups</title>
+<meta name="description" content="Bold, premium, full-stack creative for African startups and local businesses. Brand systems, web, and growth creative built as one system.">
+<link rel="canonical" href="https://pennio.agency/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#050505">
+<link rel="alternate" hreflang="en-ng" href="https://pennio.agency/">
+<link rel="alternate" hreflang="en" href="https://pennio.agency/">
+<link rel="alternate" hreflang="x-default" href="https://pennio.agency/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pennio.agency/">
+<meta property="og:title" content="PENNIO · Full-Stack Creative Agency for African Startups">
+<meta property="og:description" content="Bold, premium, full-stack creative for African startups and local businesses. Brand systems, web, and growth creative built as one system.">
+<meta property="og:image" content="https://pennio.agency/og-cover.jpg">
+<meta property="og:site_name" content="PENNIO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@penniodesign">
+<meta name="twitter:title" content="PENNIO · Full-Stack Creative Agency for African Startups">
+<meta name="twitter:description" content="Bold, premium, full-stack creative for African startups and local businesses. Brand systems, web, and growth creative built as one system.">
+<meta name="twitter:image" content="https://pennio.agency/og-cover.jpg">
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "ProfessionalService",
+"name": "PENNIO",
+"url": "https://pennio.agency",
+"logo": "https://pennio.agency/logo.png",
+"description": "Full-stack creative agency for African startups and local businesses. Brand systems, web, and growth creative built as one connected system.",
+"address": { "@type": "PostalAddress", "addressRegion": "Oyo State", "addressCountry": "NG" },
+"sameAs": [
+"https://x.com/penniodesign",
+"https://instagram.com/pennio.agency",
+"https://linkedin.com/in/paul-oyatowo"
+],
+"priceRange": "₦₦₦"
+}
+</script>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{ "@type": "Question", "name": "What does full-stack creative mean at PENNIO?", "acceptedAnswer": { "@type": "Answer", "text": "It means one studio handles strategy, identity, web, and growth creative as a single connected system. Everything comes from the same brief and moves in the same direction, so your brand, website, and ads all feel like they belong to the same business." } },
+{ "@type": "Question", "name": "Do you work with early-stage startups?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PENNIO works across the growth curve, from pre-launch startups that need a strong foundation to established local businesses that are ready to grow. Scope and price are confirmed after a strategy call." } },
+{ "@type": "Question", "name": "Do you work with brands outside Nigeria?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PENNIO works with African founders and businesses regardless of location. Diaspora and pan-African engagements are scoped and priced individually. Book a call and we will confirm fit from there." } },
+{ "@type": "Question", "name": "What happens after I book a strategy call?", "acceptedAnswer": { "@type": "Answer", "text": "We scope your brief together, agree on the right service package, and confirm pricing and timeline in writing before any work begins." } }
+]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange: #F26522;
+  --orange-dark:#D9561B;
+  --black: #050505;
+  --off-black: #0A0A0A;
+  --surface: #121212;
+  --surface-2: #1A1A1A;
+  --white: #FFFFFF;
+  --off-white: #F8F8F8;
+  --text-dark: #000000;
+  --text-muted: #666666;
+  --line-dark: rgba(255,255,255,0.09);
+  --line-light: rgba(0,0,0,0.09);
+  --grey-3: rgba(255,255,255,0.50);
+  --grey-4: rgba(255,255,255,0.60);
+  --grey-5: rgba(255,255,255,0.85);
+  --glass-bg: rgba(255,255,255,0.035);
+  --glass-bdr: rgba(255,255,255,0.08);
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .marquee-track, .proof-status-dot, .nav-logo svg { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; }
+  video[aria-hidden="true"] { display: none !important; }
+}
+body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.skip-nav { position: absolute; top: -100%; left: 0; background: var(--orange); color: var(--white); padding: 12px 20px; font-size: 0.8rem; font-weight: 600; text-decoration: none; z-index: 9999; border-radius: 0 0 4px 0; transition: top 0.15s ease; }
+.skip-nav:focus { top: 0; }
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+.reveal.up { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.label { display: inline-block; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-4); margin-bottom: 16px; }
+.label.dark { color: var(--text-muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-weight: 500; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; border-radius: 4px; }
+.btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.btn-cta { font-size: 0.8rem; padding: 12px 24px; background: var(--orange); color: var(--white); }
+.btn-cta:hover { background: var(--orange-dark); }
+.btn-outline { font-size: 0.8rem; padding: 11px 23px; background: transparent; color: var(--white); border: 1px solid var(--line-dark); }
+.btn-outline:hover { border-color: var(--grey-4); background: rgba(255,255,255,0.03); }
+.grid-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.grid-3d-dark { position: absolute; bottom: -10%; left: -50%; width: 200%; height: 100%; background-image: linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to top, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 40px 40px; transform: perspective(60vh) rotateX(60deg) translateY(-50px); mask-image: linear-gradient(to top, black 10%, transparent 80%); -webkit-mask-image: linear-gradient(to top, black 10%, transparent 80%); }
+.grid-3d-light { position: absolute; bottom: -10%; left: -50%; width: 200%; height: 100%; background-image: linear-gradient(to right, rgba(0,0,80,0.045) 1px, transparent 1px), linear-gradient(to top, rgba(0,0,80,0.045) 1px, transparent 1px); background-size: 40px 40px; transform: perspective(60vh) rotateX(60deg) translateY(-50px); mask-image: linear-gradient(to top, black 10%, transparent 80%); -webkit-mask-image: linear-gradient(to top, black 10%, transparent 80%); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 72px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: rgba(5,5,5,0.82); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border-bottom: 1px solid var(--line-dark); }
+.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; width: 180px; }
+.nav-logo svg { width: 18px; animation: navMarkBreathe 3.6s ease-in-out infinite; transform-origin: center; }
+@keyframes navMarkBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.nav-wordmark { font-size: 0.88rem; font-weight: 600; letter-spacing: -0.02em; color: var(--white); }
+.nav-wordmark span { color: var(--orange); }
+.nav-center { display: flex; gap: 36px; list-style: none; }
+.nav-center a { font-size: 0.78rem; font-weight: 400; color: var(--white); text-decoration: none; transition: opacity 0.2s; }
+.nav-center a:hover { opacity: 0.55; }
+.nav-right { display: flex; justify-content: flex-end; width: 180px; gap: 12px; align-items: center; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; color: var(--white); flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 4px; transition: background 0.2s; }
+.nav-hamburger:hover { background: rgba(255,255,255,0.06); }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: currentColor; transition: transform 0.25s ease, opacity 0.25s ease; }
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mobile-drawer { position: fixed; top: 72px; left: 0; right: 0; background: rgba(5,5,5,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--line-dark); z-index: 199; padding: 8px 5vw 24px; display: flex; flex-direction: column; transform: translateY(-8px); opacity: 0; pointer-events: none; transition: opacity 0.22s ease, transform 0.22s ease; }
+.mobile-drawer.open { opacity: 1; transform: translateY(0); pointer-events: all; }
+.mobile-drawer a { font-size: 0.96rem; font-weight: 400; color: var(--white); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--line-dark); transition: color 0.2s; display: flex; align-items: center; justify-content: space-between; }
+.mobile-drawer a:last-child { border-bottom: none; padding-bottom: 0; }
+.mobile-drawer a::after { content: 'Go'; font-size: 0.72rem; color: var(--grey-4); }
+.mobile-drawer a.drawer-cta { color: var(--orange); font-weight: 500; margin-top: 8px; border: 1px solid rgba(242,101,34,0.25); border-radius: 4px; padding: 14px 16px; background: rgba(242,101,34,0.04); }
+.mobile-drawer a.drawer-cta::after { content: ''; }
+.hero { position: relative; min-height: 100svh; padding: 160px 5vw 110px; display: flex; align-items: center; justify-content: center; background: var(--off-black); text-align: center; }
+.hero-container { position: relative; z-index: 10; width: 100%; max-width: 860px; }
+.hero h1 { font-size: clamp(2.8rem, 5vw, 5.6rem); font-weight: 700; line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 24px; }
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--grey-4); }
+.hero-sub { font-size: 1.08rem; font-weight: 300; line-height: 1.68; color: var(--grey-4); max-width: 560px; margin: 0 auto 14px; }
+.hero-note { font-size: 0.82rem; font-weight: 400; color: var(--grey-3); max-width: 440px; margin: 0 auto 40px; line-height: 1.65; }
+.hero-actions { display: flex; gap: 14px; align-items: center; justify-content: center; }
+.marquee-wrap { border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); background: var(--black); overflow: hidden; padding: 15px 0; }
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-item { display: inline-flex; align-items: center; gap: 28px; padding: 0 14px; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey-4); white-space: nowrap; }
+.marquee-sep { width: 4px; height: 4px; background: var(--grey-3); border-radius: 50%; flex-shrink: 0; }
+.section-problem { position: relative; background: var(--white); color: var(--text-dark); padding: 130px 5vw; text-align: center; }
+.problem-header { max-width: 640px; margin: 0 auto 72px; position: relative; z-index: 10; }
+.problem-header h2 { font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 14px; }
+.problem-header p { font-size: 1.05rem; font-weight: 400; line-height: 1.6; color: var(--text-muted); }
+.cycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; position: relative; z-index: 10; }
+.cycle-step { background: var(--white); border: 1px solid var(--line-light); border-radius: 6px; padding: 40px 28px; text-align: left; box-shadow: 0 2px 16px rgba(0,0,0,0.03); transition: transform 0.28s ease; }
+.cycle-step:hover { transform: translateY(-4px); }
+.cycle-step.fatal { background: var(--black); color: var(--white); border-color: var(--black); }
+.cycle-n { font-size: 0.7rem; font-weight: 500; color: var(--text-muted); margin-bottom: 28px; }
+.cycle-step.fatal .cycle-n { color: var(--grey-4); }
+.cycle-title { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
+.cycle-text { font-size: 0.9rem; font-weight: 400; line-height: 1.6; color: var(--text-muted); }
+.cycle-step.fatal .cycle-text { color: var(--grey-4); }
+.section-insight { background: var(--black); padding: 110px 5vw; }
+.insight-card { border-radius: 10px; padding: 72px 60px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: center; max-width: 1100px; margin: 0 auto; background: var(--glass-bg); backdrop-filter: blur(32px) saturate(120%); -webkit-backdrop-filter: blur(32px) saturate(120%); border: 1px solid var(--glass-bdr); position: relative; overflow: hidden; }
+.insight-card::before { content: ''; position: absolute; top: 0; left: 0; width: 55%; height: 55%; background: radial-gradient(ellipse at top left, rgba(255,255,255,0.04) 0%, transparent 65%); pointer-events: none; }
+.insight-q { font-size: clamp(1.7rem, 2.8vw, 2.6rem); font-weight: 600; line-height: 1.22; letter-spacing: -0.03em; position: relative; }
+.insight-q em { font-style: normal; font-weight: 300; color: var(--grey-4); }
+.insight-body { font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--grey-4); position: relative; }
+.section-services { background: var(--black); padding: 90px 5vw 130px; border-top: 1px solid var(--line-dark); }
+.services-header { text-align: center; margin-bottom: 72px; }
+.services-header h2 { font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.services-header p { font-size: 1rem; font-weight: 300; line-height: 1.65; color: var(--grey-4); max-width: 480px; margin: 14px auto 0; }
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-dark); max-width: 1100px; margin: 0 auto; }
+.phase { padding: 44px 36px 48px; }
+.phase:not(:last-child) { border-right: 1px solid var(--line-dark); }
+.phase-n { font-size: 4.5rem; font-weight: 700; color: var(--surface-2); line-height: 1; letter-spacing: -0.05em; margin-bottom: 24px; }
+.phase-name { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 14px; }
+.phase-desc { font-size: 0.92rem; font-weight: 300; line-height: 1.65; color: var(--grey-4); margin-bottom: 32px; }
+.phase-tag { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+.phase-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.phase-list li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.86rem; font-weight: 400; line-height: 1.5; color: var(--grey-5); }
+.phase-list li::before { content: ''; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+.section-statement { background: var(--surface); border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); padding: 80px 5vw; }
+.statement-inner { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 60px; max-width: 1100px; margin: 0 auto; }
+.statement-left { flex: 1; padding-right: 60px; border-right: 1px solid var(--line-dark); }
+.statement-left h2 { font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.statement-right { flex-shrink: 0; padding-left: 60px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.statement-inner p { font-size: 1rem; font-weight: 300; line-height: 1.65; color: var(--grey-4); margin-top: 14px; max-width: 420px; }
+.section-work { background: var(--off-black); padding: 120px 5vw; border-top: 1px solid var(--line-dark); }
+.work-header { text-align: center; margin-bottom: 56px; }
+.work-header h2 { font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.work-header p { font-size: 1rem; font-weight: 300; color: var(--grey-4); margin-top: 14px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.proof-card { border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-bdr); background: var(--surface); position: relative; cursor: default; transition: transform 0.28s ease, border-color 0.28s ease; }
+.proof-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.14); }
+.proof-card:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.proof-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; height: auto; }
+.proof-img-placeholder { width: 100%; aspect-ratio: 4/5; background: var(--surface-2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.proof-img-placeholder::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 60%); }
+.proof-img-initial { font-size: 4rem; font-weight: 700; letter-spacing: -0.05em; color: rgba(255,255,255,0.06); user-select: none; }
+.proof-logo-icon { width: 56px; height: auto; opacity: 0.9; }
+.proof-meta { padding: 24px 24px 28px; }
+.proof-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+.proof-status-dot { width: 5px; height: 5px; background: var(--orange); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.proof-brand { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 6px; }
+.proof-category { font-size: 0.78rem; font-weight: 300; color: var(--grey-4); margin-bottom: 12px; }
+.proof-outcome { font-size: 0.78rem; font-weight: 400; line-height: 1.55; color: var(--grey-3); padding-top: 12px; border-top: 1px solid var(--line-dark); }
+a.proof-card { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+.proof-card.proof-link { cursor: pointer; }
+.proof-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-4); margin-bottom: 10px; }
+.studio-strip { max-width: 1100px; margin: 40px auto 0; padding-top: 32px; border-top: 1px solid var(--line-dark); }
+.studio-strip-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-3); margin-bottom: 18px; }
+.studio-strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.studio-chip { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--line-dark); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.2s, background 0.2s; }
+.studio-chip:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.02); }
+.studio-chip-icon { width: 30px; height: 30px; flex-shrink: 0; opacity: 0.85; }
+.studio-chip-name { font-size: 0.84rem; font-weight: 600; margin-bottom: 2px; }
+.studio-chip-status { font-size: 0.68rem; font-weight: 400; color: var(--grey-3); }
+.proof-modal { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.72); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 5vw; }
+.proof-modal.is-open { display: flex; }
+.proof-modal-inner { background: var(--surface); border: 1px solid var(--glass-bdr); border-radius: 10px; max-width: 480px; width: 100%; padding: 40px 32px; position: relative; }
+.proof-modal-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line-dark); background: transparent; color: var(--grey-5); font-size: 1.1rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.proof-modal-close:hover { border-color: var(--grey-4); }
+.proof-modal-mark { display: flex; align-items: center; justify-content: center; width: 96px; height: 96px; border-radius: 50%; background: #121413; margin: 18px 0; }
+.proof-modal-inner h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
+.proof-modal-inner .proof-category { margin-bottom: 0; }
+.proof-modal-inner p.proof-modal-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.65; color: var(--grey-4); margin: 16px 0 24px; }
+.proof-modal-status { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); }
+.section-faq { background: var(--black); padding: 110px 5vw; border-top: 1px solid var(--line-dark); }
+.faq-wrap { max-width: 780px; margin: 0 auto; }
+.faq-header { margin-bottom: 56px; }
+.faq-header h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.faq-item { border-bottom: 1px solid var(--line-dark); padding: 32px 0; }
+.faq-item:first-of-type { border-top: 1px solid var(--line-dark); }
+.faq-q { font-size: 1rem; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; list-style: none; }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--grey-4); flex-shrink: 0; line-height: 1; margin-top: 2px; transition: transform 0.25s ease; }
+details[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a { font-size: 0.94rem; font-weight: 300; line-height: 1.75; color: var(--grey-4); padding-top: 18px; max-width: 640px; }
+.section-apply { position: relative; background: var(--off-white); color: var(--text-dark); padding: 120px 5vw; }
+.apply-wrap { max-width: 780px; margin: 0 auto; position: relative; z-index: 10; }
+.apply-header { text-align: center; margin-bottom: 48px; }
+.apply-header h2 { font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 14px; }
+.apply-header p { font-size: 1.02rem; font-weight: 400; line-height: 1.65; color: var(--text-muted); }
+.apply-time-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(242,101,34,0.08); border: 1px solid rgba(242,101,34,0.2); border-radius: 100px; padding: 6px 14px; margin-bottom: 20px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: var(--orange); }
+.apply-time-badge::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+.apply-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+.fit-col { border-radius: 8px; padding: 28px 24px; border: 1px solid var(--line-light); }
+.fit-col:first-child { background: rgba(0,0,0,0.03); }
+.fit-col:last-child { background: rgba(0,0,0,0.02); }
+.fit-heading { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; }
+.fit-heading.fit-yes { color: #1a7a3c; }
+.fit-heading.fit-no { color: #b04020; }
+.fit-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.fit-list li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.88rem; font-weight: 400; line-height: 1.5; color: var(--text-dark); }
+.fit-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+.fit-col:first-child .fit-list li::before { background: #1a7a3c; }
+.fit-col:last-child .fit-list li::before { background: #b04020; }
+.apply-capacity { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: rgba(242,101,34,0.06); border: 1px solid rgba(242,101,34,0.15); border-radius: 6px; padding: 14px 20px; margin-bottom: 32px; }
+.apply-capacity-text { font-size: 0.82rem; font-weight: 400; line-height: 1.5; color: #5a2800; }
+.apply-capacity-text strong { font-weight: 600; }
+.apply-capacity-link { font-size: 0.76rem; font-weight: 500; color: var(--orange); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+.apply-capacity-link:hover { text-decoration: underline; }
+.apply-form-wrap { background: rgba(8,8,8,0.96); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 56px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 32px 80px rgba(0,0,0,0.12); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; color: rgba(255,255,255,0.38); }
+.field input, .field select, .field textarea { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 4px; padding: 13px 15px; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 300; color: var(--white); outline: none; transition: border-color 0.2s; width: 100%; -webkit-appearance: none; }
+.field select option { background: #111; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.18); }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
+.field textarea { resize: vertical; min-height: 110px; }
+.field-error { font-size: 0.7rem; color: #ff8a65; min-height: 14px; }
+.form-submit { width: 100%; margin-top: 28px; padding: 16px; background: var(--orange); color: var(--white); border: none; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+.form-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.form-fine { font-size: 0.72rem; text-align: center; color: rgba(255,255,255,0.38); margin-top: 14px; line-height: 1.65; }
+.form-alert { display: none; font-size: 0.78rem; color: #ff8a65; background: rgba(255,138,101,0.08); border: 1px solid rgba(255,138,101,0.25); border-radius: 6px; padding: 12px 16px; margin-bottom: 20px; }
+.form-alert.show { display: block; }
+.success-state { display: none; text-align: center; padding: 44px 0; }
+.success-icon { width: 60px; height: 60px; border: 2px solid var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 22px; color: var(--orange); }
+.success-state h3 { font-size: 1.7rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
+.success-state p { font-size: 0.96rem; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.65; }
+footer { background: var(--black); padding: 72px 5vw 36px; border-top: 1px solid var(--line-dark); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 64px; }
+.footer-brand .nav-logo { margin-bottom: 14px; }
+.footer-tagline { font-size: 0.88rem; font-weight: 300; color: var(--grey-4); max-width: 200px; line-height: 1.55; }
+.footer-col h4 { font-size: 0.8rem; font-weight: 600; color: var(--white); margin-bottom: 22px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.footer-col a { font-size: 0.84rem; font-weight: 300; color: var(--grey-4); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--line-dark); font-size: 0.72rem; color: var(--grey-3); }
+.footer-socials { display: flex; gap: 16px; margin-top: 20px; }
+.footer-socials a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--line-dark); border-radius: 4px; color: var(--grey-3); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.footer-socials a:hover { border-color: rgba(255,255,255,0.28); color: var(--white); }
+.footer-socials svg { width: 14px; height: 14px; fill: currentColor; }
+.modal-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal-box { background: var(--surface); border: 1px solid var(--glass-bdr); border-radius: 10px; padding: 52px; max-width: 560px; width: 100%; position: relative; transform: translateY(16px); transition: transform 0.25s ease; max-height: 80vh; overflow-y: auto; }
+.modal-overlay.open .modal-box { transform: translateY(0); }
+.modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; cursor: pointer; color: var(--grey-3); font-size: 1.2rem; line-height: 1; transition: color 0.2s; padding: 4px; }
+.modal-close:hover { color: var(--white); }
+.modal-box h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+.modal-box .modal-date { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-3); margin-bottom: 28px; display: block; }
+.modal-box p { font-size: 0.9rem; font-weight: 300; line-height: 1.8; color: var(--grey-4); margin-bottom: 16px; }
+.modal-box p:last-child { margin-bottom: 0; }
+.modal-box strong { font-weight: 500; color: var(--grey-5); }
+@media (max-width: 1024px) { .insight-card { grid-template-columns: 1fr; gap: 36px; padding: 52px 40px; } }
+@media (max-width: 768px) {
+  .nav-center { display: none; }
+  .nav-right .btn-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-logo { width: auto; }
+  .hero { padding-top: 110px; text-align: center; }
+  .hero-sub, .hero-note { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; flex-wrap: wrap; }
+  .cycle { grid-template-columns: 1fr 1fr; }
+  .section-problem { padding: 80px 5vw; }
+  .phases { grid-template-columns: 1fr; border-top: none; }
+  .phase { border-right: none !important; border-bottom: 1px solid var(--line-dark); padding: 36px 0; }
+  .phase:last-child { border-bottom: none; }
+  .statement-inner { flex-direction: column; gap: 28px; }
+  .statement-left { padding-right: 0; border-right: none; border-bottom: 1px solid var(--line-dark); padding-bottom: 28px; }
+  .statement-right { padding-left: 0; }
+  .proof-grid { grid-template-columns: 1fr 1fr; }
+  .studio-strip-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+  .form-grid { grid-template-columns: 1fr; }
+  .apply-form-wrap { padding: 36px 22px; }
+  .apply-fit { grid-template-columns: 1fr; }
+  .apply-capacity { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+@media (max-width: 480px) { .cycle { grid-template-columns: 1fr; } .proof-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
-	<body>
-		<!-- Navbar -->
-		<nav class="nav container void-background">
-			<!-- This "nav-menu" is hidden on mobile -->
-			<!-- Add the modifier "is-active" to display it on mobile -->
-			<div class="nav-left">
-				<a href="http://medium.com/@hassanhelfi/" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-medium"></i>
-					</span>
-				</a>
-				<a href="http://github.com/helfi92" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-github"></i>
-					</span>
-				</a>
-				<a href="https://twitter.com/hassanhelfi" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-twitter"></i>
-					</span>
-				</a>				
-			</div>
+<body>
+<a href="#problem" class="skip-nav">Skip to content</a>
 
-			<div class="nav-right nav-menu">
-				<a class="nav-item" href="#about">About</a>
-				<a class="nav-item" href="#projects">Projects</a>
-				<a class="nav-item" href="#social">Social</a>
-			</div>
+<nav>
+<a href="#top" class="nav-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" aria-hidden="true">
+<path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/>
+</svg>
+<span class="nav-wordmark">PENNIO<span>.</span></span>
+</a>
+<ul class="nav-center">
+<li><a href="#problem">The Problem</a></li>
+<li><a href="#services">What We Do</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#apply">Book a Call</a></li>
+</ul>
+<div class="nav-right">
+<a href="#apply" class="btn btn-cta">Book a Call</a>
+<button class="nav-hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open navigation menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
 
-			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-			<span class="nav-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
-		</nav>
-				
-		<!-- About Me -->
-		<section id="about" class="section section-1">
-			<div class="container has-text-centered">
-				<!-- Source: https://flic.kr/p/pAZBNK -->
-				<img class="avatar" src="assets/img/profile.png">
-			</div>
-			<div class="container"></br>
-				<p class="intro">
-					Lorem Khaled Ipsum is a major key to success. To succeed you must believe. When you believe, you will succeed. Mogul talk. Find peace, life is like a water fall, you’ve gotta flow. Lion! Fan luv. Eliptical talk.
-				</p>
-			</div>
-		</section>
-		
-		<!-- Projects -->
-		<section  id="projects" class="section section-2">
-			<div class="container">
-				<div class="has-text-centered">
-					<h3 class="title is-3">Projects</h3>
-				</div>
-				
-				<div class="columns is-multiline is-desktop">
-					<!-- Project 1 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<img src="assets/img/project-1.jpg" alt="Image">
-									</figure>
-								</div>
-								<div>			
-									<p>
-										They don’t want us to eat. I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-					<!-- Project 2 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<img src="assets/img/project-2.jpg" alt="Image">
-									</figure>
-								</div>
-								<div>			
-									<p>
-										Bless up. Another one. How’s business? Boomin. Don’t ever play yourself. Life is what you make it, so let’s make it.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+<a href="#problem" class="drawer-link">The Problem</a>
+<a href="#services" class="drawer-link">What We Do</a>
+<a href="#work" class="drawer-link">Work</a>
+<a href="#faq" class="drawer-link">FAQ</a>
+<a href="#apply" class="drawer-cta">Book a Strategy Call</a>
+</nav>
 
-		<!-- Social -->
-		<section id="social" class="section section-3">
-			<div class="container">
-				<div class="has-text-centered">					
-					<h3 class="title is-3">Let's Socialize</h3>
-				</div>
-				<div class="social-container columns">
-					<div class="column is-6 has-text-centered">
-						<a target="_blank" href="https://ca.linkedin.com/in/hassan-ali-6132468a"><img class="" src="assets/img/linkedin.png"></a>
-					</div>
-					<div class="column is-6 has-text-centered">
-						<a target="_blank" href="https://www.facebook.com/Hassan.Helfi"><img class="" src="assets/img/facebook.png"></a>
-					</div>
-				</div>
-			</div>
-		</section>	
-		
-		<!-- Footer -->
-		<section class="section-4 has-text-centered container">
-			<a href="http://www.hassanali.me/about">Hassan Ali</a>
-		</section>
-		
-		<!-- Scripts  -->
-		<script src="controller.js"></script>		
-	</body>	
+<section class="hero" id="top">
+<div class="grid-bg"><div class="grid-3d-dark"></div></div>
+<div class="hero-container reveal">
+<h1>Bold brands for<br>Africa's <em>next decade.</em></h1>
+<p class="hero-sub">PENNIO is a full-stack creative partner for African startups and local businesses ready to look premium, sell online, and grow past their city.</p>
+<p class="hero-note">Brand systems, web, and growth creative built as one connected system.</p>
+<div class="hero-actions">
+<a href="#apply" class="btn btn-cta">Book a strategy call</a>
+<a href="/audit/" class="btn btn-outline">Get the free checklist</a>
+</div>
+</div>
+</section>
+
+<div class="marquee-wrap" aria-hidden="true">
+<div class="marquee-track">
+<span class="marquee-item">Brand Systems <span class="marquee-sep"></span></span>
+<span class="marquee-item">Visual Identity <span class="marquee-sep"></span></span>
+<span class="marquee-item">Web and Product <span class="marquee-sep"></span></span>
+<span class="marquee-item">Growth Creative <span class="marquee-sep"></span></span>
+<span class="marquee-item">African Startups <span class="marquee-sep"></span></span>
+<span class="marquee-item">Local Businesses <span class="marquee-sep"></span></span>
+<span class="marquee-item">Premium Editorial <span class="marquee-sep"></span></span>
+<span class="marquee-item">Launch Assets <span class="marquee-sep"></span></span>
+<span class="marquee-item">Full-Stack Creative <span class="marquee-sep"></span></span>
+<span class="marquee-item">Brand Systems <span class="marquee-sep"></span></span>
+<span class="marquee-item">Visual Identity <span class="marquee-sep"></span></span>
+<span class="marquee-item">Web and Product <span class="marquee-sep"></span></span>
+<span class="marquee-item">Growth Creative <span class="marquee-sep"></span></span>
+<span class="marquee-item">African Startups <span class="marquee-sep"></span></span>
+<span class="marquee-item">Local Businesses <span class="marquee-sep"></span></span>
+<span class="marquee-item">Premium Editorial <span class="marquee-sep"></span></span>
+<span class="marquee-item">Launch Assets <span class="marquee-sep"></span></span>
+<span class="marquee-item">Full-Stack Creative <span class="marquee-sep"></span></span>
+</div>
+</div>
+
+<section class="section-problem" id="problem">
+<div class="grid-bg" style="transform: rotate(180deg); opacity: 0.55; height: 50%; top: 0; bottom: auto;">
+<div class="grid-3d-light"></div>
+</div>
+<div class="problem-header reveal">
+<span class="label dark">The Pattern</span>
+<h2>Why most African brands underperform their potential.</h2>
+<p>Most of these businesses have a strong product and a ready market. What keeps holding them back is the layer between the business and the customer: the brand.</p>
+</div>
+<div class="cycle reveal reveal-d1">
+<div class="cycle-step">
+<div class="cycle-n">01</div>
+<div class="cycle-title">The look is generic</div>
+<div class="cycle-text">A logo gets commissioned before any real thinking is done. The result looks like every other brand in the category.</div>
+</div>
+<div class="cycle-step">
+<div class="cycle-n">02</div>
+<div class="cycle-title">The website is forgettable</div>
+<div class="cycle-text">A site goes up but visitors leave without buying. The copy is unclear, the layout is template-heavy, and the brand stops at the header.</div>
+</div>
+<div class="cycle-step">
+<div class="cycle-n">03</div>
+<div class="cycle-title">The ads stop working</div>
+<div class="cycle-text">Media spend increases and the cost of winning a customer keeps climbing. By this point, the problem is on the landing page, not inside the ad.</div>
+</div>
+<div class="cycle-step fatal">
+<div class="cycle-n">04</div>
+<div class="cycle-title">The brand stalls</div>
+<div class="cycle-text">Revenue levels off and the search for a fix circles back to the logo. The cycle starts again and everything built before gets thrown out.</div>
+</div>
+</div>
+</section>
+
+<section class="section-insight">
+<div class="insight-card reveal">
+<video autoplay loop muted playsinline aria-hidden="true" style="position:absolute; top:0; right:0; width:46%; height:100%; object-fit:cover; opacity:0.16; pointer-events:none; mix-blend-mode:screen;">
+<source src="motion/orbit-strategy-loop.mp4" type="video/mp4">
+</video>
+<div class="insight-q">
+Most African businesses do not have a design problem.<br>
+They have a <em>connection problem.</em>
+</div>
+<div class="insight-body">
+When brand, web, and growth creative come from different vendors working off different briefs, the business ends up looking like it was put together rather than properly built. The market can feel that gap. They may not always know what to call it, but it makes trust harder to earn and the business harder to grow.
+</div>
+</div>
+</section>
+
+<section class="section-services" id="services">
+<div class="services-header reveal">
+<span class="label">What We Do</span>
+<h2>Three pillars, one connected system.</h2>
+<p>Everything PENNIO builds connects back to a single strategy, so every part of the business looks like it belongs together and holds up as the business grows.</p>
+</div>
+<div class="phases">
+<div class="phase reveal">
+<div class="phase-n">01</div>
+<div class="phase-name">Brand Systems</div>
+<div class="phase-desc">Strategy and identity work that gives your business a clear position and a visual language people can recognise and remember. The kind of brand that earns trust before the customer has even bought anything.</div>
+<div class="phase-tag">What is included</div>
+<ul class="phase-list">
+<li>Brand strategy and positioning</li>
+<li>Visual identity and logoset</li>
+<li>Colour, typography, and system rules</li>
+<li>Messaging and tone of voice</li>
+<li>Brand guidelines document</li>
+</ul>
+</div>
+<div class="phase reveal reveal-d1">
+<div class="phase-n">02</div>
+<div class="phase-name">Web and Product</div>
+<div class="phase-desc">Sites and landing pages built to bring in customers. The visual system from Pillar 01 carries through every page, so the whole experience feels like it belongs to the same business.</div>
+<div class="phase-tag">What is included</div>
+<ul class="phase-list">
+<li>Landing pages and marketing sites</li>
+<li>E-commerce storefronts</li>
+<li>Layout and user experience direction</li>
+<li>Launch asset production</li>
+<li>On-page copy and structure</li>
+</ul>
+</div>
+<div class="phase reveal reveal-d2">
+<div class="phase-n">03</div>
+<div class="phase-name">Growth Creative</div>
+<div class="phase-desc">Campaign content, social creative, and ad assets built around a brand that has a clear direction. Because the strategy is in place before any campaign starts, the brief writes itself and every naira of media spend can work harder.</div>
+<div class="phase-tag">What is included</div>
+<ul class="phase-list">
+<li>Campaign concepts and creative direction</li>
+<li>Social and paid ad creatives</li>
+<li>Content pillars and editorial calendars</li>
+<li>Launch and promotion assets</li>
+<li>Ad creative briefs for media buyers</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section-statement">
+<div class="statement-inner reveal">
+<div class="statement-left">
+<h2>One partner from brand to web to growth.</h2>
+<p>When you hire separately for brand, web, and creative, the cost adds up and the work stops connecting. PENNIO delivers all three as one system, scoped to your stage and your budget.</p>
+</div>
+<div class="statement-right" style="position:relative;">
+<video autoplay loop muted playsinline aria-hidden="true" style="position:absolute; top:50%; left:50%; width:180px; height:180px; transform:translate(-50%,-50%); opacity:0.35; mix-blend-mode:screen; pointer-events:none; z-index:0;">
+<source src="motion/cta-pulse-glow.mp4" type="video/mp4">
+</video>
+<a href="#apply" class="btn btn-cta" style="padding: 16px 32px; font-size: 0.86rem; position:relative; z-index:1;">Book a strategy call</a>
+</div>
+</div>
+</section>
+
+<section class="section-work" id="work">
+<div class="work-header reveal">
+<span class="label">Selected Work</span>
+<h2>What PENNIO builds.</h2>
+<p>Active client engagements. Every brand below started as a business problem, and the creative followed the strategy.</p>
+</div>
+<div class="proof-grid">
+<div class="proof-card reveal">
+<div class="proof-img-placeholder">
+<img src="/jojo-jewels-brand-identity.webp" alt="Jojo Jewels brand identity by PENNIO" class="proof-img" width="400" height="500" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="proof-img-initial" style="display:none">JJ</div>
+</div>
+<div class="proof-meta">
+<div class="proof-status"><span class="proof-status-dot"></span>In Progress</div>
+<div class="proof-brand">Jojo Jewels</div>
+<div class="proof-category">Jewellery · Brand Architecture and Identity System</div>
+<div class="proof-outcome">Brand positioning and full visual identity built to support premium pricing and grow digital sales.</div>
+</div>
+</div>
+<div class="proof-card reveal reveal-d1">
+<div class="proof-img-placeholder">
+<img src="/tabitha-house-of-fragrance-brand-identity.webp" alt="Tabitha House of Fragrance brand identity by PENNIO" class="proof-img" width="400" height="500" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="proof-img-initial" style="display:none">TH</div>
+</div>
+<div class="proof-meta">
+<div class="proof-status"><span class="proof-status-dot"></span>In Progress</div>
+<div class="proof-brand">Tabitha House of Fragrance</div>
+<div class="proof-category">Fragrance · Brand Architecture and Identity System</div>
+<div class="proof-outcome">Identity and messaging built to position the brand for premium retail and online distribution across West Africa.</div>
+</div>
+</div>
+<div class="proof-card reveal reveal-d2">
+<div class="proof-img-placeholder">
+<video class="proof-img" autoplay loop muted playsinline poster="motion/pennio-logo-morph-poster.png" aria-label="PENNIO logo morph animation">
+<source src="motion/pennio-logo-morph.webm" type="video/webm">
+<source src="motion/pennio-logo-morph.mp4" type="video/mp4">
+</video>
+</div>
+<div class="proof-meta">
+<div class="proof-status"><span class="proof-status-dot"></span>Ongoing</div>
+<div class="proof-brand">PENNIO</div>
+<div class="proof-category">Brand Studio · Platform and Creative System</div>
+<div class="proof-outcome">The studio's own identity, web, content, and ad infrastructure, built and maintained as a working proof of the system.</div>
+</div>
+</div>
+</div>
+
+<!-- Studio-built products live here, deliberately secondary to client brand work above so first impression stays "creative agency," not "AI studio." -->
+<div class="studio-strip reveal">
+<div class="studio-strip-label">Also from the studio</div>
+<div class="studio-strip-grid">
+<a href="/letscreate" class="studio-chip" aria-label="The Let's Create Network by PENNIO">
+<img src="/logo.png" alt="" class="studio-chip-icon">
+<div>
+<div class="studio-chip-name">The Let's Create Network</div>
+<div class="studio-chip-status">Creative skills academy</div>
+</div>
+</a>
+<div class="studio-chip" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Ogbifọ project details" onclick="openProofModal('ogbifo')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProofModal('ogbifo');}">
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30" aria-hidden="true" style="color:#D49B41;">
+<g stroke="currentColor" stroke-width="4" stroke-linecap="round">
+<line x1="83" y1="50" x2="88" y2="50" /><line x1="72.5" y1="72.5" x2="77.5" y2="77.5" /><line x1="50" y1="83" x2="50" y2="88" /><line x1="27.5" y1="72.5" x2="22.5" y2="77.5" /><line x1="17" y1="50" x2="12" y2="50" /><line x1="27.5" y1="27.5" x2="22.5" y2="22.5" /><line x1="50" y1="17" x2="50" y2="12" /><line x1="72.5" y1="27.5" x2="77.5" y2="22.5" />
+</g>
+<path d="M 32 50 C 32 36, 68 36, 68 50 C 68 64, 32 64, 32 50 Z" stroke="#D49B41" stroke-width="5"/>
+<circle cx="50" cy="50" r="6" fill="#D49B41"/>
+</svg>
+<div>
+<div class="studio-chip-name">Ogbifọ</div>
+<div class="studio-chip-status">Language preservation AI · In progress</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="proof-modal" id="proofModal" role="dialog" aria-modal="true" aria-labelledby="proofModalTitle">
+<div class="proof-modal-inner">
+<button class="proof-modal-close" type="button" aria-label="Close" onclick="closeProofModal()">&times;</button>
+<div class="proof-modal-status">In Progress</div>
+<h3 id="proofModalTitle">Ogbifọ</h3>
+<div class="proof-category">AI Product · Language and Cultural Preservation</div>
+<div class="proof-modal-mark" aria-hidden="true">
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+<style>
+@keyframes spokePulseOdd { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+@keyframes spokePulseEven { 0%, 100% { transform: scale(1.2); } 50% { transform: scale(0.85); } }
+.spoke-odd { transform-origin: 50px 50px; animation: spokePulseOdd 1.5s ease-in-out infinite; }
+.spoke-even { transform-origin: 50px 50px; animation: spokePulseEven 1.5s ease-in-out infinite; }
+</style>
+<g stroke="#FAF9F6" stroke-width="3" stroke-linecap="round">
+<line x1="83" y1="50" x2="88" y2="50" class="spoke-odd" /><line x1="80.5" y1="61.5" x2="85" y2="63" class="spoke-even" /><line x1="72.5" y1="72.5" x2="77.5" y2="77.5" class="spoke-odd" /><line x1="61.5" y1="80.5" x2="63" y2="85" class="spoke-even" /><line x1="50" y1="83" x2="50" y2="88" class="spoke-odd" /><line x1="38.5" y1="80.5" x2="37" y2="85" class="spoke-even" /><line x1="27.5" y1="72.5" x2="22.5" y2="77.5" class="spoke-odd" /><line x1="19.5" y1="61.5" x2="15" y2="63" class="spoke-even" /><line x1="17" y1="50" x2="12" y2="50" class="spoke-odd" /><line x1="19.5" y1="38.5" x2="15" y2="37" class="spoke-even" /><line x1="27.5" y1="27.5" x2="22.5" y2="22.5" class="spoke-odd" /><line x1="38.5" y1="19.5" x2="37" y2="15" class="spoke-even" /><line x1="50" y1="17" x2="50" y2="12" class="spoke-odd" /><line x1="61.5" y1="19.5" x2="63" y2="15" class="spoke-even" /><line x1="72.5" y1="27.5" x2="77.5" y2="22.5" class="spoke-odd" /><line x1="80.5" y1="38.5" x2="85" y2="37" class="spoke-even" />
+</g>
+<path d="M 32 50 C 32 36, 68 36, 68 50 C 68 64, 32 64, 32 50 Z" stroke="#D49B41" stroke-width="4.5"/>
+<circle cx="50" cy="50" r="5" fill="#D49B41"/>
+</svg>
+</div>
+<p class="proof-modal-desc">Ogbifọ is an AI-powered translation and cultural preservation platform that documents, translates, and safeguards African languages using machine learning, corpus verification, and offline-first tooling. The product page is in progress; a preview link will replace this pop-up once it is live.</p>
+<a href="/letscreate" class="btn btn-outline" style="width:100%; text-align:center; justify-content:center; display:flex;">Explore the PENNIO platform</a>
+</div>
+</div>
+
+<section class="section-faq" id="faq" aria-label="Frequently Asked Questions">
+<div class="faq-wrap">
+<div class="faq-header reveal">
+<span class="label">FAQ</span>
+<h2>Questions before<br>booking the call.</h2>
+</div>
+<details class="faq-item reveal">
+<summary class="faq-q">What does full-stack creative mean at PENNIO?</summary>
+<p class="faq-a">It means one studio handles strategy, identity, web, and growth creative as a single connected system. Everything comes from the same brief and moves in the same direction, so your brand, website, and ads all feel like they belong to the same business.</p>
+</details>
+<details class="faq-item reveal reveal-d1">
+<summary class="faq-q">Do you work with early-stage startups or only established brands?</summary>
+<p class="faq-a">PENNIO works across the growth curve, from pre-launch startups that need a strong foundation to established local businesses that have outgrown their current creative. Scope and price are confirmed in a strategy call before any work begins.</p>
+</details>
+<details class="faq-item reveal reveal-d1">
+<summary class="faq-q">Do you work with brands outside Nigeria?</summary>
+<p class="faq-a">PENNIO works with African founders and local businesses regardless of location. Diaspora and pan-African engagements are scoped and priced individually. Book a call and we will confirm fit from there.</p>
+</details>
+<details class="faq-item reveal reveal-d2">
+<summary class="faq-q">What happens after I book a strategy call?</summary>
+<p class="faq-a">We scope your brief together, agree on which pillars apply, and confirm scope, timeline, and pricing in writing before any work begins. The call is a conversation about fit and what the project actually needs.</p>
+</details>
+<details class="faq-item reveal reveal-d2">
+<summary class="faq-q">I already have a logo and a website. Can PENNIO still help?</summary>
+<p class="faq-a">This is the most common starting point. The strategy call helps us understand what exists, what is working, and what needs to be built on. Where the foundation is already solid, PENNIO builds from it rather than replacing it.</p>
+</details>
+</div>
+</section>
+
+<section class="section-apply" id="apply">
+<div class="grid-bg"><div class="grid-3d-light"></div></div>
+<div class="apply-wrap">
+<div class="apply-header reveal">
+<div class="apply-time-badge">5 questions, 5 minutes</div>
+<h2>Apply if the brand is real<br>and the founder is ready.</h2>
+<p>Every application is read personally. If there is a fit, you will hear back within 48 hours to book a strategy call. Submitting does not commit you to anything.</p>
+</div>
+<div class="apply-fit reveal reveal-d1">
+<div class="fit-col">
+<div class="fit-heading fit-yes">This is for you if</div>
+<ul class="fit-list">
+<li>You run a startup or local business with a real product or service</li>
+<li>You want brand, web, and creative handled as one connected system</li>
+<li>You are ready to invest in a foundation that grows with the business</li>
+<li>You can give the process the time and attention it deserves</li>
+</ul>
+</div>
+<div class="fit-col">
+<div class="fit-heading fit-no">Who should wait</div>
+<ul class="fit-list">
+<li>You need a logo done quickly with no strategy behind it</li>
+<li>You are still testing whether the business idea will work</li>
+<li>You want to skip strategy and go straight to execution</li>
+<li>You are exploring without a real brief or committed budget</li>
+</ul>
+</div>
+</div>
+<div class="apply-capacity reveal reveal-d1">
+<p class="apply-capacity-text"><strong>PENNIO takes on a maximum of 3 new projects per month.</strong> Once those slots are filled, applications move to the next intake.</p>
+<a href="#apply-form" class="apply-capacity-link">Apply below</a>
+</div>
+<div class="apply-form-wrap reveal reveal-d2" id="apply-form">
+<div class="form-alert" id="formAlert"></div>
+<form id="applyForm" action="https://formsubmit.co/ea0da421e8e6e82457be40792262eeed" method="POST">
+<input type="hidden" name="_subject" value="New Project Application (PENNIO)">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="form-grid">
+<div class="field">
+<label for="f-name">Full Name</label>
+<input type="text" id="f-name" name="name" required placeholder="Your name" autocomplete="name">
+</div>
+<div class="field">
+<label for="f-email">Email</label>
+<input type="email" id="f-email" name="email" required placeholder="you@email.com" autocomplete="email">
+</div>
+<div class="field">
+<label for="f-brand">Brand or Business Name</label>
+<input type="text" id="f-brand" name="brand_name" required placeholder="What is your brand called?">
+</div>
+<div class="field">
+<label for="f-stage">Where are you right now?</label>
+<select id="f-stage" name="stage" required>
+<option value="" disabled selected>Select your stage</option>
+<option>Already selling consistently</option>
+<option>Launching with budget committed</option>
+<option>Established business, ready to grow</option>
+<option>Pre-launch, idea is validated</option>
+</select>
+</div>
+<div class="field full">
+<label for="f-social">Website or Instagram (if any)</label>
+<input type="text" id="f-social" name="social" placeholder="@yourbrand or www.yourbrand.com">
+</div>
+<div class="field full">
+<label for="f-challenge">What is the main creative or brand problem you need solved?</label>
+<textarea id="f-challenge" name="challenge" placeholder="Be specific. The clearer the brief, the faster we can assess fit."></textarea>
+</div>
+</div>
+<button type="submit" class="form-submit" id="submitBtn">Submit Application</button>
+<p class="form-fine">Submitting this application does not commit you to a project. If there is a fit, we will be in touch within 48 hours to book a strategy call.</p>
+</form>
+<div class="success-state" id="successMsg">
+<div class="success-icon">&#10003;</div>
+<h3>Application Received.</h3>
+<p>Your application is in. We will be in touch within 48 hours.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+<div class="modal-box">
+<button class="modal-close" id="close-privacy" aria-label="Close privacy policy">&#10005;</button>
+<h3 id="privacy-title">Privacy Policy</h3>
+<span class="modal-date">Effective January 2026</span>
+<p>PENNIO collects only the information you submit through this application form: your name, email, brand name, stage, and the brief you describe. It is used solely to evaluate your application.</p>
+<p>We do not sell, rent, or share your information with third parties. We do not use your data for advertising. Application data is routed through FormSubmit and stored securely.</p>
+<p>You may request deletion of your data at any time by submitting a request through the application form. We will respond within 5 business days.</p>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+<div class="modal-box">
+<button class="modal-close" id="close-terms" aria-label="Close terms of engagement">&#10005;</button>
+<h3 id="terms-title">Terms of Engagement</h3>
+<span class="modal-date">Effective January 2026</span>
+<p><strong>Submitting an application does not constitute a contract.</strong> PENNIO reviews every application manually and reserves the right to decline any project without obligation to provide a reason.</p>
+<p>Accepted clients receive a formal project agreement outlining scope, deliverables, timeline, and payment terms before any work begins. Pricing is confirmed in writing after the strategy call.</p>
+<p>All creative work produced by PENNIO remains the intellectual property of PENNIO until final payment is received in full. Upon full payment, ownership of deliverables transfers to the client as outlined in the project agreement.</p>
+<p>PENNIO does not offer refunds once a project phase has begun. Disputes are handled in good faith and governed by Nigerian law.</p>
+</div>
+</div>
+
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a href="#top" class="nav-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" aria-hidden="true">
+<path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/>
+</svg>
+<span class="nav-wordmark">PENNIO<span style="color:var(--orange);">.</span></span>
+</a>
+<p class="footer-tagline">Bold brands for Africa's next decade.</p>
+<div class="footer-socials">
+<a href="https://x.com/penniodesign" target="_blank" rel="noopener" aria-label="X / Twitter">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+</a>
+<a href="https://instagram.com/pennio.agency" target="_blank" rel="noopener" aria-label="Instagram">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+</a>
+<a href="https://linkedin.com/in/paul-oyatowo" target="_blank" rel="noopener" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Studio</h4>
+<ul>
+<li><a href="#problem">The Problem</a></li>
+<li><a href="#services">What We Do</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="/audit/">Free Brand Checklist</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<ul>
+<li><a href="#" id="open-privacy">Privacy</a></li>
+<li><a href="#" id="open-terms">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&#169; 2026 PENNIO · Full-Stack Creative Agency</span>
+</div>
+</footer>
+
+<!-- Meta Pixel: moved to end of body and deferred so it never blocks first paint or LCP -->
+<script defer>
+window.addEventListener('load', function () {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1288692886314507');
+  fbq('track', 'PageView');
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1288692886314507&ev=PageView&noscript=1"/></noscript>
+
+<script>
+function trackLead() { if (typeof fbq !== 'undefined') fbq('track', 'Lead'); }
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('open-privacy').addEventListener('click', e => { e.preventDefault(); openModal('modal-privacy'); });
+document.getElementById('open-terms').addEventListener('click', e => { e.preventDefault(); openModal('modal-terms'); });
+document.getElementById('close-privacy').addEventListener('click', () => closeModal('modal-privacy'));
+document.getElementById('close-terms').addEventListener('click', () => closeModal('modal-terms'));
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(overlay.id); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+    closeProofModal();
+  }
+});
+
+const hamburger = document.getElementById('hamburgerBtn');
+const drawer = document.getElementById('mobileDrawer');
+function toggleDrawer(force) {
+  const open = force !== undefined ? force : hamburger.getAttribute('aria-expanded') === 'false';
+  hamburger.setAttribute('aria-expanded', String(open));
+  drawer.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+hamburger.addEventListener('click', () => toggleDrawer());
+drawer.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => toggleDrawer(false)); });
+window.addEventListener('resize', () => { if (window.innerWidth > 768) toggleDrawer(false); });
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); obs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(v => { v.pause(); v.removeAttribute('autoplay'); });
+}
+
+function openProofModal(id) {
+  if (id === 'ogbifo') { document.getElementById('proofModal').classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+}
+function closeProofModal() {
+  document.getElementById('proofModal').classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+document.getElementById('proofModal').addEventListener('click', e => { if (e.target.id === 'proofModal') closeProofModal(); });
+
+/* Application form: progressive-enhancement AJAX submit via FormSubmit's ajax endpoint,
+   so the founder sees the success state in-page instead of being redirected off-site.
+   Falls back to a normal POST (native form action) if fetch fails or JS is off. */
+(function () {
+  const form = document.getElementById('applyForm');
+  const alertBox = document.getElementById('formAlert');
+  const submitBtn = document.getElementById('submitBtn');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    alertBox.classList.remove('show');
+
+    if (form.querySelector('[name="_honey"]').value) return; // honeypot tripped, silently drop
+
+    const requiredFields = ['name', 'email', 'brand_name', 'stage'];
+    for (const key of requiredFields) {
+      const field = form.querySelector(`[name="${key}"]`);
+      if (!field.value.trim()) {
+        field.focus();
+        alertBox.textContent = 'Please fill in every required field before submitting.';
+        alertBox.classList.add('show');
+        return;
+      }
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    const actionUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(actionUrl, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      if (!res.ok) throw new Error('Submit failed');
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+      trackLead();
+    } catch (err) {
+      alertBox.textContent = "Something didn't go through. You can also reach us directly on Instagram @pennio.agency.";
+      alertBox.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Application';
+    }
+  });
+})();
+</script>
+</body>
 </html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brand Architecture Checklist · Free Diagnostic — PENNIO</title>
+<meta name="description" content="15 questions to run before your next ad dollar. A free self-audit across Meaning, System, and Voice, from PENNIO — the brand architecture studio for visionary founders.">
+<link rel="canonical" href="https://pennio.agency/audit/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#050505">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pennio.agency/audit/">
+<meta property="og:title" content="The Brand Architecture Checklist — Free Diagnostic from PENNIO">
+<meta property="og:description" content="15 questions to run before your next ad dollar. Meaning, System, Voice — the three pillars PENNIO builds before any campaign starts.">
+<meta property="og:image" content="https://pennio.agency/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Brand Architecture Checklist — Free Diagnostic from PENNIO">
+<meta name="twitter:description" content="15 questions to run before your next ad dollar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange: #F26522;
+    --orange-dark: #D9561B;
+    --black: #050505;
+    --off-black: #0A0A0A;
+    --surface: #111111;
+    --white: #FFFFFF;
+    --grey-3: rgba(255,255,255,0.50);
+    --grey-4: rgba(255,255,255,0.60);
+    --grey-5: rgba(255,255,255,0.85);
+    --line: rgba(255,255,255,0.09);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 6vw; }
+
+  /* NAV */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 26px 6vw; }
+  .nav-wordmark { display: flex; align-items: center; gap: 7px; font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: none; }
+  .nav-wordmark span { color: var(--orange); }
+  .nav-back { font-size: 0.78rem; font-weight: 400; color: var(--grey-4); text-decoration: none; }
+  .nav-back:hover { color: var(--white); }
+
+  /* HERO */
+  .hero { position: relative; overflow: hidden; padding: 40px 0 90px; }
+  .hero .grid3d { position: absolute; bottom: -10%; left: -50%; width: 200%; height: 70%; background-image: linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to top, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 5% 8%; transform: perspective(60vh) rotateX(60deg) translateY(-20px); mask-image: linear-gradient(to top, black 10%, transparent 70%); -webkit-mask-image: linear-gradient(to top, black 10%, transparent 70%); pointer-events: none; z-index: 0; }
+  .hero .glow { position: absolute; top: -15%; right: -10%; width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(242,101,34,0.16) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+  .hero-grid { position: relative; z-index: 10; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: start; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--orange); }
+  .hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 22px; }
+  .hero h1 em { font-style: italic; font-weight: 300; color: var(--grey-4); }
+  .hero-sub { font-size: 1.05rem; font-weight: 300; line-height: 1.65; color: var(--grey-4); max-width: 480px; margin-bottom: 30px; }
+
+  .checklist-facts { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 8px; }
+  .fact { display: flex; flex-direction: column; gap: 4px; }
+  .fact-num { font-size: 1.5rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+  .fact-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-3); }
+
+  /* FORM CARD */
+  .form-card { position: relative; z-index: 10; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 12px; padding: 40px; backdrop-filter: blur(20px); }
+  .form-card-eyebrow { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-3); margin-bottom: 10px; }
+  .form-card h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .form-card-note { font-size: 0.85rem; font-weight: 300; color: var(--grey-4); line-height: 1.55; margin-bottom: 26px; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-3); margin-bottom: 7px; }
+  .field input { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 13px 15px; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 400; color: var(--white); outline: none; transition: border-color 0.2s; }
+  .field input:focus { border-color: var(--orange); }
+  .form-alert { display: none; font-size: 0.78rem; color: #ff8a65; background: rgba(255,90,30,0.08); border: 1px solid rgba(255,90,30,0.25); border-radius: 6px; padding: 10px 12px; margin-bottom: 14px; }
+  .form-alert.show { display: block; }
+  .form-submit { width: 100%; margin-top: 6px; padding: 15px; background: var(--orange); color: var(--white); border: none; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .form-submit:hover { background: var(--orange-dark); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-fine { font-size: 0.68rem; font-weight: 400; color: var(--grey-3); text-align: center; margin-top: 14px; line-height: 1.5; }
+
+  .success-state { display: none; text-align: center; padding: 10px 0; }
+  .success-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(242,101,34,0.14); border: 1px solid rgba(242,101,34,0.4); color: var(--orange); font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+  .success-state h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+  .success-state p { font-size: 0.85rem; font-weight: 300; color: var(--grey-4); line-height: 1.55; margin-bottom: 22px; }
+  .download-btn { display: inline-flex; align-items: center; gap: 9px; background: var(--white); color: #000; text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 14px 26px; border-radius: 6px; }
+  .download-btn:hover { background: var(--grey-5); }
+  .success-secondary { display: block; margin-top: 18px; font-size: 0.75rem; color: var(--grey-4); text-decoration: underline; text-underline-offset: 3px; }
+  .success-secondary:hover { color: var(--white); }
+
+  /* WHY SECTION */
+  .why { padding: 80px 0; border-top: 1px solid var(--line); }
+  .why-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; }
+  @media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; gap: 30px; } }
+  .why h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+  .why p { font-size: 0.95rem; font-weight: 300; line-height: 1.7; color: var(--grey-4); margin-bottom: 16px; }
+
+  /* PILLARS PREVIEW */
+  .pillars { padding: 0 0 90px; }
+  .pillars-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey-3); margin-bottom: 26px; }
+  .pillar-row { display: grid; grid-template-columns: 60px 1fr; gap: 20px; border-top: 1px solid var(--line); padding: 26px 0; }
+  .pillar-row:last-child { border-bottom: 1px solid var(--line); }
+  .pillar-row-num { font-family: 'Inter', sans-serif; font-size: 1.6rem; font-weight: 800; font-style: italic; color: rgba(255,255,255,0.14); }
+  .pillar-row h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+  .pillar-row p { font-size: 0.85rem; font-weight: 300; color: var(--grey-4); line-height: 1.6; max-width: 560px; }
+
+  /* FOOTER */
+  .foot { border-top: 1px solid var(--line); padding: 30px 0 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .foot-copy { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-3); }
+  .foot-links { display: flex; gap: 20px; }
+  .foot-links a { font-size: 0.78rem; color: var(--grey-4); text-decoration: none; }
+  .foot-links a:hover { color: var(--white); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-wordmark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="14" height="18" aria-hidden="true"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg>
+    PENNIO<span>.</span>
+  </a>
+  <a href="/" class="nav-back">← pennio.agency</a>
+</nav>
+
+<section class="hero">
+  <div class="grid3d" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Free Diagnostic</span>
+        <h1>Find out if your brand can survive its own <em>ad spend.</em></h1>
+        <p class="hero-sub">15 questions across the three pillars PENNIO builds before any campaign starts: Meaning, System, Voice. Five minutes, honestly answered, and you'll know exactly where the gap is before you spend another naira finding out the hard way.</p>
+        <div class="checklist-facts">
+          <div class="fact"><span class="fact-num">15</span><span class="fact-label">Checklist Items</span></div>
+          <div class="fact"><span class="fact-num">03</span><span class="fact-label">Brand Pillars</span></div>
+          <div class="fact"><span class="fact-num">5 min</span><span class="fact-label">To Complete</span></div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div id="formView">
+          <div class="form-card-eyebrow">Get Instant Access</div>
+          <h2>Download the checklist.</h2>
+          <p class="form-card-note">One PDF, straight to your screen. No spam, no drip sequence, unsubscribe from anything we send whenever you like.</p>
+          <div class="form-alert" id="formAlert"></div>
+          <form id="auditForm" action="https://formsubmit.co/ea0da421e8e6e82457be40792262eeed" method="POST">
+            <input type="hidden" name="_subject" value="New Lead: Brand Architecture Checklist (PENNIO)">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thanks for requesting The Brand Architecture Checklist. Here is your copy: https://pennio.agency/audit/pennio-brand-architecture-checklist.pdf — If your score comes back low, that is exactly what PENNIO builds. Apply at https://pennio.agency/#apply.">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="field">
+              <label for="a-name">Full Name</label>
+              <input type="text" id="a-name" name="name" required placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="a-email">Email</label>
+              <input type="email" id="a-email" name="email" required placeholder="you@email.com" autocomplete="email">
+            </div>
+            <button type="submit" class="form-submit" id="auditSubmitBtn">Send Me the Checklist</button>
+            <p class="form-fine">Also emailed to you as a backup. Built by the studio behind pennio.agency.</p>
+          </form>
+        </div>
+        <div class="success-state" id="auditSuccess">
+          <div class="success-icon">&#10003;</div>
+          <h3>It's ready.</h3>
+          <p>Your copy is emailed to you as backup. Download it directly below and go through it now, while the campaign that sent you here is still fresh.</p>
+          <a class="download-btn" href="/audit/pennio-brand-architecture-checklist.pdf" download>&#8595; Download the Checklist (PDF)</a>
+          <a class="success-secondary" href="/#apply">Already know your score is low? Apply to the studio →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <h2>This is not an ad problem. Most of the time, it never was.</h2>
+      <div>
+        <p>Founders usually reach for a new ad account, a new agency, or a new hook when the numbers stop moving. Rarely do they reach for the brand underneath the ad. Performance marketing amplifies whatever signal a brand is already sending. If the signal is weak, the spend just scales the problem faster.</p>
+        <p>This checklist is the same diagnostic PENNIO runs before taking on a project. Go through it honestly. If your score comes back low, you now know exactly what to fix before your next campaign, not after it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillars-label">What's Inside</div>
+    <div class="pillar-row">
+      <span class="pillar-row-num">01</span>
+      <div>
+        <h3>Meaning</h3>
+        <p>The position you defend and the customer you built for. Five questions that check whether your brand can survive a competitor copying your logo tomorrow.</p>
+      </div>
+    </div>
+    <div class="pillar-row">
+      <span class="pillar-row-num">02</span>
+      <div>
+        <h3>System</h3>
+        <p>The visual rules that let anyone execute the brand correctly without you in the room. Five questions on whether your identity survives being handed to someone new.</p>
+      </div>
+    </div>
+    <div class="pillar-row">
+      <span class="pillar-row-num">03</span>
+      <div>
+        <h3>Voice</h3>
+        <p>The specific vocabulary that carries the system across every platform. Five questions on whether your captions, copy, and sales messages sound like one brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+    <span class="foot-copy">© PENNIO — Brand Architecture Studio</span>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/#apply">Apply</a>
+      <a href="https://instagram.com/pennio.agency" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Meta Pixel: deferred so it never blocks first paint -->
+<script defer>
+window.addEventListener('load', function () {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1288692886314507');
+  fbq('track', 'PageView');
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1288692886314507&ev=PageView&noscript=1"/></noscript>
+
+<script>
+function trackLead() { if (typeof fbq !== 'undefined') fbq('track', 'Lead'); }
+
+(function () {
+  const form = document.getElementById('auditForm');
+  const alertBox = document.getElementById('formAlert');
+  const submitBtn = document.getElementById('auditSubmitBtn');
+  const formView = document.getElementById('formView');
+  const successView = document.getElementById('auditSuccess');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    alertBox.classList.remove('show');
+
+    if (form.querySelector('[name="_honey"]').value) return; // honeypot tripped, silently drop
+
+    const requiredFields = ['name', 'email'];
+    for (const key of requiredFields) {
+      const field = form.querySelector(`[name="${key}"]`);
+      if (!field.value.trim()) {
+        field.focus();
+        alertBox.textContent = 'Please fill in your name and email.';
+        alertBox.classList.add('show');
+        return;
+      }
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const actionUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(actionUrl, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      if (!res.ok) throw new Error('Submit failed');
+      formView.style.display = 'none';
+      successView.style.display = 'block';
+      trackLead();
+    } catch (err) {
+      alertBox.textContent = "Something didn't go through. You can also reach us directly on Instagram @pennio.agency.";
+      alertBox.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Me the Checklist';
+    }
+  });
+})();
+</script>
+</body>
+</html>

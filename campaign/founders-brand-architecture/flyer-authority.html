@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PENNIO — Ad: The Architecture Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange: #F26522;
+    --orange-dk: #D9561B;
+    --black: #050505;
+    --off-black: #0A0A0A;
+    --white: #FFFFFF;
+    --grey3: rgba(255,255,255,0.35);
+    --grey4: rgba(255,255,255,0.60);
+    --grey5: rgba(255,255,255,0.85);
+    --line: rgba(255,255,255,0.09);
+  }
+  html { background: #000; }
+  body { font-family: 'Inter', sans-serif; background: #000; color: var(--white); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+
+  .toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: 56px; padding: 0 20px; background: rgba(5,5,5,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .toolbar-brand { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; }
+  .toolbar-brand span { color: var(--orange); }
+  .toolbar-actions { display: flex; gap: 8px; }
+  .fmt-btn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 7px 14px; border-radius: 4px; cursor: pointer; border: 1px solid var(--line); background: rgba(255,255,255,0.06); color: var(--white); transition: all 0.15s ease; }
+  .fmt-btn.active { background: var(--orange); border-color: var(--orange); }
+  .export-btn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; padding: 7px 16px; border-radius: 4px; cursor: pointer; border: none; background: var(--white); color: #000; }
+  .export-btn:hover { background: var(--grey5); }
+  .export-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .page { padding: 96px 20px 60px; display: flex; flex-direction: column; align-items: center; }
+  .canvas-shell { position: relative; }
+  .flyer-wrap { position: relative; overflow: hidden; background: var(--off-black); box-shadow: 0 40px 100px rgba(0,0,0,0.5); }
+
+  .grid3d { position: absolute; bottom: -10%; left: -50%; width: 200%; height: 80%; background-image: linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to top, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 7% 7%; transform: perspective(60vh) rotateX(60deg) translateY(-20px); mask-image: linear-gradient(to top, black 10%, transparent 70%); -webkit-mask-image: linear-gradient(to top, black 10%, transparent 70%); pointer-events: none; z-index: 0; }
+  .glow-accent { position: absolute; top: -12%; right: -12%; width: 65%; height: 60%; background: radial-gradient(ellipse, rgba(242,101,34,0.16) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+
+  .flyer-inner { position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; padding: 7% 8%; }
+  .f-top { display: flex; align-items: center; justify-content: space-between; }
+  .f-brand { display: flex; align-items: center; gap: 6px; }
+  .f-wordmark { font-size: clamp(0.7rem, 1.6vw, 0.95rem); font-weight: 700; letter-spacing: -0.01em; }
+  .f-wordmark span { color: var(--orange); }
+  .f-handle { font-size: clamp(0.5rem, 1vw, 0.68rem); font-weight: 500; color: var(--grey3); letter-spacing: 0.04em; }
+
+  .f-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .f-label { display: inline-flex; align-items: center; gap: 8px; font-size: clamp(0.55rem, 1.1vw, 0.72rem); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin-bottom: 5%; }
+  .f-label::before { content: ''; width: 20px; height: 1px; background: var(--orange); }
+  .f-headline { font-size: clamp(2.1rem, 6.4vw, 4.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; color: var(--white); }
+  .f-headline em { font-style: italic; font-weight: 300; color: var(--grey4); }
+  .f-sub { margin-top: 5%; font-size: clamp(0.85rem, 1.9vw, 1.15rem); font-weight: 300; line-height: 1.55; color: var(--grey4); max-width: 88%; }
+
+  .f-bottom { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 5%; }
+  .f-cta { display: inline-flex; align-items: center; gap: 8px; font-size: clamp(0.68rem, 1.4vw, 0.88rem); font-weight: 700; color: var(--white); }
+  .f-cta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+  .f-tag { font-size: clamp(0.52rem, 1vw, 0.66rem); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey3); }
+
+  .caption-section { margin-top: 32px; width: 100%; max-width: 520px; background: #121212; border: 1px solid var(--line); border-radius: 4px; padding: 18px 20px; }
+  .caption-title { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey4); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  .caption-body { width: 100%; min-height: 100px; font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--grey5); line-height: 1.6; background: transparent; border: none; resize: vertical; outline: none; }
+  .copy-btn { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600; padding: 5px 12px; border-radius: 3px; border: 1px solid var(--line); background: rgba(255,255,255,0.06); color: var(--white); cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg>
+    PENNIO<span>.</span> Ad 01 — Authority
+  </div>
+  <div class="toolbar-actions">
+    <button class="fmt-btn" id="btn-square" onclick="setFormat('square')">1:1</button>
+    <button class="fmt-btn active" id="btn-portrait" onclick="setFormat('portrait')">4:5</button>
+    <button class="fmt-btn" id="btn-story" onclick="setFormat('story')">9:16</button>
+    <button class="export-btn" id="btn-export" onclick="exportPNG()">↓ Export PNG</button>
+  </div>
+</div>
+<div class="page">
+  <div class="canvas-shell">
+    <div class="flyer-wrap">
+      <div class="grid3d"></div>
+      <div class="glow-accent"></div>
+      <div class="flyer-inner">
+        <div class="f-top">
+          <div class="f-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="15" height="19"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg>
+            <span class="f-wordmark">PENNIO<span>.</span></span>
+          </div>
+          <span class="f-handle">@pennio.agency</span>
+        </div>
+        <div class="f-body">
+          <span class="f-label">Brand Architecture Studio</span>
+          <h1 class="f-headline">Your brand is not a logo.<br>It's the <em>architecture</em><br>everything else stands on.</h1>
+          <p class="f-sub">PENNIO builds the meaning, system, and voice visionary founders build the next decade on.</p>
+        </div>
+        <div class="f-bottom">
+          <span class="f-cta"><span class="f-cta-dot"></span>pennio.agency</span>
+          <span class="f-tag">Applications Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="caption-section">
+    <div class="caption-title"><span>Ad Copy / Caption</span><button class="copy-btn" onclick="copyCaption()" id="copy-btn">Copy Text</button></div>
+    <textarea class="caption-body" id="caption-content">Most agencies sell you a logo and call it a brand.
+
+A logo is decoration. Architecture is what holds the weight: the position you defend, the system every future execution draws from, the voice that carries across every platform without losing coherence.
+
+PENNIO builds that architecture for founders who are building something that has to last past the next campaign.
+
+Applications open. We respond within 48 hours.
+
+pennio.agency</textarea>
+  </div>
+</div>
+<script>
+const FORMATS = {
+  square:   { w: 1080, h: 1080 },
+  portrait: { w: 1080, h: 1350 },
+  story:    { w: 1080, h: 1920 }
+};
+let activeFormat = 'portrait';
+
+function getScale() {
+  const { w, h } = FORMATS[activeFormat];
+  return Math.min(520 / w, 720 / h);
+}
+
+function setFormat(fmt) {
+  activeFormat = fmt;
+  const { w, h } = FORMATS[fmt];
+  const wrap = document.querySelector('.flyer-wrap');
+  wrap.style.width = w + 'px';
+  wrap.style.height = h + 'px';
+  const scale = getScale();
+  wrap.style.transform = `scale(${scale})`;
+  wrap.style.transformOrigin = 'top left';
+  document.querySelector('.canvas-shell').style.width = (w * scale) + 'px';
+  document.querySelector('.canvas-shell').style.height = (h * scale) + 'px';
+  document.querySelectorAll('.fmt-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-' + fmt).classList.add('active');
+}
+
+async function exportPNG() {
+  const btn = document.getElementById('btn-export'); btn.disabled = true; const orig = btn.textContent; btn.textContent = 'Rendering...';
+  const { w, h } = FORMATS[activeFormat];
+  const wrap = document.querySelector('.flyer-wrap');
+  wrap.style.transform = 'none';
+  try {
+    const canvas = await html2canvas(wrap, { scale: 3, useCORS: true, allowTaint: true, backgroundColor: null, logging: false, removeContainer: true, width: w, height: h });
+    const a = document.createElement('a');
+    a.download = `pennio-ad-authority-${activeFormat}.png`;
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  } finally {
+    wrap.style.transform = `scale(${getScale()})`;
+    btn.disabled = false; btn.textContent = orig;
+  }
+}
+
+function copyCaption() {
+  const t = document.getElementById('caption-content');
+  t.select(); t.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+  const btn = document.getElementById('copy-btn');
+  const o = btn.textContent; btn.textContent = 'Copied!';
+  setTimeout(() => btn.textContent = o, 1800);
+}
+
+setFormat('portrait');
+</script>
+</body>
+</html>

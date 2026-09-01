@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PENNIO — Carousel Ad: Architecture First</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange:    #F26522;
+    --orange-dk: #D9561B;
+    --black:     #050505;
+    --off-black: #0A0A0A;
+    --surface:   #121212;
+    --white:     #FFFFFF;
+    --grey3:     rgba(255,255,255,0.35);
+    --grey4:     rgba(255,255,255,0.60);
+    --grey5:     rgba(255,255,255,0.85);
+    --line:      rgba(255,255,255,0.09);
+    --glass:     rgba(255,255,255,0.035);
+    --glass-bdr: rgba(255,255,255,0.08);
+  }
+  html { background: #000; }
+  body { font-family: 'Inter', sans-serif; background: #000; color: var(--white); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+
+  /* TOOLBAR */
+  .toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: 56px; padding: 0 20px; background: rgba(5,5,5,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .toolbar-brand { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: -0.01em; }
+  .toolbar-brand span { color: var(--orange); }
+  .toolbar-actions { display: flex; gap: 8px; }
+  .btn-tool { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 7px 14px; border-radius: 4px; cursor: pointer; border: none; transition: all 0.18s ease; white-space: nowrap; }
+  .btn-primary { background: var(--orange); color: var(--white); }
+  .btn-primary:hover { background: var(--orange-dk); }
+  .btn-secondary { background: rgba(255,255,255,0.07); color: var(--white); border: 1px solid var(--line); }
+  .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
+  .btn-tool:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-tool svg { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
+
+  /* LAYOUT */
+  .page { padding: 80px 20px 40px; max-width: 420px; margin: 0 auto; }
+  .slide-count { font-size: 0.58rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey3); text-align: center; margin-bottom: 20px; }
+
+  /* CAROUSEL */
+  .carousel-wrap { position: relative; }
+  .slides-track { overflow: hidden; border-radius: 2px; }
+  .slide { display: none; position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+  .slide.active { display: flex; flex-direction: column; }
+
+  /* ARROWS */
+  .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 4px; background: rgba(255,255,255,0.07); border: 1px solid var(--line); color: var(--white); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.18s; z-index: 10; user-select: none; }
+  .nav-arrow:hover { background: rgba(255,255,255,0.14); }
+  .nav-arrow.prev { left: -44px; }
+  .nav-arrow.next { right: -44px; }
+  .nav-arrow:disabled { opacity: 0.2; cursor: default; }
+
+  /* DOTS */
+  .dot-nav { display: flex; gap: 5px; justify-content: center; margin-top: 18px; flex-wrap: wrap; }
+  .dot { height: 5px; border-radius: 3px; border: none; cursor: pointer; background: rgba(255,255,255,0.2); transition: all 0.22s ease; padding: 0; }
+  .dot.active { background: var(--orange); width: 20px !important; }
+  .slide-label { text-align: center; margin-top: 12px; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
+
+  /* PROGRESS */
+  .progress-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; flex-direction: column; gap: 20px; }
+  .progress-overlay.show { display: flex; }
+  .progress-bar-wrap { width: 260px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+  .progress-bar { height: 100%; background: var(--orange); border-radius: 2px; transition: width 0.3s ease; width: 0%; }
+  .progress-text { font-size: 0.7rem; color: var(--grey4); font-weight: 300; }
+
+  /* CAPTION */
+  .caption-section { margin-top: 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; }
+  .caption-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .caption-title { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey4); }
+  .caption-body { width: 100%; min-height: 180px; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--grey5); line-height: 1.6; background: transparent; border: none; resize: vertical; outline: none; }
+
+  /* SLIDE INTERNALS */
+  .s-top { display: flex; align-items: center; justify-content: space-between; padding: 7% 8%; position: relative; z-index: 10; }
+  .s-brand { display: flex; align-items: center; gap: 5px; }
+  .s-wordmark { font-size: 0.62rem; font-weight: 600; letter-spacing: -0.01em; }
+  .s-wordmark .dot-orange { color: var(--orange); }
+  .s-num { font-size: 0.55rem; font-weight: 500; color: var(--grey3); }
+  .s-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 8% 8%; position: relative; z-index: 10; }
+  .s-label { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey3); display: block; margin-bottom: 0; }
+  .s-label.dark { color: rgba(0,0,0,0.4); }
+  .s-h1 { font-weight: 700; line-height: 1.06; letter-spacing: -0.03em; margin: 0; }
+  .s-p { font-weight: 300; line-height: 1.65; }
+
+  /* ATMOSPHERE */
+  .grid3d { position: absolute; bottom: -10%; left: -50%; width: 200%; height: 100%; background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to top, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 7% 7%; transform: perspective(60vh) rotateX(60deg) translateY(-50px); mask-image: linear-gradient(to top, black 10%, transparent 70%); -webkit-mask-image: linear-gradient(to top, black 10%, transparent 70%); pointer-events: none; z-index: 0; }
+  .grid3d-light { position: absolute; bottom: -10%; left: -50%; width: 200%; height: 100%; background-image: linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(to top, rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 7% 7%; transform: perspective(60vh) rotateX(60deg) translateY(-50px); mask-image: linear-gradient(to top, black 10%, transparent 70%); -webkit-mask-image: linear-gradient(to top, black 10%, transparent 70%); pointer-events: none; z-index: 0; }
+
+  /* PER-SLIDE STYLES */
+  #s1 { background: var(--off-black); }
+  #s1 .accent-line { display: flex; align-items: center; gap: 8px; margin-top: 9%; }
+  #s1 .accent-line::before { content: ''; display: block; width: 22px; height: 1px; background: var(--orange); }
+  #s2 { background: var(--white); color: #000; }
+  #s2 .s-wordmark, #s2 .s-num { color: #000 !important; }
+  #s2 .cycle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 6%; }
+  #s2 .c-step { border: 1px solid rgba(0,0,0,0.09); border-radius: 3px; padding: 10px 11px; background: rgba(0,0,0,0.04); }
+  #s2 .c-step.fatal { background: var(--black); border-color: var(--black); }
+  #s2 .c-n { font-size: 0.5rem; font-weight: 600; color: rgba(0,0,0,0.35); margin-bottom: 5px; letter-spacing: 0.06em; }
+  #s2 .c-step.fatal .c-n { color: var(--grey4); }
+  #s2 .c-title { font-size: 0.68rem; font-weight: 600; color: #000; margin-bottom: 3px; }
+  #s2 .c-step.fatal .c-title { color: var(--white); }
+  #s2 .c-text { font-size: 0.58rem; font-weight: 300; color: rgba(0,0,0,0.5); line-height: 1.45; }
+  #s2 .c-step.fatal .c-text { color: var(--grey4); }
+  #s3 { background: var(--black); }
+  #s3 .stat-block { border-left: 2px solid var(--orange); padding-left: 7%; margin-top: 8%; }
+  #s3 .stat { margin-bottom: 6%; }
+  #s3 .stat:last-child { margin-bottom: 0; }
+  #s3 .stat-lbl { font-size: 0.5rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey3); margin-bottom: 2px; }
+  #s3 .stat-val { font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+  #s4 { background: var(--surface); }
+  #s4 .glow { position: absolute; top: 0; right: 0; width: 55%; height: 55%; background: radial-gradient(ellipse at top right, rgba(242,101,34,0.07) 0%, transparent 70%); pointer-events: none; }
+  #s4 .cards { display: flex; flex-direction: column; gap: 8px; margin-top: 6%; }
+  #s4 .diag-card { border-radius: 3px; padding: 11px 13px; }
+  #s4 .diag-card.said { background: var(--glass); border: 1px solid var(--line); }
+  #s4 .diag-card.truth { background: rgba(242,101,34,0.08); border: 1px solid rgba(242,101,34,0.28); }
+  #s4 .diag-lbl { font-size: 0.5rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+  #s4 .diag-card.said .diag-lbl { color: var(--grey3); }
+  #s4 .diag-card.truth .diag-lbl { color: var(--orange); }
+  #s4 .diag-text { font-size: 0.68rem; font-weight: 400; color: var(--grey4); line-height: 1.5; }
+  #s4 .diag-card.truth .diag-text { color: var(--white); }
+  #s5 { background: var(--white); color: #000; }
+  #s5 .s-wordmark, #s5 .s-num { color: #000 !important; }
+  #s5 .q-list { border-top: 1px solid rgba(0,0,0,0.1); margin-top: 6%; }
+  #s5 .q-row { display: flex; gap: 11px; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 10px 0; align-items: flex-start; }
+  #s5 .q-n { font-size: 0.52rem; font-weight: 700; color: var(--orange); min-width: 16px; padding-top: 2px; }
+  #s5 .q-text { font-size: 0.68rem; font-weight: 400; color: #000; line-height: 1.5; }
+  #s6 { background: var(--off-black); }
+  #s6 .glow { position: absolute; bottom: 0; left: 0; width: 55%; height: 55%; background: radial-gradient(ellipse at bottom left, rgba(242,101,34,0.05) 0%, transparent 70%); pointer-events: none; }
+  #s6 .phase-list { border-top: 1px solid var(--line); margin-top: 6%; }
+  #s6 .phase-row { display: flex; gap: 11px; border-bottom: 1px solid var(--line); padding: 11px 0; align-items: flex-start; }
+  #s6 .phase-n { font-size: 0.52rem; font-weight: 700; color: var(--orange); min-width: 18px; padding-top: 2px; }
+  #s6 .phase-name { font-size: 0.7rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+  #s6 .phase-desc { font-size: 0.58rem; font-weight: 300; color: var(--grey4); line-height: 1.55; }
+  #s7 { background: var(--black); }
+  #s7 .seq-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8%; }
+  #s7 .seq-row { display: flex; gap: 10px; align-items: center; border-radius: 3px; padding: 9px 11px; }
+  #s7 .seq-row.normal { background: rgba(255,255,255,0.03); border: 1px solid var(--line); }
+  #s7 .seq-row.highlight { background: rgba(242,101,34,0.09); border: 1px solid rgba(242,101,34,0.24); }
+  #s7 .seq-n { font-size: 0.52rem; font-weight: 700; color: var(--orange); min-width: 16px; }
+  #s7 .seq-step { font-size: 0.68rem; font-weight: 600; color: var(--white); }
+  #s7 .seq-note { font-size: 0.58rem; font-weight: 300; color: var(--grey4); margin-top: 1px; }
+  #s8 { background: var(--surface); }
+  #s8 .glow { position: absolute; top: 0; right: 0; width: 50%; height: 50%; background: radial-gradient(ellipse at top right, rgba(242,101,34,0.06) 0%, transparent 70%); pointer-events: none; }
+  #s8 .pill-list { display: flex; flex-direction: column; gap: 7px; margin-top: 7%; margin-bottom: 6%; }
+  #s8 .pill-row { display: flex; gap: 8px; align-items: flex-start; }
+  #s8 .pill-dot { width: 4px; height: 4px; background: var(--orange); border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  #s8 .pill-text { font-size: 0.65rem; font-weight: 300; color: var(--grey4); line-height: 1.5; }
+  #s8 .intake-card { background: rgba(255,255,255,0.035); border: 1px solid var(--line); border-radius: 3px; padding: 10px 12px; }
+  #s8 .intake-lbl { font-size: 0.5rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey3); margin-bottom: 4px; }
+  #s8 .intake-text { font-size: 0.62rem; font-weight: 300; color: var(--grey4); line-height: 1.55; }
+  #s9 { background: var(--off-black); }
+  #s9 .cta-inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 8% 10%; text-align: center; position: relative; z-index: 10; }
+  #s9 .cta-tag { display: inline-flex; background: var(--orange); border-radius: 3px; padding: 8px 20px; font-size: 0.68rem; font-weight: 600; color: var(--white); letter-spacing: 0.04em; margin-top: 8%; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="14" height="18"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg>
+    PENNIO<span>.</span> Carousel Ad — Architecture First
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-tool btn-secondary" onclick="downloadCurrentPNG()" id="btn-png">
+      <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>Save Slide PNG
+    </button>
+    <button class="btn-tool btn-secondary" onclick="downloadAllPNGs()" id="btn-all">
+      <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm0-10h4v6h6v-6h4l-7-7-7 7z"/></svg>All 9 PNGs
+    </button>
+    <button class="btn-tool btn-primary" onclick="printPDF()" id="btn-pdf">
+      <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>Download Deck PDF
+    </button>
+  </div>
+</div>
+<div class="progress-overlay" id="progress">
+  <div class="progress-text" id="progress-text">Rendering slides...</div>
+  <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+</div>
+<div class="page">
+  <div class="slide-count">PENNIO · 9 slides · 3:4 format</div>
+  <div class="carousel-wrap">
+    <button class="nav-arrow prev" id="btn-prev" onclick="move(-1)">&#8249;</button>
+    <button class="nav-arrow next" id="btn-next" onclick="move(1)">&#8250;</button>
+    <div class="slides-track">
+      <div class="slide active" id="s1">
+        <div class="grid3d"></div>
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">01 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label">Brand Architecture Studio</span>
+          <h1 class="s-h1" style="font-size:clamp(1.55rem,8vw,2.9rem);color:var(--white);margin-top:6%;">Build the brand<br>before you spend<br>on <em style="font-style:italic;font-weight:300;color:var(--grey4)">the ads.</em></h1>
+          <div class="accent-line"><span style="font-size:0.65rem;color:var(--grey4);font-weight:300;">pennio.agency</span></div>
+        </div>
+      </div>
+      <div class="slide" id="s2">
+        <div class="grid3d-light"></div>
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg><span class="s-wordmark" style="color:#000;">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num" style="color:rgba(0,0,0,0.35);">02 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label dark">The Pattern</span>
+          <h2 class="s-h1" style="font-size:clamp(1.1rem,6vw,2rem);color:#000;margin-top:4%;margin-bottom:5%;">Most founders run<br>the sequence in<br>the wrong order.</h2>
+          <div class="cycle-grid">
+            <div class="c-step"><div class="c-n">01</div><div class="c-title">Product ready</div><div class="c-text">Brand assembled quickly. Ship it.</div></div>
+            <div class="c-step"><div class="c-n">02</div><div class="c-title">Ads on</div><div class="c-text">Capital flows into Meta. Traffic moves.</div></div>
+            <div class="c-step"><div class="c-n">03</div><div class="c-title">Traffic bounces</div><div class="c-text">Clicks arrive. Nothing holds them.</div></div>
+            <div class="c-step fatal"><div class="c-n">04</div><div class="c-title">Budget cut</div><div class="c-text">Blame the platform. Start over.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide" id="s3">
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">03 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label">The Cost of Skipping</span>
+          <div class="stat-block">
+            <div class="stat"><div class="stat-lbl">Ad Spend</div><div class="stat-val" style="font-size:clamp(1.4rem,7vw,2.8rem);color:var(--white);">&#8358;1,500,000</div></div>
+            <div class="stat"><div class="stat-lbl">Revenue Back</div><div class="stat-val" style="font-size:clamp(1.4rem,7vw,2.8rem);color:var(--grey4);">&#8358;475,000</div></div>
+            <div class="stat"><div class="stat-lbl">Result</div><div class="stat-val" style="font-size:clamp(1.4rem,7vw,2.8rem);color:var(--orange);">Minus.</div></div>
+          </div>
+          <p class="s-p" style="font-size:0.65rem;color:var(--grey4);margin-top:7%;max-width:85%;">The ad worked. People clicked. The brand could not give them a reason to stay.</p>
+        </div>
+      </div>
+      <div class="slide" id="s4">
+        <div class="glow"></div>
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">04 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label">Diagnosis</span>
+          <h2 class="s-h1" style="font-size:clamp(1.2rem,6vw,2.1rem);color:var(--white);margin-top:5%;margin-bottom:6%;">This is not<br>an ad problem.</h2>
+          <div class="cards">
+            <div class="diag-card said"><div class="diag-lbl">What people said</div><div class="diag-text">Blame the platform. Change the creative.</div></div>
+            <div class="diag-card truth"><div class="diag-lbl">What actually happened</div><div class="diag-text">Traffic arrived. Nothing in the architecture gave them a reason to trust it.</div></div>
+          </div>
+          <p class="s-p" style="font-size:0.62rem;color:var(--grey4);margin-top:6%;">Performance marketing amplifies whatever signal the brand is already sending. If the signal is weak, the spend scales the problem.</p>
+        </div>
+      </div>
+      <div class="slide" id="s5">
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="black"/></svg><span class="s-wordmark" style="color:#000;">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num" style="color:rgba(0,0,0,0.35);">05 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label dark">Architecture Answers</span>
+          <h2 class="s-h1" style="font-size:clamp(1rem,5.5vw,1.8rem);color:#000;margin-top:4%;margin-bottom:5%;">Three questions before<br>a single naira goes<br>to ads.</h2>
+          <div class="q-list">
+            <div class="q-row"><span class="q-n">01</span><span class="q-text">What does this brand mean to the person it is trying to reach?</span></div>
+            <div class="q-row"><span class="q-n">02</span><span class="q-text">What system of trust does it operate within?</span></div>
+            <div class="q-row"><span class="q-n">03</span><span class="q-text">What makes it the only coherent choice in its category?</span></div>
+          </div>
+          <p style="margin-top:5%;font-size:0.6rem;font-weight:300;color:rgba(0,0,0,0.45);line-height:1.6;">Without answers, the campaign pays for strangers to discover that the brand has not yet decided what it is.</p>
+        </div>
+      </div>
+      <div class="slide" id="s6">
+        <div class="glow"></div>
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">06 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label">The Work</span>
+          <h2 class="s-h1" style="font-size:clamp(1.1rem,5.5vw,1.9rem);color:var(--white);margin-top:5%;margin-bottom:5%;">PENNIO builds<br>three things.</h2>
+          <div class="phase-list">
+            <div class="phase-row"><span class="phase-n">01</span><div><div class="phase-name">Meaning</div><div class="phase-desc">What the brand stands for, who it is built for, and the single market position it will defend. Locked in a document. Never improvised again.</div></div></div>
+            <div class="phase-row"><span class="phase-n">02</span><div><div class="phase-name">System</div><div class="phase-desc">Visual identity, typography, color, grid. Not a mood board. A set of binding decisions every future execution draws from.</div></div></div>
+            <div class="phase-row"><span class="phase-n">03</span><div><div class="phase-name">Voice</div><div class="phase-desc">The specific vocabulary that carries the visual system across every platform without losing coherence.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide" id="s7">
+        <div class="grid3d"></div>
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">07 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label">The Right Sequence</span>
+          <h2 class="s-h1" style="font-size:clamp(1.1rem,5.5vw,1.9rem);color:var(--white);margin-top:5%;margin-bottom:6%;">Architecture first.<br>Then the spend begins.</h2>
+          <div class="seq-list">
+            <div class="seq-row normal"><span class="seq-n">01</span><div><div class="seq-step">Foundation locked</div><div class="seq-note">Meaning, position, system, voice.</div></div></div>
+            <div class="seq-row normal"><span class="seq-n">02</span><div><div class="seq-step">Execution built on it</div><div class="seq-note">Website, deck, content. All from the same source.</div></div></div>
+            <div class="seq-row normal"><span class="seq-n">03</span><div><div class="seq-step">Ads amplify a clear signal</div><div class="seq-note">Traffic arrives. The brand is ready for it.</div></div></div>
+            <div class="seq-row highlight"><span class="seq-n">04</span><div><div class="seq-step">Acquisition compounds</div><div class="seq-note">Not a campaign. A system.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide" id="s8">
+        <div class="glow"></div>
+        <div class="s-top">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">08 / 09</span>
+        </div>
+        <div class="s-body">
+          <span class="s-label">Selection</span>
+          <h2 class="s-h1" style="font-size:clamp(1.1rem,5.5vw,1.9rem);color:var(--white);margin-top:5%;margin-bottom:5%;">PENNIO is for visionary<br>founders building at<br><em style="font-style:italic;font-weight:300;color:var(--grey4)">continental scale.</em></h2>
+          <div class="pill-list">
+            <div class="pill-row"><div class="pill-dot"></div><span class="pill-text">African founders scaling across borders</span></div>
+            <div class="pill-row"><div class="pill-dot"></div><span class="pill-text">Brands entering markets beyond the home base</span></div>
+            <div class="pill-row"><div class="pill-dot"></div><span class="pill-text">Founders who understand architecture precedes execution</span></div>
+            <div class="pill-row"><div class="pill-dot"></div><span class="pill-text">Builders who have already paid the cost of skipping this</span></div>
+          </div>
+          <div class="intake-card"><div class="intake-lbl">Studio Intake</div><div class="intake-text">We limit intake to protect the depth of the work. Every application is reviewed manually.</div></div>
+        </div>
+      </div>
+      <div class="slide" id="s9">
+        <div class="grid3d"></div>
+        <div class="s-top" style="position:relative;z-index:10;">
+          <div class="s-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="13" height="17"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg><span class="s-wordmark">PENNIO<span class="dot-orange">.</span></span></div>
+          <span class="s-num">09 / 09</span>
+        </div>
+        <div class="cta-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.67 102.67" width="36" height="46"><path d="M81.67,40.84a40.67,40.67,0,0,1-5.46,20.41,41.11,41.11,0,0,1-15,15,40.64,40.64,0,0,1-20.41,5.46V61.25a20.42,20.42,0,0,0,0-40.83H20.42V76.21a40.7,40.7,0,0,0,20.42,5.46v21A61.55,61.55,0,0,1,0,87.26V40.84A40.68,40.68,0,0,1,5.46,20.42a41.11,41.11,0,0,1,15-15,40.9,40.9,0,0,1,40.83,0,41.11,41.11,0,0,1,15,15,40.68,40.68,0,0,1,5.46,20.42" fill="white"/></svg>
+          <h2 class="s-h1" style="font-size:clamp(1.2rem,5.5vw,2.1rem);color:var(--white);margin-top:6%;margin-bottom:0;">The foundation<br>determines<br><em style="font-style:italic;font-weight:300;color:var(--grey4)">everything that follows.</em></h2>
+          <p class="s-p" style="font-size:0.65rem;color:var(--grey4);max-width:74%;margin-top:5%;">Applications open. We respond within 48 hours. If the work is for you, you will know immediately.</p>
+          <div class="cta-tag">pennio.agency</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dot-nav" id="dots"></div>
+  <div class="slide-label" id="slide-label"></div>
+  <div class="caption-section">
+    <div class="caption-header">
+      <div class="caption-title">Social Caption</div>
+      <button class="btn-tool btn-secondary" onclick="copyCaption()" id="btn-copy">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>Copy Text
+      </button>
+    </div>
+    <textarea class="caption-body" id="caption-content">Founders often run the sequence in the wrong order. Product ready. Ads on. Traffic bounces. Budget cut.
+
+It is rarely an ad problem. It is an architecture problem. Performance marketing amplifies whatever signal the brand is already sending. If the signal is weak, the spend scales the problem.
+
+Before a single naira goes to ads, lock in the foundation. Meaning. System. Voice.
+
+Architecture first. Then the spend begins.
+
+#BrandArchitecture #PENNIO #VisionaryFounders #BrandIdentity #Scale</textarea>
+  </div>
+</div>
+<script>
+const LABELS = ["Cover","The Pattern","The Cost","The Diagnosis","Three Questions","The Work","The Sequence","Who It's For","Apply"];
+const TOTAL = 9;
+let current = 0;
+function buildDots() {
+  const nav = document.getElementById('dots');
+  for (let i = 0; i < TOTAL; i++) {
+    const b = document.createElement('button');
+    b.className = 'dot' + (i === 0 ? ' active' : '');
+    b.style.width = i === 0 ? '20px' : '6px';
+    b.onclick = () => goTo(i);
+    nav.appendChild(b);
+  }
+}
+function updateUI() {
+  document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === current));
+  document.querySelectorAll('.dot').forEach((d, i) => { d.classList.toggle('active', i === current); d.style.width = i === current ? '20px' : '6px'; });
+  document.getElementById('slide-label').textContent = LABELS[current];
+  document.getElementById('btn-prev').disabled = current === 0;
+  document.getElementById('btn-next').disabled = current === TOTAL - 1;
+}
+function move(dir) { goTo(current + dir); }
+function goTo(n) { if (n < 0 || n >= TOTAL) return; current = n; updateUI(); }
+document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') move(1); if (e.key === 'ArrowLeft') move(-1); });
+buildDots(); updateUI();
+function copyCaption() {
+  const t = document.getElementById('caption-content');
+  t.select(); t.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+  const btn = document.getElementById('btn-copy');
+  const orig = btn.innerHTML;
+  btn.innerHTML = 'Copied!';
+  setTimeout(() => { btn.innerHTML = orig; }, 2000);
+}
+function showProgress(text, pct) { document.getElementById('progress').classList.add('show'); document.getElementById('progress-text').textContent = text; document.getElementById('progress-bar').style.width = pct + '%'; }
+function hideProgress() { document.getElementById('progress').classList.remove('show'); }
+async function captureSlide(index) {
+  document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === index));
+  await new Promise(r => setTimeout(r, 120));
+  return html2canvas(document.querySelector('.slides-track'), { scale: 3, useCORS: true, allowTaint: true, backgroundColor: null, logging: false, removeContainer: true });
+}
+async function downloadCurrentPNG() {
+  const btn = document.getElementById('btn-png'); btn.disabled = true;
+  showProgress('Rendering slide ' + (current + 1) + '...', 50);
+  try {
+    const canvas = await captureSlide(current);
+    const a = document.createElement('a');
+    a.download = 'pennio-slide-' + String(current+1).padStart(2,'0') + '-' + LABELS[current].toLowerCase().replace(/\s+/g,'-') + '.png';
+    a.href = canvas.toDataURL('image/png'); a.click();
+  } finally { updateUI(); hideProgress(); btn.disabled = false; }
+}
+async function downloadAllPNGs() {
+  const btn = document.getElementById('btn-all'); btn.disabled = true;
+  document.getElementById('btn-png').disabled = true; document.getElementById('btn-pdf').disabled = true;
+  try {
+    for (let i = 0; i < TOTAL; i++) {
+      showProgress('Rendering slide ' + (i+1) + ' of ' + TOTAL + '...', Math.round(((i+1)/TOTAL)*100));
+      const canvas = await captureSlide(i);
+      await new Promise(r => setTimeout(r, 60));
+      const a = document.createElement('a');
+      a.download = 'pennio-slide-' + String(i+1).padStart(2,'0') + '-' + LABELS[i].toLowerCase().replace(/\s+/g,'-') + '.png';
+      a.href = canvas.toDataURL('image/png'); a.click();
+      await new Promise(r => setTimeout(r, 400));
+    }
+  } finally { goTo(current); hideProgress(); btn.disabled = false; document.getElementById('btn-png').disabled = false; document.getElementById('btn-pdf').disabled = false; }
+}
+async function printPDF() {
+  const btn = document.getElementById('btn-pdf'); const originalHtml = btn.innerHTML; btn.disabled = true;
+  document.getElementById('btn-png').disabled = true; document.getElementById('btn-all').disabled = true;
+  showProgress('Initializing PDF...', 10);
+  try {
+    const { jsPDF } = window.jspdf; let pdf;
+    for (let i = 0; i < TOTAL; i++) {
+      showProgress('Rendering PDF page ' + (i+1) + ' of ' + TOTAL + '...', Math.round(((i+1)/TOTAL)*100));
+      const canvas = await captureSlide(i);
+      const w = canvas.width, h = canvas.height;
+      if (i === 0) { pdf = new jsPDF('p', 'px', [w, h]); } else { pdf.addPage([w, h], 'p'); }
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, w, h);
+      await new Promise(r => setTimeout(r, 60));
+    }
+    showProgress('Saving PDF...', 100);
+    pdf.save('PENNIO_Carousel.pdf');
+  } catch(err) {
+    console.error(err);
+  } finally { goTo(current); hideProgress(); btn.disabled = false; btn.innerHTML = originalHtml; document.getElementById('btn-png').disabled = false; document.getElementById('btn-all').disabled = false; }
+}
+</script>
+</body>
+</html>
